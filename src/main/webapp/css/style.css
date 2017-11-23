@@ -1,0 +1,436 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+/*******************************
+ * Preloader
+ *******************************/
+
+#preloader {
+    background: #FFF;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+#status {
+    background-image: url(../img/preloader.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+
+/*******************************
+ * Common styles
+ *******************************/
+
+html { 
+    overflow:  hidden; 
+}
+
+a, button, input, textarea{
+    outline: none;
+}
+
+a:hover, a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul. li{
+    list-style: none;
+}
+
+li{
+    display: inline;
+}
+
+textarea{
+    font-family: "Courier new";
+    resize: none;
+    border: 0;
+    padding: 15px;
+    width: 98%;
+    height: 75%;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+select{
+    background-color: #F3F3F8;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    padding: 10px;    
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.red_button, .small_red_button{
+    font-size: 20px;
+    color: white;
+    background: #d11717;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));  
+    -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    -ms-transition: All 0.5s ease;
+    transition: All 0.5s ease;
+} 
+
+.red_button:hover, .small_red_button:hover{
+    background-color: #ff3434;
+    color: white;
+    text-decoration: none;  
+}
+
+.small_red_button, .description div, .wrapper_tasks div div,
+.task, textarea, select{
+    border-radius: 5px;
+}
+
+.red_button, .description_icon, .description_number,
+.description_address, .title, .text, .l_height ul li,
+.title_question, .comment_question, .description, 
+.run_tasks, .event_log, .logs, .res_result{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.footer, .footer_tasks{
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    background-color: #06528C; 
+}
+
+.header, .header_tasks{
+   background-color: white;
+   box-shadow: 0 9px 16px rgba(0,0,0,0.08), 0 7px 7px rgba(0,0,0,0.05);
+}
+
+/********************************
+* Index page
+********************************/
+.wrapper{
+    height: 100%;
+    background: radial-gradient(40% 40%, white, #DEDEE2);
+    width: 100%;
+    position: relative;
+}
+
+.header{
+    height: 110px;
+}
+
+.red_button{
+    height: 40px;
+    width: 210px;
+    padding-top: 2px;
+    line-height: 38px;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.small_red_button{
+    float: right;
+    margin-top: 5px;
+    border: 0;
+    padding: 3px 35px 3px 35px;
+}
+
+.margin_hyper{
+    margin-top: 35px;
+}
+
+.white_button{
+    margin-top: 100px;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777, 0 4px 0 #666666, 0 5px 0 #555555, 0 6px 0 #444444, 0 7px 0 #333333, 0 8px 7px #000B21;
+}
+
+.white_button:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.icon{
+    width: 70px;
+    margin: 18px 15px 0 0;
+    float: left;
+}
+
+.description_icon{
+    font-weight: 600;
+    line-height: 1.1em;
+    font-size: 16px;
+    color: #262626;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-family: "Times New Roman";
+}
+
+.description_number{
+    text-align: right;
+    font-size: 28px;
+}
+
+.l_height{
+     line-height: 1.5em;
+     margin-top: 32px;   
+}
+
+.description_address{
+    text-align: right;
+    color: #7A777A;
+    font-size: 18px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 32px;
+    color: #005BAA;
+    margin-top: 200px;
+}
+
+.text{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.img_student{
+    margin-top: 100px;
+    width: 550px;
+}
+
+.footer{
+    height: 110px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/******************************************
+* Page tasks and send answer to task
+******************************************/
+
+.header_tasks{
+    height: 60px; 
+}
+
+.footer_tasks{
+    vertical-align: middle;
+    height: 60px;
+}
+
+.tasks{
+    width: 400px;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    left: 0;
+    position:absolute; 
+    height: 100%;
+    border-top: 3px solid #D0CECB;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    padding-top: 0;
+}
+
+.wrapper_tasks{
+    background-color: #F3F3F4;
+    opacity: 0.98;
+    width: 400px;
+    height: 100%;
+    padding-top: 25px;
+}
+
+.description{
+    padding: 28px 0 0 405px;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+}
+
+.title_tasks{
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    font-weight: 600;
+    font-size: 24px;
+    color: #005BAA;
+    margin-top: 15px;
+}
+
+.icon_tasks{
+    width: 30px;
+    float: left;
+    margin: 17px 10px 0 20px;
+}
+
+.l_height ul li{
+    font-size: 18px;
+    float: right;
+    margin: 0 20px 0 5px;
+    transform: translateY(-9px);
+}
+
+.hyper_tasks{
+    color: #323232; 
+}
+
+.hyper_tasks:hover{
+    border-bottom: 2px solid red; 
+    text-decoration: none;
+    color: #323232;
+    transition: 0.3s;
+}
+
+.task{
+    line-height: 1.0em;
+    margin: 0 50px 5px 50px;
+    padding: 10px 10px 2px 10px;
+    width: 300px;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    background-color: #FCFCFD;
+    transition: 1s; 
+}
+
+.task:hover{
+    background-color: #E6E6E7;
+    cursor: pointer;
+}
+
+.title_question{
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #AC2020;
+}
+
+.comment_question{
+    font-size: 17px;
+}
+
+.untitle{
+    letter-spacing: 1px;
+    font-size: 30px;
+    transform:translateY(-8px);
+    font-weight: 600;
+    color: #626262;
+}
+
+.run_tasks{
+    color: white;
+    font-size: 22px;
+    padding: 16px;
+}
+
+.timer{
+    float: right;
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 15px;
+    letter-spacing: 2px;
+}
+
+/******************************************
+* Page enter tasl
+******************************************/
+
+.help_enter_task{
+    text-align: center;
+    line-height: 10px;
+    color: #AC2020;
+    float: left;
+    font-size: 16px;
+}
+
+.description div p{
+    margin: 20px 15px 0 0;
+    color: #4E4E50;
+    line-height: 10px;
+    font-size: 16px;
+    float: left;
+    padding-left: 15px;
+}
+
+.description div{
+    height: 40px;
+    width: 98%;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    background-color: #F1F1F6;
+}
+
+.wrapper_tasks div div{
+    margin-left: 50px;   
+    width: 300px;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    background-color: #EDEEF3;
+}
+
+.event_log{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    padding-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.logs{
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+/******************************************
+* Page end test
+******************************************/
+
+.img_student_res{
+    margin-top: 150px;
+    width: 580px;  
+}
+
+/******************************************
+* Media queries
+******************************************/
+
+@media (max-height: 800px) {
+    
+    .title{
+        margin-top: 150px;
+    }
+
+    .img_student{
+        margin-top: 100px;
+        width: 430px;
+        transform:translateX(100px);
+    }   
+
+    textarea{
+        height: 68%;
+    } 
+
+}
+
+@media (max-height: 900px) {
+   
+   .img_student_res{
+        margin-top: 130px;
+        width: 500px;  
+        transform:translateX(50px);
+    } 
+
+}
