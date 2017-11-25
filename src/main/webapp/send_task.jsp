@@ -44,7 +44,7 @@
             <textarea autofocus class="txt_send"></textarea>
             <div>
                 <p id="log"></p>
-                <button href="tasks.html" class="small_red_button">Отправить</button>
+                <button href="tasks.jsp" class="small_red_button">Отправить</button>
             </div>
         </form> <!-- end description -->
 

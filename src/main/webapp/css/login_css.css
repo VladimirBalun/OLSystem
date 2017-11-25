@@ -14,6 +14,15 @@ a{
 	font-size: 14px;
 }
 
+.btn_sign_in, .btn_sign_up{
+	outline: none;
+}
+
+.log_in, .log_up{
+	text-align: center;
+	color: #F0F0F0;
+}
+
 #preloader {
     background: #FFF;
     bottom: 0;
@@ -97,6 +106,7 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 	border-color:#1161ee;
 }
+
 .login-form{
 	min-height:345px;
 	position:relative;

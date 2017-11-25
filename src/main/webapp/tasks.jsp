@@ -4,41 +4,57 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="templates/header.jsp"/>
 
+<%
+    int numberQuestion;
+    if(request.getParameter("number_question") == null){
+        numberQuestion = 1;
+    } else {
+        numberQuestion = Integer.valueOf(request.getParameter("number_question"));
+    }
+    Question curQuestion = FactoryModels.getQuestion(numberQuestion);
+%>
+
     <div class="container-fluid wrapper">
 
         <jsp:include page="templates/nav_tasks.jsp"/>
 
         <div class="row tasks">
-            <div class="wrapper_tasks">
+            <form action="tasks.jsp" method="GET" class="wrapper_tasks">
                 <%
                     ArrayList<Question> listQuestions = FactoryModels.getQuestions();
                     for (Question question : listQuestions){
                 %>
-                    <div id="<%=question.getNumber()%>" class="task">
+                    <button value="<%=question.getNumber()%>" name="number_question" class="task">
                         <p class="title_question">Задание <%=question.getNumber()%></p>
                         <p class="comment_question"><%=question.getTitle()%></p>
-                    </div>
+                    </button>
                 <%
                     }
                 %>
-            </div><!-- end wrapper_tasks -->
+            </form><!-- end wrapper_tasks -->
         </div><!-- end tasks -->
 
         <div class="description wow bounceInRight" data-wow-delay=".5s">
-            <p class="untitle">Числа Фибоначчи</p>
-            Время на тест: 1 секунда.<br>
-            Размер программы меньше 200Мб.<br>
-            Последовательность Фибоначчи F[n] задается следующим образом:<br>
-            F[0]=1<br>
-            F[1]=1<br>
-            F[n]=F[n]-1+F[n]-2.<br>
-            Начало ряда Фибоначчи выглядит так:<br>
-            1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...<br>
-            Программа должна по данному n, 0 ≤ n≤ 40 вычиcлить F[n].<br><br>
+            <p class="untitle"><%=curQuestion.getTitle()%></p>
+            <%=curQuestion.getText()%><br><br>
             <b>Пример входных данных</b><br>
-            10<br>
+            <%
+                ArrayList<String> listInData = curQuestion.getInData();
+                for (String inData : listInData){
+            %>
+                <%=inData%><br>
+            <%
+                }
+            %>
             <b>Пример выходных данных</b><br>
-            89<br>
+            <%
+                ArrayList<String> listOutData = curQuestion.getOutData();
+                for (String outData : listOutData){
+            %>
+                <%=outData%><br>
+            <%
+                }
+            %>
         </div><!-- end description -->
 
         <jsp:include page="templates/nav_footer_tasks.jsp"/>

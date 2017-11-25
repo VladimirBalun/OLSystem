@@ -1,5 +1,9 @@
 package ru.tidstu.testingsystem.models;
 
+import sun.swing.SwingUtilities2;
+
+import java.util.ArrayList;
+
 /**
  * Class implements model of the user. The class stores
  * data about user(login, password, name, group).
@@ -14,23 +18,22 @@ public class User {
     private String name;
     private String password;
     private String group;
+    private int countTrueQuestions;
 
     /**
-     *
-     * @param login login use
+     * Default constructor this class. Here initilize
+     * count true answer of user.
      */
-    public User(String login, String password, String name, String group) {
-        this.login = login;
-        this.name = name;
-        this.password = password;
-        this.group = group;
+    public User(){
+        countTrueQuestions = 0;
     }
 
     /**
-     * Default constructor.
+     * Method add count true questions
+     * of user.
      */
-    public User(){
-
+    public void addTrueAnswer(){
+        countTrueQuestions++;
     }
 
     /**
@@ -63,6 +66,14 @@ public class User {
      */
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    /**
+     * Getter returns count true answers of user.
+     * @return count true answers of user.
+     */
+    public int getCountTrueQuestions(){
+        return countTrueQuestions;
     }
 
     /**

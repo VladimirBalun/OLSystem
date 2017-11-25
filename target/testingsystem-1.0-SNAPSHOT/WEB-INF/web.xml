@@ -14,7 +14,4 @@
     <url-pattern>/LogIn</url-pattern>
   </servlet-mapping>
 
-  <!--<display-name>TestingSystem</display-name>-->
-
-  <!--<display-name>Archetype Created Web Application</display-name>-->
 </web-app>

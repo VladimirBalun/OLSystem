@@ -32,10 +32,7 @@
                     <div class="group">
                         <button name="btn_sign_in" class="button">Войти</button>
                     </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot">Забыли пароль?</a>
-                    </div>
+                    <p class="log_in"></p>
                 </form><!-- end sign-in-html -->
 
                 <form method="post" action="/LogIn" class="sign-up-htm">
@@ -49,7 +46,7 @@
                     </div>
                     <div class="group">
                         <label for="pass" class="label">ФИО</label>
-                        <input name="name_sign_up" id="pass" type="password" class="input" data-type="password">
+                        <input name="name_sign_up" id="pass" type="text" class="input" data-type="password">
                     </div>
                     <div class="group">
                         <label for="group" class="label">Группа</label>
@@ -58,10 +55,13 @@
                     <div class="group">
                         <button name="btn_sign_up" class="button">Зарегистрироваться</button>
                     </div>
+                    <p class="log_up"></p>
                 </form><!-- end sign-up-html -->
 
             </div><!-- end login_form -->
         </div><!-- end login_html -->
     </div><!-- end login_wrap -->
+
+    <script src="js/check_autorization.js"></script>
 
     <jsp:include page="templates/footer.jsp"/>

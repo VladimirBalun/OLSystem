@@ -1,18 +1,23 @@
 package ru.tidstu.testingsystem.models;
 
+import java.util.ArrayList;
+
 /**
+ * Class implements model of the question. The class stores
+ * data about question(number, title, text, input and
+ * output data).
  * @author Balun Vladimir
  */
 public class Question {
 
     /**
-     *
+     * Common data of question.
      */
     private int number;
     private String title;
     private String text;
-    private String inputData;
-    private String outputDate;
+    private ArrayList<String> inData;
+    private ArrayList<String> outData;
 
     /**
      *
@@ -24,6 +29,8 @@ public class Question {
         this.title = title;
         this.text = text;
         this.number = number;
+        inData = new ArrayList<String>();
+        outData = new ArrayList<String>();
     }
 
     /**
@@ -51,19 +58,35 @@ public class Question {
     }
 
     /**
-     *
-     * @return
+     * Method add input data for question.
+     * @param value input data for question
      */
-    public String getInputData() {
-        return inputData;
+    public void addInputData(String value){
+       inData.add(value);
     }
 
     /**
-     *
-     * @return
+     * Method add output data for question.
+     * @param value output data for question
      */
-    public String getOutputDate() {
-        return outputDate;
+    public void addOutputData(String value){
+        outData.add(value);
+    }
+
+    /**
+     * Getter returns list of inputs data.
+     * @return list of inputs data
+     */
+    public ArrayList<String> getInData() {
+        return inData;
+    }
+
+    /**
+     * Getter returns list of outputs data.
+     * @return list of outputs data
+     */
+    public ArrayList<String> getOutData() {
+        return outData;
     }
 
 }
