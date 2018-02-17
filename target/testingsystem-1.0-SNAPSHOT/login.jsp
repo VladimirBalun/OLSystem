@@ -1,4 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+
 <html >
 <head>
     <meta charset="UTF-8">
@@ -6,7 +9,7 @@
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
     <link rel="stylesheet" href="css/login_css.css">
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
-    <script src="js/jquery.min.js"></script>
+    <script src="js/libs/jquery.min.js"></script>
 </head>
 <body>
 
@@ -32,7 +35,7 @@
                     <div class="group">
                         <button name="btn_sign_in" class="button">Войти</button>
                     </div>
-                    <p class="log_in"></p>
+                    <p class="log_in"><c:out value="${requestScope.logIn}"/></p>
                 </form><!-- end sign-in-html -->
 
                 <form method="post" action="/LogIn" class="sign-up-htm">
@@ -55,7 +58,7 @@
                     <div class="group">
                         <button name="btn_sign_up" class="button">Зарегистрироваться</button>
                     </div>
-                    <p class="log_up"></p>
+                    <p class="log_up"><c:out value="${requestScope.signUp}"/></p>
                 </form><!-- end sign-up-html -->
 
             </div><!-- end login_form -->

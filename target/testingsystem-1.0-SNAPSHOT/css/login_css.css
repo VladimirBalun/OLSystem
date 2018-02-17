@@ -14,13 +14,20 @@ a{
 	font-size: 14px;
 }
 
-.btn_sign_in, .btn_sign_up{
+.button{
 	outline: none;
+	cursor: pointer;
+}
+
+.tab{
+	cursor: pointer;
 }
 
 .log_in, .log_up{
 	text-align: center;
-	color: #F0F0F0;
+	color: #DEDEE2;
+	font-weight: 400;
+	font-size: 14px;
 }
 
 #preloader {
@@ -34,7 +41,7 @@ a{
 }
 
 #status {
-    background-image: url(../img/preloader.gif);
+    background-image: url(img/preloader.gif);
     background-position: center;
     background-repeat: no-repeat;
     height: 200px;
@@ -106,7 +113,6 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 	border-color:#1161ee;
 }
-
 .login-form{
 	min-height:345px;
 	position:relative;

@@ -13,6 +13,7 @@ $(document).ready(function() {
             $(".log_in").html("Введены не все данные...");
             return false;
         }
+
     });
 
     //Check on empty data in the SignUp form
@@ -36,6 +37,8 @@ $(document).ready(function() {
                 $(".log_up").html("Не введена группа...");
                 return false;
         }
+
+
     });
 
 });

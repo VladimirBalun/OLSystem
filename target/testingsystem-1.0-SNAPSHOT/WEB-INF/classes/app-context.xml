@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userMaker" class="ru.tidstu.testingsystem.models.UsersMaker" scope="singleton"></bean>
+    <bean id="questionMaker" class="ru.tidstu.testingsystem.models.QuestionMaker" scope="singleton"></bean>
+    <bean id="groupMaker" class="ru.tidstu.testingsystem.models.GroupMaker" scope="singleton"></bean>
+    <bean id="basicData" class="ru.tidstu.testingsystem.models.BasicData" scope="singleton"></bean>
+
+</beans>
+
