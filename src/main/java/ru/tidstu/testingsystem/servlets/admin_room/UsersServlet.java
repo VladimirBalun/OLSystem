@@ -2,8 +2,10 @@ package ru.tidstu.testingsystem.servlets.admin_room;
 
 import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.tidstu.testingsystem.domain.User;
 import ru.tidstu.testingsystem.services.UsersService;
-import ru.tidstu.testingsystem.services.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +19,8 @@ import java.util.List;
 @WebServlet("/UsersServlet/*")
 public class UsersServlet extends HttpServlet {
 
-    private UsersService userMaker = new UsersService();
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private UsersService usersService = (UsersService) appContext.getBean("usersService");
     private List<User> users;
 
     @Override
@@ -41,17 +44,17 @@ public class UsersServlet extends HttpServlet {
 
     private void delUser(HttpServletRequest req){
         String nameUser = req.getParameter("name_user_for_del");
-        userMaker.delUser(nameUser);
+        usersService.delUser(nameUser);
         log.debug("User " + nameUser + " was deleted.");
         //Load reloading list users for send on client
-        users = userMaker.getUsers();
+        users = usersService.getUsers();
     }
 
     private void selectUsersFromGroup(HttpServletRequest req){
         String nameGroup = req.getParameter("group_for_select_users");
         log.debug("Users was selected by group " + nameGroup + ".");
         //Load reloading list users for send on client
-        users = userMaker.getUsersFromGroup(nameGroup);
+        users = usersService.getUsersFromGroup(nameGroup);
     }
 
     private void sendResponse(HttpServletResponse resp) throws IOException {

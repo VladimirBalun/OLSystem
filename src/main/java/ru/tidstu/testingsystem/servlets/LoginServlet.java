@@ -4,10 +4,10 @@ import lombok.extern.log4j.Log4j;
 import ru.tidstu.testingsystem.authentication.RoleUser;
 import ru.tidstu.testingsystem.authentication.SignIn;
 import ru.tidstu.testingsystem.authentication.SignUp;
-import ru.tidstu.testingsystem.services.QuestionsService;
-import ru.tidstu.testingsystem.services.models.User;
+import ru.tidstu.testingsystem.domain.User;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

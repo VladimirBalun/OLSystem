@@ -1,9 +1,12 @@
 package ru.tidstu.testingsystem.authentication;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.tidstu.testingsystem.dao.QuestionsDAOImpl;
+import ru.tidstu.testingsystem.dao.UsersDAOImpl;
+import ru.tidstu.testingsystem.domain.User;
 import ru.tidstu.testingsystem.services.QuestionsService;
-import ru.tidstu.testingsystem.services.UsersService;
-import ru.tidstu.testingsystem.services.models.User;
 
 @Log4j
 public class SignUp {
@@ -13,9 +16,9 @@ public class SignUp {
     }
 
     private boolean isEmptyUser(User user){
-        UsersService usersService = new UsersService();
-        if(usersService.isEmptyUserForSignUp(user)){
-            usersService.addUser(user);
+        UsersDAOImpl usersDAOImpl = new UsersDAOImpl();
+        if(usersDAOImpl.isEmptyUserForSignUp(user)){
+            usersDAOImpl.addUser(user);
             loadQuestionsForUser();
             return true;
         } else {
@@ -24,8 +27,9 @@ public class SignUp {
     }
 
     private void loadQuestionsForUser(){
-        QuestionsService questionsService = new QuestionsService();
-        questionsService.setQuestions();
+        ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+        QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
+        questionsService.setQuestionsForUser();
         log.debug("Questions was loaded for user");
     }
 

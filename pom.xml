@@ -5,12 +5,13 @@
     <groupId>ru.tidstu</groupId>
     <artifactId>testingsystem</artifactId>
     <packaging>war</packaging>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>Testing System</name>
     <description>Testing system fo students</description>
     <url>http://maven.apache.org</url>
 
     <properties>
+        <spring.version>5.0.3.RELEASE</spring.version>
         <servlet.verion>4.0.0</servlet.verion>
         <jsp.version>2.3.1</jsp.version>
         <jstl.version>1.2</jstl.version>
@@ -19,6 +20,22 @@
     </properties>
 
     <dependencies>
+        <!--Spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!--Servlet-->
         <dependency>
             <groupId>javax.servlet</groupId>

@@ -20,20 +20,17 @@ public class DataBase {
     }
 
     public void connect(){
-        //Properties for connection with data base
-        String urlDB = "jdbc:firebirdsql:localhost/3050:C:\\Users\\vova\\Desktop\\TestingSystem\\src\\main\\resources\\DB.FDB";
+        String urlDB = "jdbc:firebirdsql:localhost/3050:C:\\Users\\vova\\Desktop\\TestingSystem\\TestingSystem\\src\\main\\resources\\DB.FDB";
         connectionInfo.put("user", "SYSDBA");
         connectionInfo.put("password", "masterkey");
         connectionInfo.put("charSet", "Cp1251");
 
-        //Loads Firebird driver
         try {
             Class.forName("org.firebirdsql.jdbc.FBDriver");
         } catch (ClassNotFoundException e) {
             log.error("Not found driver for FireBird");
         }
 
-        //Connects with data base
         try {
             connection = DriverManager.getConnection(urlDB, connectionInfo);
             if(connection == null) {
@@ -54,7 +51,7 @@ public class DataBase {
         } catch (SQLException e) {
             log.error("Error in the SELECT query(" + query +").");
         } catch (NullPointerException e){
-            log.error("Error in the statement of SELECT query.");
+            log.error("Error in the statement of SELECT query(" + query +").");
         }
         return result;
     }

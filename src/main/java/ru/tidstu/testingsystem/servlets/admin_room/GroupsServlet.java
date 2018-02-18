@@ -2,8 +2,10 @@ package ru.tidstu.testingsystem.servlets.admin_room;
 
 import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.tidstu.testingsystem.domain.Group;
 import ru.tidstu.testingsystem.services.GroupsService;
-import ru.tidstu.testingsystem.services.models.Group;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +19,8 @@ import java.util.List;
 @WebServlet("/GroupsServlet/*")
 public class GroupsServlet extends HttpServlet {
 
-    private GroupsService groupsService = new GroupsService();
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private GroupsService groupsService = (GroupsService) appContext.getBean("groupsService");
     private List<Group> groups;
 
     @Override
@@ -25,7 +28,6 @@ public class GroupsServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
-
         //If request from form add_group
         if(req.getParameter("title_group") != null){
             addGroup(req);

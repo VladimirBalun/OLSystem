@@ -2,9 +2,11 @@ package ru.tidstu.testingsystem.servlets.admin_room;
 
 import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.tidstu.testingsystem.domain.Question;
 import ru.tidstu.testingsystem.services.QuestionsService;
 import ru.tidstu.testingsystem.services.TestDataService;
-import ru.tidstu.testingsystem.services.models.Question;
 import ru.tidstu.testingsystem.servlets.DispatcherServlet;
 
 import javax.servlet.ServletException;
@@ -17,8 +19,9 @@ import java.io.IOException;
 @WebServlet("/QuestionsServlet/*")
 public class QuestionsServlet extends DispatcherServlet {
 
-    private QuestionsService questionsService = new QuestionsService();
-    private TestDataService testDataService = new TestDataService();
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
+    private TestDataService testDataService =  (TestDataService) appContext.getBean("testDataService");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

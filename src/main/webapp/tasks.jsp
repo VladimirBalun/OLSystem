@@ -1,16 +1,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="ru.tidstu.testingsystem.services.models.Question" %>
+<%@ page import="ru.tidstu.testingsystem.domain.Question" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
 <%@ page import="ru.tidstu.testingsystem.services.QuestionsService" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 
 <jsp:include page="templates/header.jsp"/>
 
 <%
-    QuestionsService questionsService = new QuestionsService();
-    ArrayList<Question> listQuestions = questionsService.getQuestionsOfUser();
-    Question selectedQuestion = listQuestions.get(0);
+    ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
+
+    List<Question> listQuestions = questionsService.getQuestionsOfUser();
+    //Question selectedQuestion = listQuestions.get(0);
     pageContext.setAttribute("questions", listQuestions);
 %>
 
@@ -42,12 +46,12 @@
         </div><!-- end tasks -->
 
         <div class="description animated" data-effect="bounceInRight">
-            <p class="untitle"><%= selectedQuestion.getTitle() %></p>
-            <p class="txt_question"><%= selectedQuestion.getText() %></p>
+            <p class="untitle"></p>
+            <p class="txt_question"></p>
             <b>Пример входных данных:</b>
-            <p class="input_data"><%= selectedQuestion.getInputData() %></p>
+            <p class="input_data"></p>
             <b >Пример выходных данных:</b>
-            <p class="output_data"><%= selectedQuestion.getOutputData() %></p>
+            <p class="output_data"></p>
         </div><!-- end description -->
 
         <div class="row footer_tasks">
@@ -61,39 +65,7 @@
 
     </div><!-- end wrapper -->
 
-    <script>
-
-        $(document).ready(function(){
-
-            $("#tasks").css("border-bottom", "2px solid red");
-            var formChangeQuestion = $("#form_change");
-            new WOW().init();
-
-            function animate(elem){
-                var effect = elem.data("effect");
-                if(!effect || elem.hasClass(effect)) return false;
-                elem.addClass(effect);
-                setTimeout( function(){
-                    elem.removeClass(effect);
-                }, 1000);
-            }
-
-            formChangeQuestion.submit(function(){
-                var number = $(this).find(".task:focus").val();
-                $.get(formChangeQuestion.attr("action"), {num_question : number}, function(question){
-                    $(".untitle").html(question.title);
-                    $(".txt_question").html(question.text);
-                    $(".input_data").html(question.inputData);
-                    $(".output_data").html(question.outputData);
-                    animate($(".description"));
-                });
-                event.preventDefault();
-            });
-
-        });
-
-    </script>
-
     <script src="js/libs/wow.min.js"></script>
+    <script src="js/tasks.js"></script>
 
 <jsp:include page="templates/footer.jsp"/>

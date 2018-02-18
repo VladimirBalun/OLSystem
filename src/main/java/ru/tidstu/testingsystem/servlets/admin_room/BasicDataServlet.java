@@ -1,6 +1,8 @@
 package ru.tidstu.testingsystem.servlets.admin_room;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.tidstu.testingsystem.services.BasicDataService;
 import ru.tidstu.testingsystem.servlets.DispatcherServlet;
 
@@ -14,7 +16,8 @@ import java.io.IOException;
 @WebServlet("/BasicDataServlet/*")
 public class BasicDataServlet extends DispatcherServlet {
 
-    private BasicDataService basicDataService = new BasicDataService();
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private BasicDataService basicDataService = (BasicDataService) appContext.getBean("basicDataService");
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
