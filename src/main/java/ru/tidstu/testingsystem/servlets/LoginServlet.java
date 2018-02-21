@@ -4,15 +4,16 @@ import lombok.extern.log4j.Log4j;
 import ru.tidstu.testingsystem.authentication.RoleUser;
 import ru.tidstu.testingsystem.authentication.SignIn;
 import ru.tidstu.testingsystem.authentication.SignUp;
-import ru.tidstu.testingsystem.domain.User;
+import ru.tidstu.testingsystem.data.entity.User;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Log4j
+@WebServlet("/LoginServlet/*")
 public class LoginServlet extends DispatcherServlet {
 
     @Override

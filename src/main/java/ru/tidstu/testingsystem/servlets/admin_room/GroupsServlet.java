@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tidstu.testingsystem.domain.Group;
-import ru.tidstu.testingsystem.services.GroupsService;
+import ru.tidstu.testingsystem.data.entity.Group;
+import ru.tidstu.testingsystem.data.service.GroupsService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,12 +1,7 @@
 package ru.tidstu.testingsystem.authentication;
 
 import lombok.extern.log4j.Log4j;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tidstu.testingsystem.dao.QuestionsDAOImpl;
-import ru.tidstu.testingsystem.dao.QuestionsDAOImpl;
-import ru.tidstu.testingsystem.dao.UsersDAOImpl;
-import ru.tidstu.testingsystem.services.QuestionsService;
+import ru.tidstu.testingsystem.data.dao.UsersDAOImpl;
 
 @Log4j
 public class SignIn {
@@ -15,7 +10,6 @@ public class SignIn {
         if(isAdmin(login, password)){
             return RoleUser.ADMIN;
         } else if(isUser(login, password)){
-            loadQuestionsForUser();
             return RoleUser.USER;
         } else {
             return RoleUser.UNKNOWN;
@@ -39,11 +33,5 @@ public class SignIn {
         }
     }
 
-    private void loadQuestionsForUser(){
-        ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
-        QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
-        questionsService.setQuestionsForUser();
-        log.debug("Questions was loaded for user");
-    }
 
 }

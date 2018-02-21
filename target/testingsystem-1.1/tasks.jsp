@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="ru.tidstu.testingsystem.domain.Question" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
-<%@ page import="ru.tidstu.testingsystem.services.QuestionsService" %>
 <%@ page import="java.util.List" %>
+<%@ page import="ru.tidstu.testingsystem.utils.Olympiad" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Question" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 
@@ -11,15 +11,9 @@
 
 <%
     ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
-    QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
-
-    List<Question> listQuestions = questionsService.getQuestionsOfUser();
-    Cookie[] cookies = request.getCookies();
-    for(int i = 0; i <cookies.length; i++){
-        System.out.println(cookies[i].getName() + " : " + cookies[i].getValue());
-    }
-    //Question selectedQuestion = listQuestions.get(0);
-    pageContext.setAttribute("questions", listQuestions);
+    Olympiad olympiad = (Olympiad) appContext.getBean("olympiad");
+    List<Question> questions = olympiad.getQuestions();
+    pageContext.setAttribute("questions", questions);
 %>
 
     <div class="container-fluid wrapper">
@@ -60,7 +54,7 @@
 
         <div class="row footer_tasks">
             <div class="col-lg-6 col-md-6">
-                <p class="run_tasks">Выполненных заданий: <c:out value="${Users.getCurrentUserStatistics()}"/></p>
+                <p class="run_tasks">Выполненных заданий:</p>
             </div>
             <div class="col-lg-6 col-md-6 ">
                 <p class="timer">02:34:14</p>

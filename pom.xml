@@ -6,7 +6,7 @@
     <artifactId>testingsystem</artifactId>
     <packaging>war</packaging>
     <version>1.1</version>
-    <name>Testing System</name>
+    <description>Testing System</description>
     <description>Testing system fo students</description>
     <url>http://maven.apache.org</url>
 

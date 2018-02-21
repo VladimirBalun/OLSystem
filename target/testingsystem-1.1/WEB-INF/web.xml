@@ -13,10 +13,6 @@
     <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.BasicDataServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>IndexServlet</servlet-name>
-    <servlet-class>ru.tidstu.testingsystem.servlets.IndexServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>GroupsServlet</servlet-name>
     <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.GroupsServlet</servlet-class>
   </servlet>
@@ -33,8 +29,8 @@
     <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.ResultsServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>GetTaskServlet</servlet-name>
-    <servlet-class>ru.tidstu.testingsystem.servlets.GetTaskServlet</servlet-class>
+    <servlet-name>SendTaskServlet</servlet-name>
+    <servlet-class>ru.tidstu.testingsystem.servlets.SendTaskServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>TasksServlet</servlet-name>
@@ -48,10 +44,6 @@
   <servlet-mapping>
     <servlet-name>BasicDataServlet</servlet-name>
     <url-pattern>/BasicData</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>IndexServlet</servlet-name>
-    <url-pattern>/Index</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GroupsServlet</servlet-name>
@@ -70,8 +62,8 @@
     <url-pattern>/Results</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>GetTaskServlet</servlet-name>
-    <url-pattern>/GetTask</url-pattern>
+    <servlet-name>SendTaskServlet</servlet-name>
+    <url-pattern>/SendTask</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>TasksServlet</servlet-name>

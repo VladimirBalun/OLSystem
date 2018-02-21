@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tidstu.testingsystem.services.ResultsService;
+import ru.tidstu.testingsystem.data.service.ResultsService;
 import ru.tidstu.testingsystem.utils.SortingResults;
-import ru.tidstu.testingsystem.domain.Result;
+import ru.tidstu.testingsystem.data.entity.Result;
 import ru.tidstu.testingsystem.servlets.DispatcherServlet;
 
 import javax.servlet.ServletException;

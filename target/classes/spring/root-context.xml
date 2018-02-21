@@ -7,18 +7,20 @@
 
     <context:annotation-config/>
 
-    <bean id="basicDataDAO" class="ru.tidstu.testingsystem.dao.BasicDataDAOImpl"/>
-    <bean id="groupsDAO" class="ru.tidstu.testingsystem.dao.GroupsDAOImpl"/>
-    <bean id="resultsDAO" class="ru.tidstu.testingsystem.dao.ResultsDAOImpl"/>
-    <bean id="usersDAO" class="ru.tidstu.testingsystem.dao.UsersDAOImpl"/>
-    <bean id="questionsDAO" class="ru.tidstu.testingsystem.dao.QuestionsDAOImpl"/>
-    <bean id="testDataDAO" class="ru.tidstu.testingsystem.dao.TestDataDAOImpl"/>
+    <bean id="basicDataDAO" class="ru.tidstu.testingsystem.data.dao.BasicDataDAOImpl"/>
+    <bean id="groupsDAO" class="ru.tidstu.testingsystem.data.dao.GroupsDAOImpl"/>
+    <bean id="resultsDAO" class="ru.tidstu.testingsystem.data.dao.ResultsDAOImpl"/>
+    <bean id="usersDAO" class="ru.tidstu.testingsystem.data.dao.UsersDAOImpl"/>
+    <bean id="questionsDAO" class="ru.tidstu.testingsystem.data.dao.QuestionsDAOImpl"/>
+    <bean id="testDataDAO" class="ru.tidstu.testingsystem.data.dao.TestDataDAOImpl"/>
 
-    <bean id="basicDataService" class="ru.tidstu.testingsystem.services.BasicDataServiceImpl"/>
-    <bean id="groupsService" class="ru.tidstu.testingsystem.services.GroupsServiceImpl"/>
-    <bean id="resultsService" class="ru.tidstu.testingsystem.services.ResultsServiceImpl"/>
-    <bean id="usersService" class="ru.tidstu.testingsystem.services.UsersServiceImpl"/>
-    <bean id="questionsService" class="ru.tidstu.testingsystem.services.QuestionsServiceImpl"/>
-    <bean id="testDataService" class="ru.tidstu.testingsystem.services.TestDataServiceImpl"/>
+    <bean id="basicDataService" class="ru.tidstu.testingsystem.data.service.BasicDataServiceImpl"/>
+    <bean id="groupsService" class="ru.tidstu.testingsystem.data.service.GroupsServiceImpl"/>
+    <bean id="resultsService" class="ru.tidstu.testingsystem.data.service.ResultsServiceImpl"/>
+    <bean id="usersService" class="ru.tidstu.testingsystem.data.service.UsersServiceImpl"/>
+    <bean id="questionsService" class="ru.tidstu.testingsystem.data.service.QuestionsServiceImpl"/>
+    <bean id="testDataService" class="ru.tidstu.testingsystem.data.service.TestDataServiceImpl"/>
+
+    <bean id="olympiad" class="ru.tidstu.testingsystem.utils.PassingOlympiad"/>
 
 </beans>

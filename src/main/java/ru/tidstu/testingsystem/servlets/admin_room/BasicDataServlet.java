@@ -3,7 +3,7 @@ package ru.tidstu.testingsystem.servlets.admin_room;
 import lombok.extern.log4j.Log4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.tidstu.testingsystem.services.BasicDataService;
+import ru.tidstu.testingsystem.data.service.BasicDataService;
 import ru.tidstu.testingsystem.servlets.DispatcherServlet;
 
 import javax.servlet.ServletException;

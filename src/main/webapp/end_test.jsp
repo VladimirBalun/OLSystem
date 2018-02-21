@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
-<%@ page import="ru.tidstu.testingsystem.services.BasicDataService" %>
+<%@ page import="ru.tidstu.testingsystem.data.service.BasicDataService" %>
 
 <%
     ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");

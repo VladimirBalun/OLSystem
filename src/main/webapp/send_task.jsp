@@ -1,19 +1,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="ru.tidstu.testingsystem.domain.Question" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
-<%@ page import="ru.tidstu.testingsystem.services.QuestionsService" %>
 <%@ page import="java.util.List" %>
+<%@ page import="ru.tidstu.testingsystem.utils.Olympiad" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Question" %>
+<%@ page import="java.util.Queue" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Log" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <jsp:include page="templates/header.jsp"/>
 <%@ page isELIgnored="false" %>
 
 <%
     ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
-    QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
-
-    List<Question> listQuestions = questionsService.getQuestionsOfUser();
-    pageContext.setAttribute("questions", listQuestions);
+    Olympiad olympiad = (Olympiad) appContext.getBean("olympiad");
+    List<Question> questions = olympiad.getQuestions();
+    Queue<Log> logsRunningTest = olympiad.getLogsOfRunningTest();
+    pageContext.setAttribute("logs", logsRunningTest);
+    pageContext.setAttribute("questions", questions);
 %>
 
     <div class="container-fluid wrapper">
@@ -40,18 +43,16 @@
                     </div>
                     <div>
                         <p class="logs">
-                            13:15 - Ошибка компиляции<br>
-                            13:19 - Ошибка в тестепрограммы<br>
-                            13:40 - Ошибка в тесте программы<br>
-                            13:42 - Задание 2 выполнено<br>
-                            14:22 - Ошибка компиляции<br>
+                            <c:forEach var="log" items="${logs}">
+                                ${log.time}
+                            </c:forEach>
                         </p>
                     </div>
                 </div>
             </div><!-- end wrapper_tasks -->
         </div><!-- end tasks -->
 
-        <form action="/GetTask" method="POST" id="form" class="description">
+        <form action="/SendTask" method="POST" id="form" class="description">
             <div>
                 <select name="name_question">
                     <c:forEach var="question" items="${questions}">
@@ -68,7 +69,7 @@
 
         <div class="row footer_tasks">
             <div class="col-lg-6 col-md-6">
-                <p class="run_tasks">Выполненных заданий: <c:out value="${Users.getCurrentUserStatistics()}"/></p>
+                <p class="run_tasks">Выполненных заданий:</p>
             </div>
             <div class="col-lg-6 col-md-6 ">
                 <p class="timer">02:34:14</p>

@@ -1,5 +1,5 @@
-<%@ page import="ru.tidstu.testingsystem.dao.GroupsDAOImpl" %>
-<%@ page import="ru.tidstu.testingsystem.domain.Group" %>
+<%@ page import="ru.tidstu.testingsystem.data.dao.GroupsDAOImpl" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Group" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="ru.tidstu.testingsystem.services.*" %>
-<%@ page import="ru.tidstu.testingsystem.domain.Group" %>
-<%@ page import="ru.tidstu.testingsystem.domain.User" %>
+<%@ page import="ru.tidstu.testingsystem.data.service.*" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Group" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="ru.tidstu.testingsystem.domain.Question" %>
-<%@ page import="ru.tidstu.testingsystem.domain.Result" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Question" %>
+<%@ page import="ru.tidstu.testingsystem.data.entity.Result" %>
 <%@ page import="ru.tidstu.testingsystem.utils.SortingResults" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
