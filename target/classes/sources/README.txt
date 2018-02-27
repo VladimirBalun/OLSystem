@@ -1,0 +1,1 @@
+Doesn't remove this directory, because it uses for check programs during the Olympic.

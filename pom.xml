@@ -7,7 +7,6 @@
     <packaging>war</packaging>
     <version>1.1</version>
     <description>Testing System</description>
-    <description>Testing system fo students</description>
     <url>http://maven.apache.org</url>
 
     <properties>

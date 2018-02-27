@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ResultsDAO {
 
-    public List<Result> getResultsOfUsers(SortingResults method);
+    List<Result> getResultsOfUsers(SortingResults method);
 
 }

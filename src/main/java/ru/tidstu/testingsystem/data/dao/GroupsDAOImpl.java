@@ -1,6 +1,7 @@
 package ru.tidstu.testingsystem.data.dao;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.stereotype.Repository;
 import ru.tidstu.testingsystem.utils.DataBase;
 import ru.tidstu.testingsystem.data.entity.Group;
 
@@ -9,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @Log4j
+@Repository
 public class GroupsDAOImpl implements GroupsDAO {
 
     private static ArrayList<Group> groups = new ArrayList<Group>();
@@ -16,11 +18,11 @@ public class GroupsDAOImpl implements GroupsDAO {
 
     public ArrayList<Group> getGroups() {
         groups.clear();
+        String query = "SELECT g.name_group, " +
+                       "(SELECT COUNT(u.id) FROM users u WHERE u.id_group = g.id) " +
+                       "FROM groups g";
+        ResultSet result = dataBase.execSelect(query);
         try {
-            String query = "SELECT g.name_group, " +
-                           "(SELECT COUNT(u.id) FROM users u WHERE u.id_group = g.id) " +
-                           "FROM groups g";
-            ResultSet result = dataBase.execSelect(query);
             while (result.next()){
                 Group group = Group.builder()
                         .name(result.getString(1))
@@ -29,7 +31,7 @@ public class GroupsDAOImpl implements GroupsDAO {
                 groups.add(group);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Error is reading groups. Query: " + query);
         }
         return groups;
     }

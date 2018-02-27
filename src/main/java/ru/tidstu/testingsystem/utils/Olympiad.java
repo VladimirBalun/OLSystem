@@ -1,7 +1,9 @@
 package ru.tidstu.testingsystem.utils;
 
+import ru.tidstu.testingsystem.compilers.ResultRunningProgram;
 import ru.tidstu.testingsystem.data.entity.Log;
 import ru.tidstu.testingsystem.data.entity.Question;
+import ru.tidstu.testingsystem.data.entity.TestData;
 
 import java.util.List;
 import java.util.Queue;
@@ -16,6 +18,8 @@ public interface Olympiad {
 
     void addLog(Log log);
 
-    Queue<Log> getLogsOfRunningTest();
+    List<Log> getLogsOfRunningTest();
+
+    ResultRunningProgram checkTask(String textProgram, List<TestData> testData);
 
 }

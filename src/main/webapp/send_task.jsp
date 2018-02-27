@@ -4,7 +4,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="ru.tidstu.testingsystem.utils.Olympiad" %>
 <%@ page import="ru.tidstu.testingsystem.data.entity.Question" %>
-<%@ page import="java.util.Queue" %>
 <%@ page import="ru.tidstu.testingsystem.data.entity.Log" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <jsp:include page="templates/header.jsp"/>
@@ -13,8 +12,10 @@
 <%
     ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
     Olympiad olympiad = (Olympiad) appContext.getBean("olympiad");
+
     List<Question> questions = olympiad.getQuestions();
-    Queue<Log> logsRunningTest = olympiad.getLogsOfRunningTest();
+    List<Log> logsRunningTest = olympiad.getLogsOfRunningTest();
+
     pageContext.setAttribute("logs", logsRunningTest);
     pageContext.setAttribute("questions", questions);
 %>
@@ -24,7 +25,7 @@
         <div class="row header_tasks">
             <div class="col-lg-6 col-md-6">
                 <img src="img/icon.png" class="icon_tasks">
-                <p class="title_tasks">Система тестирования ТИ ДГТУ</p>
+                <p class="title_tasks">Система тестирования</p>
             </div>
             <div class="col-lg-6 col-md-6 l_height">
                 <ul>
@@ -43,8 +44,8 @@
                     </div>
                     <div>
                         <p class="logs">
-                            <c:forEach var="log" items="${logs}">
-                                ${log.time}
+                            <c:forEach var="logRunningTest" items="${logs}">
+                                <p>${logRunningTest.time}</p>
                             </c:forEach>
                         </p>
                     </div>
@@ -52,7 +53,7 @@
             </div><!-- end wrapper_tasks -->
         </div><!-- end tasks -->
 
-        <form action="/SendTask" method="POST" id="form" class="description">
+        <form action="/SendTask" method="POST" id="form_send_task" class="description">
             <div>
                 <select name="name_question">
                     <c:forEach var="question" items="${questions}">
@@ -62,7 +63,7 @@
             </div>
             <textarea name="text_program" autofocus class="txt_send"></textarea>
             <div>
-                <p id="log"></p>
+                <p id="log" class="animated" data-effect="pulse"></p>
                 <button class="small_red_button">Отправить</button>
             </div>
         </form> <!-- end description -->
@@ -72,50 +73,55 @@
                 <p class="run_tasks">Выполненных заданий:</p>
             </div>
             <div class="col-lg-6 col-md-6 ">
-                <p class="timer">02:34:14</p>
+                <p class="timer"></p>
             </div>
         </div><!-- end footer_tasks -->
 
     </div><!-- end wrapper -->
 
+    <script src="js/libs/wow.min.js"></script>
     <script type="text/javascript">
 
-        $("#send_task").css("border-bottom", "2px solid red");
+        $(document).ready(function() {
 
-        var form = $("#form");
-        form.submit(function(){
-            if($(".txt_send").val() != "") {
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: form.serialize(),
-                    success: function (data) {
-                        var result = data;
-                        $("#log").html(result);
-                    }
-                });
-            }
-            return false;
-        });
+            new WOW().init();
 
-        $(document).ready(function(){
-
-            checkOnEmptyTextarea();
             $("#send_task").css("border-bottom", "2px solid red");
 
-            $(".txt_send").change(
-                checkOnEmptyTextarea
-            );
+            var form = $("#form_send_task");
+            var logger = $("#log");
+
+            form.submit(function(){
+                if($("textarea[name='text_program']").val() === ""){
+                    logger.text("Не введен листинг программы, отправка задания невозможна");
+                    animate(logger);
+                    return false;
+                } else {
+                    logger.text("Началась обработка задания");
+                    animate(logger);
+                    $.ajax({
+                        type: form.attr('method'),
+                        url: form.attr('action'),
+                        data: form.serialize(),
+                        success: function (data) {
+                            logger.html(data);
+                            animate(logger);
+                        }
+                    });
+                }
+                return false;
+            });
+
+            function animate(elem){
+                var effect = elem.data("effect");
+                if(!effect || elem.hasClass(effect)) return false;
+                elem.addClass(effect);
+                setTimeout( function(){
+                    elem.removeClass(effect);
+                }, 1000);
+            }
 
         });
-
-        function checkOnEmptyTextarea(){
-            if($(".txt_send").val() == ""){
-                $("#log").text("Не введен листинг программы, отправка задания невозможна...");
-            } else {
-                $("#log").text(log = "Все готово для отправки задания...");
-            }
-        }
 
     </script>
 

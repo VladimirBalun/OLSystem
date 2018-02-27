@@ -14,13 +14,10 @@ public class TestData {
 
     String inputData;
     String outputData;
-    String nameQuestion;
 
-    @Builder
-    public TestData(String inputData, String outputData, String nameQuestion){
+    public TestData(String inputData, String outputData){
         this.inputData = inputData;
         this.outputData = outputData;
-        this.nameQuestion = nameQuestion;
     }
 
 }

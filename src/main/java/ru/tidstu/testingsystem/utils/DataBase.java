@@ -34,13 +34,12 @@ public class DataBase {
         try {
             connection = DriverManager.getConnection(urlDB, connectionInfo);
             if(connection == null) {
-                log.info("Database isn't open.");
-                return;
+                log.error("Database isn't open.");
             } else {
                 log.info("Database is open.");
             }
         } catch (SQLException e) {
-            log.error("Error in the DriverManager.");
+            log.error("Error connection with Database");
         }
     }
 

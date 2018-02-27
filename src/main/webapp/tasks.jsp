@@ -13,6 +13,7 @@
     ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
     Olympiad olympiad = (Olympiad) appContext.getBean("olympiad");
     List<Question> questions = olympiad.getQuestions();
+    Question selectedQuestion = questions.get(0);
     pageContext.setAttribute("questions", questions);
 %>
 
@@ -21,7 +22,7 @@
         <div class="row header_tasks">
             <div class="col-lg-6 col-md-6">
                 <img src="img/icon.png" class="icon_tasks">
-                <p class="title_tasks">Система тестирования ТИ ДГТУ</p>
+                <p class="title_tasks">Система тестирования</p>
             </div>
             <div class="col-lg-6 col-md-6 l_height">
                 <ul>
@@ -44,12 +45,12 @@
         </div><!-- end tasks -->
 
         <div class="description animated" data-effect="bounceInRight">
-            <p class="untitle"></p>
-            <p class="txt_question"></p>
+            <p class="untitle"><%= selectedQuestion.getTitle()%></p>
+            <p class="txt_question"><%= selectedQuestion.getText()%></p>
             <b>Пример входных данных:</b>
-            <p class="input_data"></p>
+            <p class="input_data"><%= selectedQuestion.getInputData()%></p>
             <b >Пример выходных данных:</b>
-            <p class="output_data"></p>
+            <p class="output_data"<%= selectedQuestion.getOutputData()%>></p>
         </div><!-- end description -->
 
         <div class="row footer_tasks">
@@ -64,6 +65,39 @@
     </div><!-- end wrapper -->
 
     <script src="js/libs/wow.min.js"></script>
-    <script src="js/tasks.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            new WOW().init();
+
+            $("#tasks").css("border-bottom", "2px solid red");
+
+            var formChangeQuestion = $("#form_change");
+
+            formChangeQuestion.submit(function(){
+                var number = $(this).find(".task:focus").val();
+                $.get(formChangeQuestion.attr("action"), {num_question : number}, function(question){
+                    $(".untitle").html(question.title);
+                    $(".txt_question").html(question.text);
+                    $(".input_data").html(question.inputData);
+                    $(".output_data").html(question.outputData);
+                    animate($(".description"));
+                });
+                event.preventDefault();
+            });
+
+            function animate(elem){
+                var effect = elem.data("effect");
+                if(!effect || elem.hasClass(effect)) return false;
+                elem.addClass(effect);
+                setTimeout( function(){
+                    elem.removeClass(effect);
+                }, 1000);
+            }
+
+        });
+
+    </script>
 
 <jsp:include page="templates/footer.jsp"/>

@@ -1,5 +1,7 @@
 package ru.tidstu.testingsystem.data.dao;
 
+import lombok.extern.log4j.Log4j;
+import org.springframework.stereotype.Repository;
 import ru.tidstu.testingsystem.utils.DataBase;
 import ru.tidstu.testingsystem.data.entity.Result;
 import ru.tidstu.testingsystem.utils.SortingResults;
@@ -9,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log4j
+@Repository
 public class ResultsDAOImpl implements ResultsDAO {
 
     private DataBase dataBase = DataBase.getInstance();
@@ -28,18 +32,17 @@ public class ResultsDAOImpl implements ResultsDAO {
                 results.add(resultUser);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Error is reading results of users. Query: " + query);
         }
         return results;
     }
 
     private String selectMethodOfSorting(SortingResults method){
-        SortingResults sortingResults = method;
         String query = "SELECT u.full_name, (SELECT g.name_group FROM groups g WHERE g.id = u.id_group), " +
                        "r.date_end, r.count_true_answers, r.count_questions " +
                        "FROM results r " +
                        "LEFT JOIN users u ON r.id_user = u.id ";
-        switch (sortingResults){
+        switch (method){
             case DATE:
                 query += "ORDER BY r.date_end DESC";
                 break;

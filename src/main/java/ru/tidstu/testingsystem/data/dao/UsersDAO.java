@@ -5,18 +5,16 @@ import java.util.List;
 
 public interface UsersDAO {
 
-    public boolean setCurrentUser(String login, String password);
+    boolean setCurrentUser(String login, String password);
 
-    public User getCurrentUser();
+    boolean isEmptyUserForSignUp(User user);
 
-    public boolean isEmptyUserForSignUp(User user);
+    void delUser(String nameUser);
 
-    public void delUser(String nameUser);
+    void addUser(User user);
 
-    public void addUser(User user);
+    List<User> getUsers();
 
-    public List<User> getUsers();
-
-    public List<User> getUsersFromGroup(String nameGroup);
+    List<User> getUsersFromGroup(String nameGroup);
 
 }

@@ -2,10 +2,12 @@ package ru.tidstu.testingsystem.data.service;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.tidstu.testingsystem.data.dao.BasicDataDAO;
 
 @Log4j
+@Service
 public class BasicDataServiceImpl implements BasicDataService {
 
     @Autowired

@@ -2,28 +2,32 @@ package ru.tidstu.testingsystem.utils;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ru.tidstu.testingsystem.compilers.Compiler;
+import ru.tidstu.testingsystem.compilers.CompilerC;
+import ru.tidstu.testingsystem.compilers.ResultRunningProgram;
 import ru.tidstu.testingsystem.data.entity.Log;
 import ru.tidstu.testingsystem.data.entity.Question;
+import ru.tidstu.testingsystem.data.entity.TestData;
 import ru.tidstu.testingsystem.data.service.QuestionsService;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 @Log4j
+@Component
 public class PassingOlympiad implements Olympiad {
 
-    private final int MAX_COUNT_LOGS_IN_JOURNAL = 5;
-    private final QuestionsService questionsService;
+    private final int MAX_COUNT_LOGS_IN_JOURNAL = 9;
 
     private List<Question> questions;
-    private Queue<Log> logsOfRunnungOlympiad;
+    private List<Log> logsOfRunningOlympiad;
 
     @Autowired
     public PassingOlympiad(QuestionsService questionsService) {
-        this.questionsService = questionsService;
+        QuestionsService questionsService1 = questionsService;
         this.questions = questionsService.getAllQuestions();
-        this.logsOfRunnungOlympiad = new LinkedList<Log>();
+        this.logsOfRunningOlympiad = new LinkedList<Log>();
     }
 
     public List<Question> getQuestions() {
@@ -51,18 +55,30 @@ public class PassingOlympiad implements Olympiad {
 
     public void addLog(Log logRunningOlympiad){
         log.debug("Add log");
-        if(logsOfRunnungOlympiad.size() > MAX_COUNT_LOGS_IN_JOURNAL){
-            logsOfRunnungOlympiad.remove();
+        if(logsOfRunningOlympiad.size() > MAX_COUNT_LOGS_IN_JOURNAL){
+            logsOfRunningOlympiad.remove(0);
             log.debug("Delete log");
         }
-        logsOfRunnungOlympiad.add(logRunningOlympiad);
-        for (Log log : logsOfRunnungOlympiad){
-            System.out.println(log.toString());
-        }
+        logsOfRunningOlympiad.add(logRunningOlympiad);
     }
 
-    public Queue<Log> getLogsOfRunningTest(){
-        return logsOfRunnungOlympiad;
+    public List<Log> getLogsOfRunningTest(){
+        for (Log log : logsOfRunningOlympiad){
+            System.out.println(log.toString());
+        }
+        return logsOfRunningOlympiad;
+    }
+
+    public ResultRunningProgram checkTask(String textProgram, List<TestData> testData){
+        Compiler compiler = new CompilerC();
+        if(!compiler.compileProgram(textProgram)){
+            return ResultRunningProgram.ERROR_COMPILATION;
+        }
+        if(!compiler.runProgram(testData)){
+            return ResultRunningProgram.LOGIC_ERROR_IN_PROGRAM;
+        } else {
+            return ResultRunningProgram.SUCCESS;
+        }
     }
 
 }

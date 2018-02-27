@@ -9,6 +9,10 @@ input{
 	outline: none;
 }
 
+input:focus{
+	border: 1px solid #1161EE;
+}
+
 a{
 	text-align: center;
 	font-size: 14px;

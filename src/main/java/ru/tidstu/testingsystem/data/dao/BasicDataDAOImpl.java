@@ -1,21 +1,18 @@
 package ru.tidstu.testingsystem.data.dao;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.stereotype.Repository;
 import ru.tidstu.testingsystem.utils.DataBase;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 @Log4j
+@Repository
 public class BasicDataDAOImpl implements BasicDataDAO {
 
-    private static DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-    private static Date date = new Date();
     private Map<String, String> basicData = new HashMap<String, String>();
     private DataBase dataBase = DataBase.getInstance();
 
@@ -23,7 +20,7 @@ public class BasicDataDAOImpl implements BasicDataDAO {
         loadDataFromDB();
     }
 
-    public void loadDataFromDB(){
+    private void loadDataFromDB(){
         basicData.clear();
         String query = "SELECT b.name, b.data FROM basic_data b";
         ResultSet resQuery = dataBase.execSelect(query);
@@ -34,12 +31,16 @@ public class BasicDataDAOImpl implements BasicDataDAO {
                 basicData.put(name, data);
             }
         } catch (SQLException e) {
-            log.error("Error is reading dates from table Basic Data. Query: " + query);
+            log.error("Error is reading basic data. Query: " + query);
         }
     }
 
-    public String getCurrentDate(){
-        return dateFormat.format(date);
+    private void reloadDataInDB(String name, String data){
+        String strQuery = "UPDATE basic_data SET data = '" + data + "' " +
+                "WHERE name = '" + name + "'";
+        dataBase.execUpdate(strQuery);
+        //Update basic data
+        loadDataFromDB();
     }
 
     public String getTitleOfTest(){
@@ -68,14 +69,6 @@ public class BasicDataDAOImpl implements BasicDataDAO {
 
     public String getNameOfCollege(){
         return basicData.get("name_of_college");
-    }
-
-    private void reloadDataInDB(String name, String data){
-        String strQuery = "UPDATE basic_data SET data = '" + data + "' " +
-                          "WHERE name = '" + name + "'";
-        dataBase.execUpdate(strQuery);
-        //Update basic data
-        loadDataFromDB();
     }
 
     public void setTitleOfTest(String titleOfTest){

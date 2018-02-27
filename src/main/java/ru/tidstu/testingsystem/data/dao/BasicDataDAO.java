@@ -2,32 +2,32 @@ package ru.tidstu.testingsystem.data.dao;
 
 public interface BasicDataDAO {
 
-    public String getTitleOfTest();
+    String getTitleOfTest();
 
-    public void setTitleOfTest(String titleOfTest);
+    void setTitleOfTest(String titleOfTest);
 
-    public String getDescriptionOfTest();
+    String getDescriptionOfTest();
 
-    public void setDescriptionOfTest(String descriptionOfTest);
+    void setDescriptionOfTest(String descriptionOfTest);
 
-    public String getTitleOfResult();
+    String getTitleOfResult();
 
-    public void setTitleOfResult(String titleOfResult);
+    void setTitleOfResult(String titleOfResult);
 
-    public String getDescriptionOfResult();
+    String getDescriptionOfResult();
 
-    public void setDescriptionOfResult(String descriptionOfResult);
+    void setDescriptionOfResult(String descriptionOfResult);
 
-    public String getAddress();
+    String getAddress();
 
-    public void setAddress(String address);
+    void setAddress(String address);
 
-    public String getPhoneNumber();
+    String getPhoneNumber();
 
-    public void setPhoneNumber(String phoneNumber);
+    void setPhoneNumber(String phoneNumber);
 
-    public String getNameOfCollege();
+    String getNameOfCollege();
 
-    public void setNameOfCollege(String nameOfCollege);
+    void setNameOfCollege(String nameOfCollege);
 
 }

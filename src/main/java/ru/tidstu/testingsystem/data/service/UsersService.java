@@ -1,5 +1,6 @@
 package ru.tidstu.testingsystem.data.service;
 
+import org.springframework.stereotype.Service;
 import ru.tidstu.testingsystem.data.entity.User;
 
 import java.util.List;
@@ -7,8 +8,6 @@ import java.util.List;
 public interface UsersService {
 
     boolean setCurrentUser(String login, String password);
-
-    User getCurrentUser();
 
     boolean isEmptyUserForSignUp(User user);
 

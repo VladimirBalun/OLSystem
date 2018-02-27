@@ -5,12 +5,12 @@ import java.util.List;
 
 public interface GroupsDAO {
 
-    public List<Group> getGroups();
+    List<Group> getGroups();
 
-    public void addGroup(String nameGroup);
+    void addGroup(String nameGroup);
 
-    public void changeGroup(String oldName, String newName);
+    void changeGroup(String oldName, String newName);
 
-    public void deleteGroup(String nameGroup);
+    void deleteGroup(String nameGroup);
 
 }

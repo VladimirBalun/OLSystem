@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface QuestionsDAO {
 
-        public void addQuestion(Question question);
+    void addQuestion(Question question);
 
-        public void removeQuestion(String titleQuestion);
+    void removeQuestion(String titleQuestion);
 
-        public void changeQuestion(String nameQuestion, String newTitle, String newText);
+    void changeQuestion(String nameQuestion, String newTitle, String newText);
 
-        public Question getQuestion(String titleQuestion);
+    Question getQuestion(String titleQuestion);
 
-        public List<Question> getAllQuestions();
+    List<Question> getAllQuestions();
 
 }

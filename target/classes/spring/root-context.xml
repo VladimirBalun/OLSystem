@@ -7,6 +7,9 @@
 
     <context:annotation-config/>
 
+    <context:component-scan base-package="ru.tidstu.testingsystem.data.dao" />
+    <context:component-scan base-package="ru.tidstu.testingsystem.data.service" />
+
     <bean id="basicDataDAO" class="ru.tidstu.testingsystem.data.dao.BasicDataDAOImpl"/>
     <bean id="groupsDAO" class="ru.tidstu.testingsystem.data.dao.GroupsDAOImpl"/>
     <bean id="resultsDAO" class="ru.tidstu.testingsystem.data.dao.ResultsDAOImpl"/>
@@ -20,6 +23,8 @@
     <bean id="usersService" class="ru.tidstu.testingsystem.data.service.UsersServiceImpl"/>
     <bean id="questionsService" class="ru.tidstu.testingsystem.data.service.QuestionsServiceImpl"/>
     <bean id="testDataService" class="ru.tidstu.testingsystem.data.service.TestDataServiceImpl"/>
+
+
 
     <bean id="olympiad" class="ru.tidstu.testingsystem.utils.PassingOlympiad"/>
 

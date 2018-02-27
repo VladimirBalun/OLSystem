@@ -1,6 +1,7 @@
 package ru.tidstu.testingsystem.data.dao;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.stereotype.Repository;
 import ru.tidstu.testingsystem.utils.DataBase;
 import ru.tidstu.testingsystem.data.entity.Question;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Log4j
+@Repository
 public class QuestionsDAOImpl implements QuestionsDAO {
 
     private DataBase dataBase = DataBase.getInstance();
@@ -40,24 +42,22 @@ public class QuestionsDAOImpl implements QuestionsDAO {
         ResultSet result = dataBase.execSelect(query);
         try {
             result.next();
-            Question question = Question.builder()
+            return Question.builder()
                     .text(result.getString("TEXT"))
                     .title(result.getString("TITLE"))
                     .build();
-            return question;
         } catch (SQLException e) {
-            log.error("Error is reading dates from table \"QuestionsDAOImpl\".");
+            log.error("Error is reading question " + titleQuestion + ". Query: " + query);
         }
         throw new NullPointerException("Question " + titleQuestion + " not found.");
     }
 
     public List<Question> getAllQuestions(){
         String query = "SELECT q.title, q.text, " +
-                "(SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), " +
-                "(SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) " +
-                "FROM questions q";
-        List<Question> questions = loadQuestionsFromDB(query);
-        return questions;
+                       "(SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), " +
+                       "(SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) " +
+                       "FROM questions q";
+        return loadQuestionsFromDB(query);
     }
 
     private List<Question> loadQuestionsFromDB(String query){
@@ -76,7 +76,7 @@ public class QuestionsDAOImpl implements QuestionsDAO {
                 questions.add(question);
             }
         } catch (SQLException e) {
-            log.error("Error is reading dates from table \"QuestionsDAOImpl\".");
+            log.error("Error is reading questions. Query: " + query);
         }
         return questions;
     }
