@@ -52,7 +52,7 @@ public class QuestionsDAOImpl implements QuestionsDAO {
         throw new NullPointerException("Question " + titleQuestion + " not found.");
     }
 
-    public List<Question> getAllQuestions(){
+    public List<Question> getQuestions(){
         String query = "SELECT q.title, q.text, " +
                        "(SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), " +
                        "(SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) " +

@@ -81,7 +81,7 @@ Information about code will add later.
 Information about checking task will add later.
 
 ## Version
-The development of the program is still ongoing. Current version of program 1.0.
+The development of the program is still ongoing. Current version of program 1.2.
 ____
 Documentation will be supplemented over time, but if you have any questions, please contact: vladimirbalun@yandex.ru
 

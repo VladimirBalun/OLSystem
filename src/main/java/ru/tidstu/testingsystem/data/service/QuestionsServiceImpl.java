@@ -1,5 +1,7 @@
 package ru.tidstu.testingsystem.data.service;
 
+import com.sun.istack.internal.NotNull;
+import lombok.NonNull;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,9 +40,8 @@ public class QuestionsServiceImpl implements QuestionsService {
         return questionsDAO.getQuestion(titleQuestion);
     }
 
-    @Transactional
-    public List<Question> getAllQuestions() {
-        return questionsDAO.getAllQuestions();
+    public List<Question> getQuestions() {
+        return questionsDAO.getQuestions();
     }
 
 }

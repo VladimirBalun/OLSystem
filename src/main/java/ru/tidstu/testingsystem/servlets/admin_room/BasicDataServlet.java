@@ -16,7 +16,7 @@ import java.io.IOException;
 @WebServlet("/BasicDataServlet/*")
 public class BasicDataServlet extends DispatcherServlet {
 
-    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring-context.xml");
     private BasicDataService basicDataService = (BasicDataService) appContext.getBean("basicDataService");
 
     @Override

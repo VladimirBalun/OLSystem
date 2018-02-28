@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet("/GroupsServlet/*")
 public class GroupsServlet extends HttpServlet {
 
-    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring-context.xml");
     private GroupsService groupsService = (GroupsService) appContext.getBean("groupsService");
     private List<Group> groups;
 

@@ -10,6 +10,7 @@ import ru.tidstu.testingsystem.data.entity.Log;
 import ru.tidstu.testingsystem.data.entity.Question;
 import ru.tidstu.testingsystem.data.entity.TestData;
 import ru.tidstu.testingsystem.data.service.QuestionsService;
+import ru.tidstu.testingsystem.data.service.TestDataService;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -20,14 +21,18 @@ public class PassingOlympiad implements Olympiad {
 
     private final int MAX_COUNT_LOGS_IN_JOURNAL = 9;
 
+    private final QuestionsService questionsService;
+    private final TestDataService testDataService;
+
     private List<Question> questions;
     private List<Log> logsOfRunningOlympiad;
 
     @Autowired
-    public PassingOlympiad(QuestionsService questionsService) {
-        QuestionsService questionsService1 = questionsService;
-        this.questions = questionsService.getAllQuestions();
-        this.logsOfRunningOlympiad = new LinkedList<Log>();
+    public PassingOlympiad(QuestionsService questionsService, TestDataService testDataService) {
+        this.questionsService = questionsService;
+        this.testDataService = testDataService;
+        questions = questionsService.getQuestions();
+        logsOfRunningOlympiad = new LinkedList<Log>();
     }
 
     public List<Question> getQuestions() {
@@ -54,10 +59,8 @@ public class PassingOlympiad implements Olympiad {
     }
 
     public void addLog(Log logRunningOlympiad){
-        log.debug("Add log");
         if(logsOfRunningOlympiad.size() > MAX_COUNT_LOGS_IN_JOURNAL){
             logsOfRunningOlympiad.remove(0);
-            log.debug("Delete log");
         }
         logsOfRunningOlympiad.add(logRunningOlympiad);
     }
@@ -69,7 +72,8 @@ public class PassingOlympiad implements Olympiad {
         return logsOfRunningOlympiad;
     }
 
-    public ResultRunningProgram checkTask(String textProgram, List<TestData> testData){
+    public ResultRunningProgram checkTask(String nameQuestion, String textProgram){
+        List<TestData> testData = testDataService.getTestDataForQuestion(nameQuestion);
         Compiler compiler = new CompilerC();
         if(!compiler.compileProgram(textProgram)){
             return ResultRunningProgram.ERROR_COMPILATION;

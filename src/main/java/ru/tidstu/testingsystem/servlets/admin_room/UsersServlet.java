@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet("/UsersServlet/*")
 public class UsersServlet extends HttpServlet {
 
-    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring-context.xml");
     private UsersService usersService = (UsersService) appContext.getBean("usersService");
     private List<User> users;
 

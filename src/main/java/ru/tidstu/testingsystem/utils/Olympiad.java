@@ -20,6 +20,6 @@ public interface Olympiad {
 
     List<Log> getLogsOfRunningTest();
 
-    ResultRunningProgram checkTask(String textProgram, List<TestData> testData);
+    ResultRunningProgram checkTask(String nameQuestion, String textProgram);
 
 }

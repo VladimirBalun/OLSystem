@@ -19,7 +19,7 @@ import java.io.IOException;
 @WebServlet("/QuestionsServlet/*")
 public class QuestionsServlet extends DispatcherServlet {
 
-    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring-context.xml");
     private QuestionsService questionsService = (QuestionsService) appContext.getBean("questionsService");
     private TestDataService testDataService =  (TestDataService) appContext.getBean("testDataService");
 
@@ -56,7 +56,7 @@ public class QuestionsServlet extends DispatcherServlet {
         if(req.getParameter("title_question_for_change") != null){
             changeQuestion(req);
         }
-        String json = new Gson().toJson(questionsService.getAllQuestions());
+        String json = new Gson().toJson(questionsService.getQuestions());
         resp.getWriter().write(json);
     }
 

@@ -20,7 +20,7 @@ import java.util.List;
 @WebServlet("/ResultsServlet/*")
 public class ResultsServlet extends DispatcherServlet{
 
-    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring/root-context.xml");
+    private ApplicationContext appContext = new ClassPathXmlApplicationContext("spring-context.xml");
     private ResultsService resultsService = (ResultsService) appContext.getBean("resultsService");
     private List<Result> resultsOfUsers;
 
