@@ -6,13 +6,15 @@ import java.util.List;
 
 public interface QuestionsService {
 
-    void addQuestion(Question question);
+    void addQuestion(String titleQuestion, String txtQuestion);
 
     void removeQuestion(String titleQuestion);
 
     void changeQuestion(String nameQuestion, String newTitle, String newText);
 
     Question getQuestion(String titleQuestion);
+
+    int getCountQuestions();
 
     List<Question> getQuestions();
 

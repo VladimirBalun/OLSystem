@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import ru.tidstu.testingsystem.data.entity.Question;
-import ru.tidstu.testingsystem.utils.Olympiad;
+import ru.tidstu.testingsystem.olympiad.Olympiad;
 
 @Controller
 @RequestMapping("/tasks")
@@ -18,20 +18,16 @@ public class TasksController {
     private Olympiad olympiad;
 
     @RequestMapping(value = "/selectedTask", method = RequestMethod.GET)
-    public @ResponseBody Question changeSelectedTask(@RequestParam(value = "number_question") int numberQuestion){
-        Question selectedQuestion = olympiad.getQuestion(numberQuestion);
-        return Question.builder()
-                .title(selectedQuestion.getTitle())
-                .text(selectedQuestion.getText())
-                .inputData(selectedQuestion.getInputData())
-                .outputData(selectedQuestion.getOutputData())
-                .build();
+    public @ResponseBody Question showSelectedTask(@RequestParam(value = "number_question") String numberQuestion){
+        return olympiad.getQuestion(Integer.parseInt(numberQuestion));
     }
 
     @RequestMapping(value = "/showPage", method = RequestMethod.GET)
     public ModelAndView showPageTasks(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("questions", olympiad.getQuestions());
+        modelAndView.addObject("logs", olympiad.getLogsOfRunningTest());
+        modelAndView.addObject("statisticUser", olympiad.getStatisticUser());
         modelAndView.setViewName("tasks");
         return modelAndView;
     }

@@ -40,7 +40,7 @@ a{
 }
 
 #status {
-	background: url("../webapp/img/preloader.gif") no-repeat center;
+	background: url("/resources/img/preloader.gif") no-repeat center;
 	height: 200px;
     left: 50%;
     margin: -100px 0 0 -100px;

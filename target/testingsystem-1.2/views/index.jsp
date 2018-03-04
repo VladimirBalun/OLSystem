@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<jsp:include page="templates/header.jsp"/>
+<jsp:include page="header.jsp"/>
 
     <div class="container-fluid wrapper">
 
@@ -41,4 +41,4 @@
 
     </div><!-- end wrapper -->
 
-<jsp:include page="templates/footer.jsp"/>
+<jsp:include page="footer.jsp"/>

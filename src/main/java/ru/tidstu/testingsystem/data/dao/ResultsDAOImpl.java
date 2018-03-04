@@ -2,9 +2,8 @@ package ru.tidstu.testingsystem.data.dao;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Repository;
-import ru.tidstu.testingsystem.utils.DataBase;
+import ru.tidstu.testingsystem.data.DataBase;
 import ru.tidstu.testingsystem.data.entity.Result;
-import ru.tidstu.testingsystem.utils.SortingResults;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

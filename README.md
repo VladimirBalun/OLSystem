@@ -17,7 +17,7 @@ about application. All the information(title, description, address,
 number, description of college/school/institute, icon and website) can be 
 change in administrator room.
 
-![Main page](http://my-files.ru/Get/hlse6z/%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9.png?justuploaded=true)
+![Main page](https://3.downloader.disk.yandex.ru/preview/21ae0d730122bc6c2b5d230bd04653da0ada3d332c90a7d18fd6bbc30938ddfd/inf/QIu_UHwQI7Su_15ipwApzpTTcd7WETQH6Rf9E_JRwAtHh1f37I_E3XQIWoDsxEW1eQUloHe9EbC0QNYJQTEDGA%3D%3D?uid=599247640&filename=%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=1280x767)
 
 Page of tasks. Here shows all the tasks fo user, his statistic and how much 
 time is left until the end of the Olympics.

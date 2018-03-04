@@ -16,12 +16,12 @@ public class UsersServiceImpl implements UsersService {
     @Autowired
     private UsersDAO usersDAO;
 
-    public boolean setCurrentUser(String login, String password) {
-        return usersDAO.setCurrentUser(login, password);
+    public boolean isValidLoginAndPassword(String login, String password) {
+        return usersDAO.isValidLoginAndPassword(login, password);
     }
 
-    public boolean isEmptyUserForSignUp(User user) {
-        return usersDAO.isEmptyUserForSignUp(user);
+    public boolean isEmptyLoginForSignUp(String login) {
+        return usersDAO.isEmptyLoginForSignUp(login);
     }
 
     @Transactional
@@ -31,9 +31,15 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Transactional
-    public void addUser(User user) {
+    public void addUser(String login, String password, String name, String group) {
+        User user = User.builder()
+                .login(login)
+                .password(password)
+                .name(name)
+                .group(group)
+                .build();
         usersDAO.addUser(user);
-        log.debug("User " + user.getLogin() + " was added");
+        log.debug("User " + login + " : " + name + " was added");
     }
 
     @Transactional

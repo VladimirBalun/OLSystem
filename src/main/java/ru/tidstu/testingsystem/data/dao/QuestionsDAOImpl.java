@@ -2,7 +2,7 @@ package ru.tidstu.testingsystem.data.dao;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Repository;
-import ru.tidstu.testingsystem.utils.DataBase;
+import ru.tidstu.testingsystem.data.DataBase;
 import ru.tidstu.testingsystem.data.entity.Question;
 
 import java.sql.ResultSet;
@@ -50,6 +50,19 @@ public class QuestionsDAOImpl implements QuestionsDAO {
             log.error("Error is reading question " + titleQuestion + ". Query: " + query);
         }
         throw new NullPointerException("Question " + titleQuestion + " not found.");
+    }
+
+    public int getCountQuestions(){
+        int countQuestions = 0;
+        String query = "SELECT COUNT(id) FROM questions";
+        ResultSet result = dataBase.execSelect(query);
+        try {
+            result.next();
+            countQuestions = result.getInt(1);
+        } catch (SQLException e) {
+            log.error("Error is reading count questions Query: " + query);
+        }
+        return countQuestions;
     }
 
     public List<Question> getQuestions(){

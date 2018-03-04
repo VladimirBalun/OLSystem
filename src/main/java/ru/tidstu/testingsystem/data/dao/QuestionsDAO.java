@@ -14,6 +14,8 @@ public interface QuestionsDAO {
 
     Question getQuestion(String titleQuestion);
 
+    int getCountQuestions();
+
     List<Question> getQuestions();
 
 }

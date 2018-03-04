@@ -1,7 +1,5 @@
 package ru.tidstu.testingsystem.data.service;
 
-import com.sun.istack.internal.NotNull;
-import lombok.NonNull;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +17,9 @@ public class QuestionsServiceImpl implements QuestionsService {
     private QuestionsDAO questionsDAO;
 
     @Transactional
-    public void addQuestion(Question question) {
-        questionsDAO.addQuestion(question);
-        log.debug("Question " + question.getTitle() + " was added");
+    public void addQuestion(String titleQuestion, String textQuestion) {
+        questionsDAO.addQuestion(new Question(titleQuestion, textQuestion));
+        log.debug("Question " + titleQuestion + " was added");
     }
 
     @Transactional
@@ -38,6 +36,10 @@ public class QuestionsServiceImpl implements QuestionsService {
 
     public Question getQuestion(String titleQuestion) {
         return questionsDAO.getQuestion(titleQuestion);
+    }
+
+    public int getCountQuestions(){
+        return questionsDAO.getCountQuestions();
     }
 
     public List<Question> getQuestions() {

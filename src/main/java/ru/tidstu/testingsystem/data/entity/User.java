@@ -13,20 +13,22 @@ public class User {
     private String password;
     private String group;
     private String bestResult;
-    private int countTrueQuestions;
+    private int countTrueAnswers;
+    private int countQuestions;
 
     @Builder
-    private User(String login, String name, String password, String group, String bestResult){
+    private User(String login, String name, String password, String group, String bestResult, int countTrueAnswers, int countQuestions){
         this.login = login;
         this.name = name;
         this.password = password;
         this.group = group;
         this.bestResult = bestResult;
-        countTrueQuestions = 0;
+        this.countTrueAnswers = countTrueAnswers;
+        this.countQuestions = countQuestions;
     }
 
     public void addTrueAnswer(){
-        countTrueQuestions++;
+        countTrueAnswers++;
     }
 
 }

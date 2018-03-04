@@ -56,20 +56,8 @@
     <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.BasicDataServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>GroupsServlet</servlet-name>
-    <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.GroupsServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UsersServlet</servlet-name>
-    <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.UsersServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>QuestionsServlet</servlet-name>
     <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.QuestionsServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ResultsServlet</servlet-name>
-    <servlet-class>ru.tidstu.testingsystem.servlets.admin_room.ResultsServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -77,20 +65,8 @@
     <url-pattern>/BasicData</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>GroupsServlet</servlet-name>
-    <url-pattern>/Groups</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UsersServlet</servlet-name>
-    <url-pattern>/Users</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
     <servlet-name>QuestionsServlet</servlet-name>
     <url-pattern>/Questions</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ResultsServlet</servlet-name>
-    <url-pattern>/Results</url-pattern>
   </servlet-mapping>
 
 </web-app>

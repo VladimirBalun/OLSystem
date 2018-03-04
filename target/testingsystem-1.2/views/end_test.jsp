@@ -1,13 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<jsp:include page="templates/header.jsp"/>
+<jsp:include page="header.jsp"/>
 
     <div class="container-fluid wrapper">
 
         <div class="row header">
             <div class="container">
                 <div class="col-lg-6 col-md-6">
-                    <img src="img/icon.png" class="icon">
+                    <img src="<c:url value="/resources/img/icon.png"/>" class="icon">
                     <p class="description_icon">${nameCollege}</p>
                 </div>
 
@@ -25,7 +26,7 @@
                     <p class="text">${descriptionResult}</p>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <img src="img/student_res.png" class="img_student_res">
+                    <img src="<c:url value="/resources/img/student_res.png"/>" class="img_student_res">
                 </div>
             </div><!-- end container -->
         </div><!-- end main_part -->
@@ -38,4 +39,4 @@
 
     </div><!-- end wrapper -->
 
-<jsp:include page="templates/footer.jsp"/>
+<jsp:include page="footer.jsp"/>

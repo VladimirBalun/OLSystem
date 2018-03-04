@@ -23,4 +23,9 @@ public class Question {
         this.outputData = outputData;
     }
 
+    public Question(String title, String text){
+        this.title = title;
+        this.text = text;
+    }
+
 }

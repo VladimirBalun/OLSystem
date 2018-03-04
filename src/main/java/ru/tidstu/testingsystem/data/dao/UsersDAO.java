@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface UsersDAO {
 
-    boolean setCurrentUser(String login, String password);
+    boolean isValidLoginAndPassword(String login, String password);
 
-    boolean isEmptyUserForSignUp(User user);
+    boolean isEmptyLoginForSignUp(String login);
 
     void delUser(String nameUser);
 

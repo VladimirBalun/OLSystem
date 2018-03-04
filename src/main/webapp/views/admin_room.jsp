@@ -2,13 +2,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 
-<jsp:include page="templates/header.jsp"/>
+<jsp:include page="header.jsp"/>
 
     <div class="container-fluid wrapper">
 
         <header class="row header_admin">
             <div class="col-lg-8 col-md-8">
-                <img src="img/icon.png" class="icon_admin">
+                <img src="<c:url value="/resources/img/icon.png"/>" class="icon_admin">
                 <p class="title_room">Комната администратора системы тестирования</p>
             </div>
             <div class="col-lg-4 col-md-4">
@@ -30,7 +30,7 @@
 
             <section class="basic_data" hidden>
                 <p class="title_admin">Основные данные о системе тестирвания:</p>
-                <form action="/BasicData" name="basic_titels" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/basicData/changeTitles"/>" name="basic_titels" method="POST" class="wrapper_admin row">
                     <div class="col-lg-5 col-md-5">
                         <label class="label_admin">Заголовок названия системы тестирования:</label>
                         <input name="title_test" type="text" class="input_admin" value="${title}">
@@ -43,7 +43,7 @@
                         <button class="button_admin">Изменить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/BasicData" name="basic_contacts" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/basicData/changeContacts"/>" name="basic_contacts" method="POST" class="wrapper_admin row">
                     <div class="col-lg-4 col-md-4">
                         <label class="label_admin">Полное название учебного заведения:</label>
                         <input name="name_college" type="text" class="input_admin" value="${nameCollege}">
@@ -60,7 +60,7 @@
                         <button class="button_admin">Изменить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/BasicData" name="basic_descriptions" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/basicData/changeDescriptions"/>" name="basic_descriptions" method="POST" class="wrapper_admin row">
                     <div class="col-lg-6 col-md-6">
                         <label class="label_admin">Описание системы тестирования:</label>
                         <textarea name="description_test" class="textarea_admin">${description}</textarea>
@@ -78,7 +78,7 @@
 
             <section class="questions" hidden>
                 <p class="title_admin">Вопросы системы тестирования:</p>
-                <form action="/Questions" name="add_data_of_question" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/questions/addTestData"/>" name="add_data_of_question" method="POST" class="wrapper_admin row">
                     <div class="col-lg-3 col-md-3">
                         <label class="label_admin">Введите входные данные:</label>
                         <input name="input_data" type="text" class="input_admin">
@@ -100,7 +100,7 @@
                         <button name="btn_add_data_of_question" class="button_admin">Добавить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/Questions" name="del_question" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/questions/delQuestion"/>" name="del_question" method="POST" class="wrapper_admin row">
                     <div class="col-lg-10 col-md-10">
                         <label class="label_admin">Выберите вопрос:</label>
                         <select name="name_question_for_del" class="select_admin select_questions">
@@ -114,7 +114,7 @@
                         <button name="btn_del_question" class="button_admin">Удалить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/Questions" name="add_question" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/questions/addQuestion"/>" name="add_question" method="POST" class="wrapper_admin row">
                     <div class="col-lg-5 col-md-5">
                         <label class="label_admin">Название вопроса:</label>
                         <textarea name="title_question_for_add" class="textarea_admin"></textarea>
@@ -127,7 +127,7 @@
                         <button name="btn_add_question" class="button_admin">Добавить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/Questions" name="change_question" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/questions/changeQuestion"/>" name="change_question" method="POST" class="wrapper_admin row">
                     <div class="col-lg-5 col-md-5">
                         <label class="label_admin">Название вопроса:</label>
                         <textarea name="title_question_for_change" class="textarea_admin"></textarea>
@@ -154,7 +154,7 @@
 
             <section class="users" hidden>
                 <p class="title_admin">Все пользователи системы тестирования:</p>
-                <form action="/Users" name="del_user" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/users/delUser"/>" name="del_user" method="POST" class="wrapper_admin row">
                     <div class="col-lg-10 col-md-10">
                         <label class="label_admin">Выберите пользователя:</label>
                         <select name="name_user_for_del" class="select_admin select_users">
@@ -192,7 +192,7 @@
                         </table>
                     </div>
                 </div><!-- end wrapper_admin -->
-                <form action="/Users" name="select_users" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/users/selectUsersFromGroup"/>" name="select_users" method="POST" class="wrapper_admin row">
                     <div class="col-lg-10 col-md-10">
                         <label class="label_admin">Выберите группу для выборки судентов:</label>
                         <select name="group_for_select_users" class="select_admin select_groups">
@@ -211,7 +211,7 @@
 
             <section class="groups" hidden>
                 <p class="title_admin">Группы принимающие участие в тестировании:</p>
-                <form action="/Groups" name="add_group" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/groups/addGroup"/>" name="add_group" method="POST" class="wrapper_admin row">
                     <div class="col-lg-10 col-md-10">
                         <label class="label_admin">Введите название группы:</label>
                         <input name="title_group" type="text" class="input_admin">
@@ -220,7 +220,7 @@
                         <button class="button_admin">Добавить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/Groups" name="change_group" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/groups/changeGroup"/>" name="change_group" method="POST" class="wrapper_admin row">
                     <div class="col-lg-5 col-md-5">
                         <label class="label_admin">Выберите старое название группы:</label>
                         <select name="old_title_group" class="select_admin select_groups">
@@ -238,7 +238,7 @@
                         <button class="button_admin">Изменить</button>
                     </div>
                 </form><!-- end wrapper_admin -->
-                <form action="/Groups" name="del_group" method="POST" class="wrapper_admin row">
+                <form action="<c:url value="/groups/delGroup"/>" name="del_group" method="POST" class="wrapper_admin row">
                     <div class="col-lg-10 col-md-10">
                         <label class="label_admin">Введите группу:</label>
                         <select name="title_group_del" class="select_admin select_groups">
@@ -291,7 +291,7 @@
                             </tr>
                             </thead>
                             <tbody id="body_table_results">
-                                <c:forEach items="${resultsOfUsers}" var="result">
+                                <c:forEach items="${resultsTest}" var="result">
                                     <tr class="del_row_results">
                                         <td>${result.name}</td>
                                         <td>${result.group}</td>
@@ -303,7 +303,7 @@
                         </table>
                     </div>
                 </div><!-- end wrapper_admin -->
-                <form action="/Results" name="sort_results" method="GET" class="wrapper_admin row">
+                <form action="<c:url value="/results/sort"/>" name="sort_results" method="GET" class="wrapper_admin row">
                     <div class="col-lg-10 col-md-10">
                         <label class="label_admin">Выберите способ сортировки:</label>
                         <select name="name_sort" class="select_admin">
@@ -322,21 +322,22 @@
 
         </div><!-- end description_admin -->
 
-        <footer class="footer_admin">
-            <p class="log_admin"><!--Последняя информация: <c:out value="${requestScope.log}"/>--></p>
-        </footer>
 
     </div><!-- end wrapper -->
 
+    <footer class="footer_admin">
+        <p class="log_admin">Последняя информация:</p>
+    </footer>
+
     <!-- Script is processing forward between tabs in menu -->
-    <script src="<c:url value="/resources/js/admin_room/menu.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/menu.js"/>"></script>
 
     <!-- Scripts are processing data exchange between
          server and client with AJAX-->
-    <script src="<c:url value="/resources/js/admin_room/basic_data.js"/>"></script>
-    <script src="<c:url value="/resources/js/admin_room/questions.js"/>"></script>
-    <script src="<c:url value="/resources/js/admin_room/users.js"/>"></script>
-    <script src="<c:url value="/resources/js/admin_room/groups.js"/>"></script>
-    <script src="<c:url value="/resources/js/admin_room/results.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/basic_data.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/questions.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/users.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/groups.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/results.js"/>"></script>
 
-<jsp:include page="templates/footer.jsp"/>
+<jsp:include page="footer.jsp"/>

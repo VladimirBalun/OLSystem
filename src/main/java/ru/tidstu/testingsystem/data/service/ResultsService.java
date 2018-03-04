@@ -1,7 +1,7 @@
 package ru.tidstu.testingsystem.data.service;
 
 import ru.tidstu.testingsystem.data.entity.Result;
-import ru.tidstu.testingsystem.utils.SortingResults;
+import ru.tidstu.testingsystem.data.dao.SortingResults;
 
 import java.util.List;
 

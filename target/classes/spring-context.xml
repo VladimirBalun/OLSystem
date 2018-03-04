@@ -17,13 +17,13 @@
     <context:component-scan base-package="ru.tidstu.testingsystem.controllers" />
     <!--Components-->
     <context:component-scan base-package="ru.tidstu.testingsystem.authentication" />
-    <context:component-scan base-package="ru.tidstu.testingsystem.utils" />
+    <context:component-scan base-package="ru.tidstu.testingsystem.olympiad" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--<mvc:resources mapping="/resources/**" location="/resources/"/>-->
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
 </beans>

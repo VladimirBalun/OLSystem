@@ -2,7 +2,7 @@ package ru.tidstu.testingsystem.data.dao;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Repository;
-import ru.tidstu.testingsystem.utils.DataBase;
+import ru.tidstu.testingsystem.data.DataBase;
 import ru.tidstu.testingsystem.data.entity.User;
 
 import java.sql.ResultSet;
@@ -16,7 +16,7 @@ public class UsersDAOImpl implements UsersDAO {
 
     private DataBase dataBase = DataBase.getInstance();
 
-    public boolean setCurrentUser(String login, String password){
+    public boolean isValidLoginAndPassword(String login, String password){
         String query = "SELECT u.login, u.password, u.full_name, g.name_group " +
                        "FROM users u LEFT JOIN groups g ON u.id_group = g.id " +
                        "WHERE login = '" + login + "' AND password = '" + password + "'";
@@ -29,10 +29,10 @@ public class UsersDAOImpl implements UsersDAO {
         return false;
     }
 
-    public boolean isEmptyUserForSignUp(User user){
+    public boolean isEmptyLoginForSignUp(String login){
         String query = "SELECT u.login, u.password, u.full_name, g.name_group " +
                        "FROM users u LEFT JOIN groups g ON u.id_group = g.id " +
-                       "WHERE login = '" + user.getLogin() + "'";
+                       "WHERE login = '" + login + "'";
         try {
             ResultSet result = dataBase.execSelect(query);
             return !result.next();
