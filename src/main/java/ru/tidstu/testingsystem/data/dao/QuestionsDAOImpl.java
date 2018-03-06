@@ -86,6 +86,7 @@ public class QuestionsDAOImpl implements QuestionsDAO {
                         .inputData(result.getString(3))
                         .outputData(result.getString(4))
                         .build();
+                question.toString();
                 questions.add(question);
             }
         } catch (SQLException e) {

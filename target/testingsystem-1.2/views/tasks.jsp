@@ -79,7 +79,7 @@
                 <p class="run_tasks">Выполненных заданий: ${statisticUser}</p>
             </div>
             <div class="col-lg-6 col-md-6 ">
-                <p class="timer"></p>
+                <p class="timer">01:45:16</p>
             </div>
         </div><!-- end footer_tasks -->
 

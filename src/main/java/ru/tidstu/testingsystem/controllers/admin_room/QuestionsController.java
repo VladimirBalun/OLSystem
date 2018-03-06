@@ -30,7 +30,7 @@ public class QuestionsController extends AdminRoomController{
     public @ResponseBody List<Question> addTestDataForQuestion(@RequestParam(value = "name_question_for_add") String nameQuestion,
                                                                @RequestParam(value = "input_data") String testInputData,
                                                                @RequestParam(value = "output_data") String testOutputData){
-        testDataService.addTestDataForQuestion(nameQuestion, testInputData, testInputData);
+        testDataService.addTestDataForQuestion(nameQuestion, testInputData, testOutputData);
         return questionsService.getQuestions();
     }
 
