@@ -17,7 +17,7 @@ administrator room, in which administrator can:
 - observe for the results of all participants.
 
 The appearance of the system you can see 
-[here](https://github.com/VladimirBalun/ATS/screenshots).
+[here](https://github.com/VladimirBalun/ATS/tree/master/screenshots).
 
 ## Installation
 For installation *ATS* on your computer, you will need to have the following
