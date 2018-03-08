@@ -41,6 +41,10 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
+    /**
+     * Scripts is processing to send task to the server and after
+     * receive print result on the page tasks.
+     */
     formSendTask.submit(function(){
         if($("textarea[name='text_program']").val() === ""){
             loggerCheckTask.text("Не введен листинг программы, отправка задания невозможна");
@@ -62,14 +66,13 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
-    var time = document.cookie;
-    alert(document.cookie);
-    alert(time);
-    var result = time.split(":");
-    alert(result);
-    var hours = result[0];
-    var minutes = result[1];
-    var seconds = result[2];
+    /**
+     * Script is running timer on page of tasks. After the
+     * end of the timer, forwards to the page end of the test,
+     */
+    var hours = 2;
+    var minutes = 0;
+    var seconds = 0;
 
     var timer = setInterval(function (){
         if(seconds === 0){

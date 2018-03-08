@@ -10,14 +10,15 @@
     <mvc:annotation-driven />
 
     <!--DAO-->
-    <context:component-scan base-package="ru.tidstu.testingsystem.data.dao" />
+    <context:component-scan base-package="ru.testingsystem.data.dao" />
     <!--Service-->
-    <context:component-scan base-package="ru.tidstu.testingsystem.data.service" />
+    <context:component-scan base-package="ru.testingsystem.data.service" />
     <!--Controllers-->
-    <context:component-scan base-package="ru.tidstu.testingsystem.controllers" />
+    <context:component-scan base-package="ru.testingsystem.controllers" />
     <!--Components-->
-    <context:component-scan base-package="ru.tidstu.testingsystem.authentication" />
-    <context:component-scan base-package="ru.tidstu.testingsystem.olympiad" />
+    <context:component-scan base-package="ru.testingsystem.authentication" />
+    <context:component-scan base-package="ru.testingsystem.olympiad" />
+    <context:component-scan base-package="ru.testingsystem.configuration" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>
