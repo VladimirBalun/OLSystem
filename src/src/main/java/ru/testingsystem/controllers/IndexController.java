@@ -17,11 +17,11 @@ public class IndexController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView showMainPage(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("title", basicDataService.getTitleOfTest());
-        modelAndView.addObject("description", basicDataService.getDescriptionOfTest());
-        modelAndView.addObject("nameCollege", basicDataService.getNameOfCollege());
-        modelAndView.addObject("numberCollege", basicDataService.getPhoneNumber());
-        modelAndView.addObject("addressCollege", basicDataService.getAddress());
+        modelAndView.addObject("title", basicDataService.getTitleTestingSystem());
+        modelAndView.addObject("description", basicDataService.getDescriptionTestingSystem());
+        modelAndView.addObject("nameCollege", basicDataService.getNameCollege());
+        modelAndView.addObject("numberCollege", basicDataService.getPhoneNumberCollege());
+        modelAndView.addObject("addressCollege", basicDataService.getAddressCollege());
         modelAndView.setViewName("index");
         return modelAndView;
     }

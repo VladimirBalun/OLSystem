@@ -2,32 +2,32 @@ package ru.testingsystem.data.service;
 
 public interface BasicDataService {
 
-    String getTitleOfTest();
+    String getTitleTestingSystem();
 
-    void setTitleOfTest(String titleOfTest);
+    void setTitleTestingSystem(String titleOfTest);
 
-    String getDescriptionOfTest();
+    String getDescriptionTestingSystem();
 
-    void setDescriptionOfTest(String descriptionOfTest);
+    void setDescriptionTestingSystem(String descriptionOfTest);
 
-    String getTitleOfResult();
+    String getTitleResultOlympiad();
 
-    void setTitleOfResult(String titleOfResult);
+    void setTitleResultOlympiad(String titleOfResult);
 
-    String getDescriptionOfResult();
+    String getDescriptionResultOlympiad();
 
-    void setDescriptionOfResult(String descriptionOfResult);
+    void setDescriptionResultOlympiad(String descriptionOfResult);
 
-    String getAddress();
+    String getAddressCollege();
 
-    void setAddress(String address);
+    void setAddressCollege(String address);
 
-    String getPhoneNumber();
+    String getPhoneNumberCollege();
 
-    void setPhoneNumber(String phoneNumber);
+    void setPhoneNumberCollege(String phoneNumber);
 
-    String getNameOfCollege();
+    String getNameCollege();
 
-    void setNameOfCollege(String nameOfCollege);
+    void setNameCollege(String nameOfCollege);
 
 }

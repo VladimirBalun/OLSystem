@@ -19,11 +19,11 @@ public class DataBase {
         connect();
     }
 
-    public void connect(){
+    private void connect(){
         String urlDB = "jdbc:mysql://localhost:3306/TestingSystem";
         connectionInfo.put("user", "root");
         connectionInfo.put("password", "admin");
-        connectionInfo.put("charSet", "Cp1251");
+        connectionInfo.put("charSet", "utf8");
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {

@@ -17,7 +17,7 @@ public class TestDataDAOImpl implements TestDataDAO {
     private DataBase dataBase = DataBase.getInstance();
 
     public void addTestDataForQuestion(String nameQuestion, String inputData, String outputData){
-        String query = "INSERT INTO in_out_dates(in_date, out_date, id_question) " +
+        String query = "INSERT INTO test_data_questions(input_data, output_data, id_question) " +
                        "VALUES('" + inputData + "', '" + outputData + "', " +
                        "(SELECT q.id FROM questions q WHERE q.title = '" + nameQuestion + "'))";
         dataBase.execInsert(query);
@@ -25,8 +25,8 @@ public class TestDataDAOImpl implements TestDataDAO {
 
     public List<TestData> getTestDataForQuestion(String nameQuestion){
         List<TestData> testDataForQuestion = new ArrayList<>();
-        String query = "SELECT io.in_date, io.out_date " +
-                       "FROM in_out_dates io " +
+        String query = "SELECT io.input_data, io.output_data " +
+                       "FROM test_data_question io " +
                        "WHERE io.id_question = (SELECT q.id FROM questions q WHERE q.title = '" + nameQuestion + "')";
         ResultSet resultQuery = dataBase.execSelect(query);
         try {

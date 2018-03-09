@@ -18,7 +18,7 @@ public class GroupsDAOImpl implements GroupsDAO {
 
     public ArrayList<Group> getGroups() {
         groups.clear();
-        String query = "SELECT g.name_group, " +
+        String query = "SELECT g.name, " +
                        "(SELECT COUNT(u.id) FROM users u WHERE u.id_group = g.id) " +
                        "FROM groups g";
         ResultSet result = dataBase.execSelect(query);
@@ -37,17 +37,17 @@ public class GroupsDAOImpl implements GroupsDAO {
     }
 
     public void addGroup(String nameGroup){
-        String query = "INSERT INTO groups(name_group) VALUES('" + nameGroup + "')";
+        String query = "INSERT INTO groups(name) VALUES('" + nameGroup + "')";
         dataBase.execInsert(query);
     }
 
     public void changeGroup(String oldName, String newName){
-        String query = "UPDATE groups SET name_group = '" + newName + "' WHERE name_group = '" + oldName + "'";
+        String query = "UPDATE groups SET name = '" + newName + "' WHERE name = '" + oldName + "'";
         dataBase.execUpdate(query);
     }
 
     public void deleteGroup(String nameGroup){
-        String query = "DELETE FROM groups WHERE name_group = '" + nameGroup + "'";
+        String query = "DELETE FROM groups WHERE name = '" + nameGroup + "'";
         dataBase.execDelete(query);
     }
 

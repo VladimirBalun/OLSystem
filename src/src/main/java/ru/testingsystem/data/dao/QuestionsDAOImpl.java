@@ -23,8 +23,8 @@ public class QuestionsDAOImpl implements QuestionsDAO {
     }
 
     public void removeQuestion(String titleQuestion){
-        String query = "DELETE FROM questions q " +
-                       "WHERE q.title = '" + titleQuestion + "'";
+        String query = "DELETE FROM questions " +
+                       "WHERE title = '" + titleQuestion + "'";
         dataBase.execDelete(query);
     }
 
@@ -67,8 +67,8 @@ public class QuestionsDAOImpl implements QuestionsDAO {
 
     public List<Question> getQuestions(){
         String query = "SELECT q.title, q.text, " +
-                       "(SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), " +
-                       "(SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) " +
+                       "(SELECT td.input_data FROM test_data_questions td WHERE td.id_question = q.id LIMIT 1), " +
+                       "(SELECT td.output_data FROM test_data_questions td WHERE td.id_question = q.id LIMIT 1) " +
                        "FROM questions q";
         return loadQuestionsFromDB(query);
     }

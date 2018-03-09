@@ -37,16 +37,16 @@ public class ResultsDAOImpl implements ResultsDAO {
     }
 
     private String selectMethodOfSorting(SortingResults method){
-        String query = "SELECT u.full_name, (SELECT g.name_group FROM groups g WHERE g.id = u.id_group), " +
-                       "r.date_end, r.count_true_answers, r.count_questions " +
-                       "FROM results r " +
+        String query = "SELECT u.name, (SELECT g.name FROM groups g WHERE g.id = u.id_group), " +
+                       "r.time, r.count_true_answers, r.count_questions " +
+                       "FROM results_test r " +
                        "LEFT JOIN users u ON r.id_user = u.id ";
         switch (method){
             case DATE:
-                query += "ORDER BY r.date_end DESC";
+                query += "ORDER BY r.time DESC";
                 break;
             case NAME:
-                query += "ORDER BY u.full_name";
+                query += "ORDER BY u.name";
                 break;
             case RESULT:
                 query += "ORDER BY (r.count_true_answers / r.count_questions * 100) DESC";

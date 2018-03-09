@@ -19,7 +19,7 @@ administrator room, in which administrator can:
 The appearance of the system you can see 
 [here](https://github.com/VladimirBalun/ATS/tree/master/img).
 
-## What you need to build AFS
+## What you need to build ATS
 For build *ATS* on your computer, you will need to have the following
 applications:
 - Git
@@ -61,16 +61,16 @@ installation on all OS, run:
 
 If installed, you'll need to see the versions JDK/JRE and Maven.
 
-## How to build AFS
-Clone a copy of the main AFS git repo by running:
+## How to build ATS
+Clone a copy of the main ATS git repo by running:
 
     git clone https://github.com/VladimirBalun/ATS.git
 
-Enter the AFS directory and run the build script on Windows:
+Enter the ATS directory and run the build script on Windows:
 
     build.bat
 
-Enter the AFS directory and run the build script on OS X or Linux/BSD:
+Enter the ATS directory and run the build script on OS X or Linux/BSD:
 
     ./build
 

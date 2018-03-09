@@ -43,60 +43,60 @@ public class BasicDataDAOImpl implements BasicDataDAO {
         loadDataFromDB();
     }
 
-    public String getTitleOfTest(){
-        return basicData.get("title_of_test");
+    public String getTitleTestingSystem(){
+        return basicData.get("titleTestingSystem");
     }
 
-    public String getDescriptionOfTest(){
-        return basicData.get("description_of_test");
+    public String getDescriptionTestingSystem(){
+        return basicData.get("descriptionTestingSystem");
     }
 
-    public String getTitleOfResult(){
-        return basicData.get("title_of_result");
+    public String getTitleResultOlympiad(){
+        return basicData.get("titleResultOlympiad");
     }
 
-    public String getDescriptionOfResult(){
-        return basicData.get("description_of_result");
+    public String getDescriptionResultOlympiad(){
+        return basicData.get("descriptionResultOlympiad");
     }
 
-    public String getAddress(){
-        return basicData.get("address");
+    public String getAddressCollege(){
+        return basicData.get("addressCollege");
     }
 
-    public String getPhoneNumber(){
-        return basicData.get("phone_number");
+    public String getPhoneNumberCollege(){
+        return basicData.get("phoneNumberCollege");
     }
 
-    public String getNameOfCollege(){
-        return basicData.get("name_of_college");
+    public String getNameCollege(){
+        return basicData.get("nameCollege");
     }
 
-    public void setTitleOfTest(String titleOfTest){
-        reloadDataInDB("title_of_test", titleOfTest);
+    public void setTitleTestingSystem(String titleOfTest){
+        reloadDataInDB("titleTestingSystem", titleOfTest);
     }
 
-    public void setDescriptionOfTest(String descriptionOfTest){
-        reloadDataInDB("description_of_test", descriptionOfTest);
+    public void setDescriptionTestingSystem(String descriptionOfTest){
+        reloadDataInDB("descriptionTestingSystem", descriptionOfTest);
     }
 
-    public void setTitleOfResult(String titleOfResult){
-        reloadDataInDB("title_of_result", titleOfResult);
+    public void setTitleResultOlympiad(String titleOfResult){
+        reloadDataInDB("titleResultOlympiad", titleOfResult);
     }
 
-    public void setDescriptionOfResult(String descriptionOfResult){
-        reloadDataInDB("description_of_result", descriptionOfResult);
+    public void setDescriptionResultOlympiad(String descriptionOfResult){
+        reloadDataInDB("descriptionResultOlympiad", descriptionOfResult);
     }
 
-    public void setAddress(String address){
-        reloadDataInDB("address", address);
+    public void setAddressCollege(String address){
+        reloadDataInDB("addressCollege", address);
     }
 
-    public void setPhoneNumber(String phoneNumber){
-        reloadDataInDB("phone_number", phoneNumber);
+    public void setPhoneNumberCollege(String phoneNumber){
+        reloadDataInDB("phoneNumberCollege", phoneNumber);
     }
 
-    public void setNameOfCollege(String nameOfCollege){
-        reloadDataInDB("name_of_college", nameOfCollege);
+    public void setNameCollege(String nameOfCollege){
+        reloadDataInDB("nameCollege", nameOfCollege);
     }
 
 }

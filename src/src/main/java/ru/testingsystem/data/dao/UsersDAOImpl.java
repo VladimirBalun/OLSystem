@@ -17,7 +17,7 @@ public class UsersDAOImpl implements UsersDAO {
     private DataBase dataBase = DataBase.getInstance();
 
     public boolean isValidLoginAndPassword(String login, String password){
-        String query = "SELECT u.login, u.password, u.full_name, g.name_group " +
+        String query = "SELECT u.login, u.password, u.name, g.name " +
                        "FROM users u LEFT JOIN groups g ON u.id_group = g.id " +
                        "WHERE login = '" + login + "' AND password = '" + password + "'";
         try {
@@ -30,7 +30,7 @@ public class UsersDAOImpl implements UsersDAO {
     }
 
     public boolean isEmptyLoginForSignUp(String login){
-        String query = "SELECT u.login, u.password, u.full_name, g.name_group " +
+        String query = "SELECT u.login, u.password, u.name, g.name " +
                        "FROM users u LEFT JOIN groups g ON u.id_group = g.id " +
                        "WHERE login = '" + login + "'";
         try {
@@ -43,31 +43,31 @@ public class UsersDAOImpl implements UsersDAO {
     }
 
     public void delUser(String nameUser){
-        String query = "DELETE FROM users WHERE full_name = '" + nameUser + "'";
+        String query = "DELETE FROM users WHERE name = '" + nameUser + "'";
         dataBase.execDelete(query);
     }
 
     public void addUser(User user){
-        String query = "INSERT INTO users(login, password, full_name, id_group) " +
-                       "VALUES('" + user.getLogin() + "','" + user.getPassword() + "','" + user.getName() + "'," +
-                       "(SELECT g.id FROM groups g WHERE g.name_group = '" + user.getGroup() + "'))";
+        String query = "INSERT INTO users(login, password, name, id_group) " +
+                       "VALUES('" + user.getLogin() + "','" + user.getPassword() + "','" + user.getName() + "', " +
+                       "(SELECT g.id FROM groups g WHERE g.name = '" + user.getGroup() + "'))";
         dataBase.execInsert(query);
     }
 
     public List<User> getUsers()  {
-        String query = "SELECT * " +
+        String query = "SELECT u.login, u.name, g.name, u.password, u.count_true_answers, u.count_questions " +
                        "FROM users u " +
                        "LEFT JOIN groups g ON u.id_group = g.id " +
-                       "ORDER BY u.full_name";
+                       "ORDER BY u.name";
         return loadUsersFromDB(query);
     }
 
     public List<User> getUsersFromGroup(String nameGroup){
-        String query = "SELECT * " +
+        String query = "SELECT u.login, u.name, g.name, u.password, u.count_true_answers, u.count_questions " +
                        "FROM users u " +
                        "LEFT JOIN groups g ON u.id_group = g.id " +
-                       "WHERE u.id_group = (SELECT id FROM groups WHERE name_group = '" + nameGroup + "') " +
-                       "ORDER BY u.full_name";
+                       "WHERE u.id_group = (SELECT id FROM groups WHERE name = '" + nameGroup + "') " +
+                       "ORDER BY u.name";
         return loadUsersFromDB(query);
     }
 
@@ -77,11 +77,11 @@ public class UsersDAOImpl implements UsersDAO {
         try {
             while (result.next()){
                 User user = User.builder()
-                        .login(result.getString("LOGIN"))
-                        .name(result.getString("FULL_NAME"))
-                        .group(result.getString("NAME_GROUP"))
-                        .password(result.getString("PASSWORD"))
-                        .bestResult(result.getString("COUNT_TRUE_ANSWERS") + "/" + result.getString("COUNT_QUESTIONS"))
+                        .login(result.getString(1))
+                        .name(result.getString(2))
+                        .group(result.getString(3))
+                        .password(result.getString(4))
+                        .bestResult(result.getString(5) + "/" + result.getString(6))
                         .build();
                 users.add(user);
             }

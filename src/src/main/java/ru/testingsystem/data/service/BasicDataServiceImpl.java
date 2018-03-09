@@ -13,73 +13,73 @@ public class BasicDataServiceImpl implements BasicDataService {
     @Autowired
     private BasicDataDAO basicDataDAO;
 
-    public String getTitleOfTest() {
-        return basicDataDAO.getTitleOfTest();
+    public String getTitleTestingSystem() {
+        return basicDataDAO.getTitleTestingSystem();
     }
 
     @Transactional
-    public void setTitleOfTest(String titleOfTest) {
-        basicDataDAO.setTitleOfTest(titleOfTest);
+    public void setTitleTestingSystem(String titleOfTest) {
+        basicDataDAO.setTitleTestingSystem(titleOfTest);
         log.debug("Title of Testing System was changed on " + titleOfTest);
     }
 
-    public String getDescriptionOfTest() {
-        return basicDataDAO.getDescriptionOfTest();
+    public String getDescriptionTestingSystem() {
+        return basicDataDAO.getDescriptionTestingSystem();
     }
 
     @Transactional
-    public void setDescriptionOfTest(String descriptionOfTest) {
-        basicDataDAO.setDescriptionOfTest(descriptionOfTest);
+    public void setDescriptionTestingSystem(String descriptionOfTest) {
+        basicDataDAO.setDescriptionTestingSystem(descriptionOfTest);
         log.debug("Description of Testing System was changed on " + descriptionOfTest);
     }
 
-    public String getTitleOfResult() {
-        return basicDataDAO.getTitleOfResult();
+    public String getTitleResultOlympiad() {
+        return basicDataDAO.getTitleResultOlympiad();
     }
 
     @Transactional
-    public void setTitleOfResult(String titleOfResult) {
-        basicDataDAO.setTitleOfResult(titleOfResult);
+    public void setTitleResultOlympiad(String titleOfResult) {
+        basicDataDAO.setTitleResultOlympiad(titleOfResult);
         log.debug("Title of result Olympiad was changed on " + titleOfResult);
     }
 
-    public String getDescriptionOfResult() {
-        return basicDataDAO.getDescriptionOfResult();
+    public String getDescriptionResultOlympiad() {
+        return basicDataDAO.getDescriptionResultOlympiad();
     }
 
     @Transactional
-    public void setDescriptionOfResult(String descriptionOfResult) {
-        basicDataDAO.setDescriptionOfResult(descriptionOfResult);
+    public void setDescriptionResultOlympiad(String descriptionOfResult) {
+        basicDataDAO.setDescriptionResultOlympiad(descriptionOfResult);
         log.debug("Description of result Olympiad was changed on " + descriptionOfResult);
     }
 
-    public String getAddress() {
-        return basicDataDAO.getAddress();
+    public String getAddressCollege() {
+        return basicDataDAO.getAddressCollege();
     }
 
     @Transactional
-    public void setAddress(String address) {
-        basicDataDAO.setAddress(address);
+    public void setAddressCollege(String address) {
+        basicDataDAO.setAddressCollege(address);
         log.debug("Address of Testing System was changed on " + address);
     }
 
-    public String getPhoneNumber() {
-        return basicDataDAO.getPhoneNumber();
+    public String getPhoneNumberCollege() {
+        return basicDataDAO.getPhoneNumberCollege();
     }
 
     @Transactional
-    public void setPhoneNumber(String phoneNumber) {
-        basicDataDAO.setPhoneNumber(phoneNumber);
+    public void setPhoneNumberCollege(String phoneNumber) {
+        basicDataDAO.setPhoneNumberCollege(phoneNumber);
         log.debug("Phone number of Testing System was changed on " + phoneNumber);
     }
 
-    public String getNameOfCollege() {
-        return basicDataDAO.getNameOfCollege();
+    public String getNameCollege() {
+        return basicDataDAO.getNameCollege();
     }
 
     @Transactional
-    public void setNameOfCollege(String nameOfCollege) {
-        basicDataDAO.setNameOfCollege(nameOfCollege);
+    public void setNameCollege(String nameOfCollege) {
+        basicDataDAO.setNameCollege(nameOfCollege);
         log.debug("Name of college for Testing System was changed on " + nameOfCollege);
     }
 

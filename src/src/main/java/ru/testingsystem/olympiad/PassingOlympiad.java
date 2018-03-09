@@ -36,6 +36,7 @@ public class PassingOlympiad implements Olympiad {
         this.compiler = compiler;
         questions = questionsService.getQuestions();
         logsOfRunningOlympiad = new LinkedList<Log>();
+        System.out.println(questions.isEmpty());
     }
 
     public void startOlympiad(String login, String password){

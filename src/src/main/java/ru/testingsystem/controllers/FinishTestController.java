@@ -21,11 +21,11 @@ public class FinishTestController {
     public ModelAndView finishOlympiad(){
         olympiad.finishOlympiad();
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("titleResult", basicDataService.getTitleOfResult());
-        modelAndView.addObject("descriptionResult", basicDataService.getDescriptionOfResult());
-        modelAndView.addObject("nameCollege", basicDataService.getNameOfCollege());
-        modelAndView.addObject("numberCollege", basicDataService.getPhoneNumber());
-        modelAndView.addObject("addressCollege", basicDataService.getAddress());
+        modelAndView.addObject("titleResult", basicDataService.getTitleResultOlympiad());
+        modelAndView.addObject("descriptionResult", basicDataService.getDescriptionResultOlympiad());
+        modelAndView.addObject("nameCollege", basicDataService.getNameCollege());
+        modelAndView.addObject("numberCollege", basicDataService.getPhoneNumberCollege());
+        modelAndView.addObject("addressCollege", basicDataService.getAddressCollege());
         modelAndView.setViewName("end_test");
         return modelAndView;
     }
