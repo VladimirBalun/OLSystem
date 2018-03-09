@@ -2,7 +2,7 @@ package ru.testingsystem.olympiad;
 
 import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.Question;
-import ru.testingsystem.olympiad.checking_task.ResultRunningProgram;
+import ru.testingsystem.utils.compilers.ResultRunningProgram;
 
 import java.util.List;
 import java.util.Queue;

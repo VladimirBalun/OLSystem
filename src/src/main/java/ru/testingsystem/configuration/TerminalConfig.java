@@ -2,9 +2,9 @@ package ru.testingsystem.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.testingsystem.olympiad.checking_task.terminals.Terminal;
-import ru.testingsystem.olympiad.checking_task.terminals.LinuxTerminal;
-import ru.testingsystem.olympiad.checking_task.terminals.WindowsCommandLine;
+import ru.testingsystem.utils.terminals.Terminal;
+import ru.testingsystem.utils.terminals.LinuxTerminal;
+import ru.testingsystem.utils.terminals.WindowsCommandLine;
 
 @Configuration
 public class TerminalConfig {

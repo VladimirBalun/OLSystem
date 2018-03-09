@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @Repository
 public class GroupsDAOImpl implements GroupsDAO {
 
-    private static ArrayList<Group> groups = new ArrayList<Group>();
+    private static ArrayList<Group> groups = new ArrayList<>();
     private DataBase dataBase = DataBase.getInstance();
 
     public ArrayList<Group> getGroups() {

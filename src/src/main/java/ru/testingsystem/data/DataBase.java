@@ -20,12 +20,12 @@ public class DataBase {
     }
 
     public void connect(){
-        String urlDB = "jdbc:firebirdsql:localhost/3050:classpath:DB.FDB";
-        connectionInfo.put("user", "SYSDBA");
-        connectionInfo.put("password", "masterkey");
+        String urlDB = "jdbc:mysql://localhost:3306/TestingSystem";
+        connectionInfo.put("user", "root");
+        connectionInfo.put("password", "admin");
         connectionInfo.put("charSet", "Cp1251");
         try {
-            Class.forName("org.firebirdsql.jdbc.FBDriver");
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             log.error("Not found driver for FireBird");
         }

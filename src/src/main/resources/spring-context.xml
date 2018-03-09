@@ -9,6 +9,8 @@
     <context:annotation-config/>
     <mvc:annotation-driven />
 
+    <!--Configuration-->
+    <context:component-scan base-package="ru.testingsystem.configuration" />
     <!--DAO-->
     <context:component-scan base-package="ru.testingsystem.data.dao" />
     <!--Service-->
@@ -17,8 +19,11 @@
     <context:component-scan base-package="ru.testingsystem.controllers" />
     <!--Components-->
     <context:component-scan base-package="ru.testingsystem.authentication" />
+
+    <context:component-scan base-package="ru.testingsystem.utils" />
     <context:component-scan base-package="ru.testingsystem.olympiad" />
-    <context:component-scan base-package="ru.testingsystem.configuration" />
+
+
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>

@@ -72,7 +72,7 @@ public class UsersDAOImpl implements UsersDAO {
     }
 
     private List<User> loadUsersFromDB(String query){
-        List<User> users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
         ResultSet result = dataBase.execSelect(query);
         try {
             while (result.next()){

@@ -8,8 +8,8 @@ import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.TestData;
 import ru.testingsystem.data.entity.User;
 import ru.testingsystem.data.service.TestDataService;
-import ru.testingsystem.olympiad.checking_task.compilers.Compiler;
-import ru.testingsystem.olympiad.checking_task.ResultRunningProgram;
+import ru.testingsystem.utils.compilers.Compiler;
+import ru.testingsystem.utils.compilers.ResultRunningProgram;
 import ru.testingsystem.data.entity.Question;
 import ru.testingsystem.data.service.QuestionsService;
 

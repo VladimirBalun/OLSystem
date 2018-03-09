@@ -5,7 +5,7 @@
 
 ATS(Automatic Testing System) - it's cross-platform system for conducting olympiads, tests, 
 control works and individual solutions of tasks on programming. Work with the system takes
-place in the web browser. At the moment system is supporting only C language, but other 
+place in the web browser. At the moment system is supporting only C and C++ language, but another 
 languages will be added soon. Compiler installation directories are taken from the registry 
 (windows-version) or from the path variable (linux-version) Also *ATS* supports 
 administrator room, in which administrator can:
@@ -69,6 +69,10 @@ Clone a copy of the main AFS git repo by running:
 Enter the AFS directory and run the build script on Windows:
 
     build.bat
+
+Enter the AFS directory and run the build script on OS X or Linux/BSD:
+
+    ./build
 
 Information for Linux and Mac was added later. Everything will build in
 directory:

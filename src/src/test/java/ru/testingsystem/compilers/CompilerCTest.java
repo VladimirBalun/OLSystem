@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import ru.testingsystem.data.entity.TestData;
-import ru.testingsystem.olympiad.checking_task.compilers.Compiler;
+import ru.testingsystem.utils.compilers.Compiler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ public class CompilerCTest {
                                  "#include <string.h>\n" +
                                  "int main(int argc, char *argv[])\n" +
                                  "{\n" +
-                                 "    printf(\"%d\", strlen(argv[1]));\n" +
+                                 "    printf(\"%ld\", strlen(argv[1]));\n" +
                                  "    return 0;\n" +
                                  "}";
         Assert.assertTrue(compilerCLanguage.compileProgram(testTextProgram));

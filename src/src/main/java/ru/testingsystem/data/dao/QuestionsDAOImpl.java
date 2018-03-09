@@ -74,7 +74,7 @@ public class QuestionsDAOImpl implements QuestionsDAO {
     }
 
     private List<Question> loadQuestionsFromDB(String query){
-        List<Question> questions = new ArrayList<Question>();
+        List<Question> questions = new ArrayList<>();
         int number = 1;
         ResultSet result = dataBase.execSelect(query);
         try {
@@ -86,7 +86,6 @@ public class QuestionsDAOImpl implements QuestionsDAO {
                         .inputData(result.getString(3))
                         .outputData(result.getString(4))
                         .build();
-                question.toString();
                 questions.add(question);
             }
         } catch (SQLException e) {

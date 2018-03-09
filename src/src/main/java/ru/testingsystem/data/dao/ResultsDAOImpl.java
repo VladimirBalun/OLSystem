@@ -17,7 +17,7 @@ public class ResultsDAOImpl implements ResultsDAO {
     private DataBase dataBase = DataBase.getInstance();
 
     public List<Result> getResultsOfUsers(SortingResults method){
-        ArrayList<Result> results = new ArrayList<Result>();
+        ArrayList<Result> results = new ArrayList<>();
         String query = selectMethodOfSorting(method);
         ResultSet resultQuery = dataBase.execSelect(query);
         try {

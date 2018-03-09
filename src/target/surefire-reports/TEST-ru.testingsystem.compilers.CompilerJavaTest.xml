@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="2" failures="0" name="ru.testingsystem.compilers.CompilerJavaTest" time="0.001" errors="2" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.151-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/vova/Desktop/ATS/src"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/vova/Desktop/ATS/src"/>
+    <property name="java.runtime.version" value="1.8.0_151-8u151-b12-0ubuntu0.17.10.2-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.13.0-36-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native/linux64"/>
+    <property name="user.home" value="/home/vova"/>
+    <property name="user.timezone" value="Europe/Volgograd"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="vova"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_151"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="ru.testingsystem.compilers.CompilerJavaTest" name="compileProgram" time="0">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;basicDataDAOImpl&apos; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/data/dao/BasicDataDAOImpl.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:129)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 31 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:182)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1224)
+	... 47 more
+Caused by: java.lang.NullPointerException
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.loadDataFromDB(BasicDataDAOImpl.java:27)
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.&lt;init&gt;(BasicDataDAOImpl.java:20)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:170)
+	... 49 more
+</error>
+    <system-out>[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+</system-out>
+    <system-err>Mar 09, 2018 12:14:41 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+Mar 09, 2018 12:14:41 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@41beb473, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@560513ce, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@13006998, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37fbe4a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@352c308, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7d373bcf]
+Mar 09, 2018 12:14:41 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from URL [file:/home/vova/Desktop/ATS/src/target/classes/spring-context.xml]
+Mar 09, 2018 12:14:42 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6d6bc158: startup date [Fri Mar 09 12:14:42 MSK 2018]; root of context hierarchy
+Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;compilerC&apos; with a different definition: replacing [Generic bean: class [ru.testingsystem.olympiad.checking_task.compilers.CompilerC]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/olympiad/checking_task/compilers/CompilerC.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=compilerConfig; factoryMethodName=compilerC; initMethodName=null; destroyMethodName=(inferred); defined in ru.testingsystem.configuration.CompilerConfig]
+Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;compilerCpp&apos; with a different definition: replacing [Generic bean: class [ru.testingsystem.olympiad.checking_task.compilers.CompilerCpp]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/olympiad/checking_task/compilers/CompilerCpp.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=compilerConfig; factoryMethodName=compilerCpp; initMethodName=null; destroyMethodName=(inferred); defined in ru.testingsystem.configuration.CompilerConfig]
+Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;compilerJava&apos; with a different definition: replacing [Generic bean: class [ru.testingsystem.olympiad.checking_task.compilers.CompilerJava]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/olympiad/checking_task/compilers/CompilerJava.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=compilerConfig; factoryMethodName=compilerJava; initMethodName=null; destroyMethodName=(inferred); defined in ru.testingsystem.configuration.CompilerConfig]
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/auethentification/logIn],methods=[POST]}&quot; onto public java.lang.String ru.testingsystem.controllers.AuethentificationController.logIn(java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/auethentification/SignUp],methods=[POST]}&quot; onto public java.lang.String ru.testingsystem.controllers.AuethentificationController.signUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/auethentification/showPage],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.AuethentificationController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/finishOlympiad],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.FinishTestController.finishOlympiad()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.IndexController.showMainPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/tasks/selectedTask],methods=[GET]}&quot; onto public ru.testingsystem.data.entity.Question ru.testingsystem.controllers.TasksController.showSelectedTask(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/tasks/showPage],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.TasksController.showPageTasks()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/tasks/checkTask],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.TasksController.checkTask(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/adminRoom/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/changeContacts],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.admin_room.BasicDataController.changeBasicTitles(java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/changeTitles],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.admin_room.BasicDataController.changeBasicTitles(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/changeDescriptions],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.admin_room.BasicDataController.changeBasicDescriptions(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/addGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Group&gt; ru.testingsystem.controllers.admin_room.GroupsController.addGroup(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/delGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Group&gt; ru.testingsystem.controllers.admin_room.GroupsController.removeGroup(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/changeGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Group&gt; ru.testingsystem.controllers.admin_room.GroupsController.changeTitleGroup(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/addQuestion],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.addQuestion(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/delQuestion],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.removeQuestion(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/changeQuestion],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.changeQuestion(java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/addTestData],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.addTestDataForQuestion(java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/showQuestion],methods=[GET]}&quot; onto public ru.testingsystem.data.entity.Question ru.testingsystem.controllers.admin_room.QuestionsController.showQuestion(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/results/sort],methods=[GET]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Result&gt; ru.testingsystem.controllers.admin_room.ResultsController.sortResultsTest(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/results/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/users/delUser],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.User&gt; ru.testingsystem.controllers.admin_room.UsersController.removerUser(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/users/selectUsersFromGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.User&gt; ru.testingsystem.controllers.admin_room.UsersController.selectUsersFromGroup(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/users/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter initControllerAdviceCache
+INFO: Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6d6bc158: startup date [Fri Mar 09 12:14:42 MSK 2018]; root of context hierarchy
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter initControllerAdviceCache
+INFO: Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6d6bc158: startup date [Fri Mar 09 12:14:42 MSK 2018]; root of context hierarchy
+Mar 09, 2018 12:14:42 PM org.springframework.context.support.AbstractApplicationContext refresh
+WARNING: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;basicDataDAOImpl&apos; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/data/dao/BasicDataDAOImpl.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Mar 09, 2018 12:14:42 PM org.springframework.test.context.TestContextManager prepareTestInstance
+SEVERE: Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@41beb473] to prepare test instance [ru.testingsystem.compilers.CompilerJavaTest@4d157787]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;basicDataDAOImpl&apos; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/data/dao/BasicDataDAOImpl.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:129)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 31 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:182)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1224)
+	... 47 more
+Caused by: java.lang.NullPointerException
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.loadDataFromDB(BasicDataDAOImpl.java:27)
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.&lt;init&gt;(BasicDataDAOImpl.java:20)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:170)
+	... 49 more
+
+</system-err>
+  </testcase>
+  <testcase classname="ru.testingsystem.compilers.CompilerJavaTest" name="runProgramAndCheckResult" time="0.001">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;basicDataDAOImpl&apos; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/data/dao/BasicDataDAOImpl.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:129)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 31 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:182)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1224)
+	... 47 more
+Caused by: java.lang.NullPointerException
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.loadDataFromDB(BasicDataDAOImpl.java:27)
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.&lt;init&gt;(BasicDataDAOImpl.java:20)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:170)
+	... 49 more
+</error>
+    <system-out>[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+</system-out>
+    <system-err>Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from URL [file:/home/vova/Desktop/ATS/src/target/classes/spring-context.xml]
+Mar 09, 2018 12:14:42 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.GenericWebApplicationContext@50b8ae8d: startup date [Fri Mar 09 12:14:42 MSK 2018]; root of context hierarchy
+Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;compilerC&apos; with a different definition: replacing [Generic bean: class [ru.testingsystem.olympiad.checking_task.compilers.CompilerC]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/olympiad/checking_task/compilers/CompilerC.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=compilerConfig; factoryMethodName=compilerC; initMethodName=null; destroyMethodName=(inferred); defined in ru.testingsystem.configuration.CompilerConfig]
+Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;compilerCpp&apos; with a different definition: replacing [Generic bean: class [ru.testingsystem.olympiad.checking_task.compilers.CompilerCpp]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/olympiad/checking_task/compilers/CompilerCpp.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=compilerConfig; factoryMethodName=compilerCpp; initMethodName=null; destroyMethodName=(inferred); defined in ru.testingsystem.configuration.CompilerConfig]
+Mar 09, 2018 12:14:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition
+INFO: Overriding bean definition for bean &apos;compilerJava&apos; with a different definition: replacing [Generic bean: class [ru.testingsystem.olympiad.checking_task.compilers.CompilerJava]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/olympiad/checking_task/compilers/CompilerJava.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=compilerConfig; factoryMethodName=compilerJava; initMethodName=null; destroyMethodName=(inferred); defined in ru.testingsystem.configuration.CompilerConfig]
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/auethentification/logIn],methods=[POST]}&quot; onto public java.lang.String ru.testingsystem.controllers.AuethentificationController.logIn(java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/auethentification/SignUp],methods=[POST]}&quot; onto public java.lang.String ru.testingsystem.controllers.AuethentificationController.signUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/auethentification/showPage],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.AuethentificationController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/finishOlympiad],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.FinishTestController.finishOlympiad()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.IndexController.showMainPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/tasks/selectedTask],methods=[GET]}&quot; onto public ru.testingsystem.data.entity.Question ru.testingsystem.controllers.TasksController.showSelectedTask(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/tasks/showPage],methods=[GET]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.TasksController.showPageTasks()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/tasks/checkTask],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.TasksController.checkTask(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/adminRoom/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/changeContacts],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.admin_room.BasicDataController.changeBasicTitles(java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/changeTitles],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.admin_room.BasicDataController.changeBasicTitles(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/changeDescriptions],methods=[POST],produces=[text/plain;charset=UTF-8]}&quot; onto public java.lang.String ru.testingsystem.controllers.admin_room.BasicDataController.changeBasicDescriptions(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/basicData/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/addGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Group&gt; ru.testingsystem.controllers.admin_room.GroupsController.addGroup(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/delGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Group&gt; ru.testingsystem.controllers.admin_room.GroupsController.removeGroup(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/changeGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Group&gt; ru.testingsystem.controllers.admin_room.GroupsController.changeTitleGroup(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/groups/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/addQuestion],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.addQuestion(java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/delQuestion],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.removeQuestion(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/changeQuestion],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.changeQuestion(java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/addTestData],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Question&gt; ru.testingsystem.controllers.admin_room.QuestionsController.addTestDataForQuestion(java.lang.String,java.lang.String,java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/showQuestion],methods=[GET]}&quot; onto public ru.testingsystem.data.entity.Question ru.testingsystem.controllers.admin_room.QuestionsController.showQuestion(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/questions/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/results/sort],methods=[GET]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.Result&gt; ru.testingsystem.controllers.admin_room.ResultsController.sortResultsTest(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/results/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/users/delUser],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.User&gt; ru.testingsystem.controllers.admin_room.UsersController.removerUser(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/users/selectUsersFromGroup],methods=[POST]}&quot; onto public java.util.List&lt;ru.testingsystem.data.entity.User&gt; ru.testingsystem.controllers.admin_room.UsersController.selectUsersFromGroup(java.lang.String)
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped &quot;{[/users/showPage]}&quot; onto public org.springframework.web.servlet.ModelAndView ru.testingsystem.controllers.admin_room.AdminRoomController.showPage()
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter initControllerAdviceCache
+INFO: Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@50b8ae8d: startup date [Fri Mar 09 12:14:42 MSK 2018]; root of context hierarchy
+Mar 09, 2018 12:14:42 PM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter initControllerAdviceCache
+INFO: Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@50b8ae8d: startup date [Fri Mar 09 12:14:42 MSK 2018]; root of context hierarchy
+Mar 09, 2018 12:14:42 PM org.springframework.context.support.AbstractApplicationContext refresh
+WARNING: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;basicDataDAOImpl&apos; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/data/dao/BasicDataDAOImpl.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Mar 09, 2018 12:14:42 PM org.springframework.test.context.TestContextManager prepareTestInstance
+SEVERE: Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@41beb473] to prepare test instance [ru.testingsystem.compilers.CompilerJavaTest@54e81b21]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;basicDataDAOImpl&apos; defined in file [/home/vova/Desktop/ATS/src/target/classes/ru/testingsystem/data/dao/BasicDataDAOImpl.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:129)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:107)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 31 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [ru.testingsystem.data.dao.BasicDataDAOImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:182)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1224)
+	... 47 more
+Caused by: java.lang.NullPointerException
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.loadDataFromDB(BasicDataDAOImpl.java:27)
+	at ru.testingsystem.data.dao.BasicDataDAOImpl.&lt;init&gt;(BasicDataDAOImpl.java:20)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:170)
+	... 49 more
+
+</system-err>
+  </testcase>
+</testsuite>

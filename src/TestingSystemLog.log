@@ -101,3 +101,132 @@
 [main] INFO  ru.testingsystem.data.DataBase  - Database is open.
 [main] INFO  ru.testingsystem.data.DataBase  - Database is open.
 [main] WARN  ru.testingsystem.olympiad.checking_task.compilers.Compiler  - File test.exe wasn't deleted
+[main] ERROR ru.testingsystem.data.DataBase  - Error connection with Database
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error connection with Database
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] ERROR ru.testingsystem.data.DataBase  - Error connection with Database
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the statement of SELECT query(SELECT b.name, b.data FROM basic_data b).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.olympiad.checking_task.compilers.Compiler  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.olympiad.checking_task.compilers.Compiler  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: /home/vova/Desktop/ATS/src/Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: /home/vova/Desktop/ATS/src/Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: Linux/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: /home/vova/AFSSources/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] ERROR ru.testingsystem.olympiad.checking_task.compilers.Compiler  - Error of creating source file. Path: /home/vova/AFSSources/test.c
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.cpp wasn't deleted
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.cpp wasn't deleted
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.cpp wasn't deleted
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.cpp wasn't deleted
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.cpp wasn't deleted
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test

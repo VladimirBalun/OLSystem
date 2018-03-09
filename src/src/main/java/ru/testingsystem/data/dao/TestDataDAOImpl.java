@@ -24,7 +24,7 @@ public class TestDataDAOImpl implements TestDataDAO {
     }
 
     public List<TestData> getTestDataForQuestion(String nameQuestion){
-        List<TestData> testDataForQuestion = new ArrayList<TestData>();
+        List<TestData> testDataForQuestion = new ArrayList<>();
         String query = "SELECT io.in_date, io.out_date " +
                        "FROM in_out_dates io " +
                        "WHERE io.id_question = (SELECT q.id FROM questions q WHERE q.title = '" + nameQuestion + "')";
