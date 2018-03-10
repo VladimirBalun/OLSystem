@@ -26,7 +26,7 @@ public class TestDataDAOImpl implements TestDataDAO {
     public List<TestData> getTestDataForQuestion(String nameQuestion){
         List<TestData> testDataForQuestion = new ArrayList<>();
         String query = "SELECT io.input_data, io.output_data " +
-                       "FROM test_data_question io " +
+                       "FROM test_data_questions io " +
                        "WHERE io.id_question = (SELECT q.id FROM questions q WHERE q.title = '" + nameQuestion + "')";
         ResultSet resultQuery = dataBase.execSelect(query);
         try {

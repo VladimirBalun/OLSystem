@@ -2,7 +2,11 @@ package ru.testingsystem.data;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
@@ -11,33 +15,40 @@ public class DataBase {
 
     @Getter
     private static DataBase instance = new DataBase();
+    private Properties properties;
     private Properties connectionInfo = new Properties();
     private Connection connection;
     private ResultSet result;
 
     private DataBase(){
+        try {
+            Resource resource = new ClassPathResource("/jdbc.properties");
+            properties = PropertiesLoaderUtils.loadProperties(resource);
+        } catch (IOException e) {
+            log.error("File with data for connection wasn't read");
+        }
         connect();
     }
 
     private void connect(){
-        String urlDB = "jdbc:mysql://localhost:3306/TestingSystem";
-        connectionInfo.put("user", "root");
-        connectionInfo.put("password", "admin");
-        connectionInfo.put("charSet", "utf8");
+        String urlDB = properties.getProperty("url");
+        connectionInfo.put("user", properties.getProperty("user"));
+        connectionInfo.put("password", properties.getProperty("password"));
+        connectionInfo.put("charSet", properties.getProperty("charset"));
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {
-            log.error("Not found driver for FireBird");
+            log.error("Not found driver for data base");
         }
         try {
             connection = DriverManager.getConnection(urlDB, connectionInfo);
             if(connection == null) {
-                log.error("Database isn't open.");
+                log.error("Connection with data base isn't open.");
             } else {
-                log.info("Database is open.");
+                log.info("Connection with data base is open.");
             }
         } catch (SQLException e) {
-            log.error("Error connection with Database");
+            log.error("Error connection with data base");
         }
     }
 

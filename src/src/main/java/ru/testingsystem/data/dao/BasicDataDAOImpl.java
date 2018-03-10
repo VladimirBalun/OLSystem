@@ -71,6 +71,10 @@ public class BasicDataDAOImpl implements BasicDataDAO {
         return basicData.get("nameCollege");
     }
 
+    public String getProgrammingLanguageOlympiad(){
+        return basicData.get("languageOlympiad");
+    }
+
     public void setTitleTestingSystem(String titleOfTest){
         reloadDataInDB("titleTestingSystem", titleOfTest);
     }
@@ -97,6 +101,10 @@ public class BasicDataDAOImpl implements BasicDataDAO {
 
     public void setNameCollege(String nameOfCollege){
         reloadDataInDB("nameCollege", nameOfCollege);
+    }
+
+    public void setProgrammingLanguageOlympiad(String nameLanguage){
+        reloadDataInDB("languageOlympiad", nameLanguage);
     }
 
 }

@@ -1,6 +1,5 @@
 package ru.testingsystem.utils.compilers;
 
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -10,7 +9,6 @@ import ru.testingsystem.utils.terminals.Terminal;
 
 import java.util.List;
 
-@Log4j
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CompilerC implements Compiler {
@@ -30,7 +28,6 @@ public class CompilerC implements Compiler {
 
     @Override
     public boolean runProgram(List<TestData> testDataForProgram) {
-        System.out.println("running in compiler");
         return  terminal.runProgram(nameFile, FILE_EXTENSION, testDataForProgram);
     }
 

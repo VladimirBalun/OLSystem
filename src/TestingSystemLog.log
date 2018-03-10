@@ -230,3 +230,23 @@
 [main] INFO  ru.testingsystem.data.DataBase  - Database is open.
 [main] ERROR ru.testingsystem.data.DataBase  - Error in the SELECT query(SELECT q.title, q.text, (SELECT FIRST 1 d.in_date FROM in_out_dates d WHERE d.id_question = q.id), (SELECT FIRST 1 d.out_date FROM in_out_dates d WHERE d.id_question = q.id) FROM questions q).
 [main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Database is open.
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test

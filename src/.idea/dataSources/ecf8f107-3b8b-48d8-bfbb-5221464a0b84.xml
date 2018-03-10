@@ -7,7 +7,7 @@
     <schema id="2" parent="1" name="TestingSystem">
       <Current>1</Current>
       <Visible>1</Visible>
-      <Collation>cp1251_general_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
@@ -911,7 +911,6 @@
     </collation>
     <table id="229" parent="2" name="basic_data">
       <Engine>InnoDB</Engine>
-      <Collation>latin1_swedish_ci</Collation>
     </table>
     <table id="230" parent="2" name="groups">
       <Engine>InnoDB</Engine>
@@ -938,14 +937,12 @@
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="236" parent="229" name="data">
       <Position>2</Position>
       <DataType>varchar(2000)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>cp1251_general_ci</Collation>
     </column>
     <key id="237" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -956,6 +953,7 @@
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="239" parent="230" name="name">
@@ -963,6 +961,7 @@
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <index id="240" parent="230" name="name">
       <ColNames>name</ColNames>
@@ -976,6 +975,7 @@
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="243" parent="231" name="title">
@@ -983,12 +983,14 @@
       <DataType>varchar(300)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="244" parent="231" name="text">
       <Position>3</Position>
       <DataType>varchar(5000)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <index id="245" parent="231" name="title">
       <ColNames>title</ColNames>
@@ -1002,6 +1004,7 @@
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="248" parent="232" name="time">
@@ -1010,7 +1013,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="232" name="id-user">
+    <column id="249" parent="232" name="id_user">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -1028,24 +1031,27 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="252" parent="232" name="fk_new_table_1_idx">
-      <ColNames>id-user</ColNames>
+    <index id="252" parent="232" name="fk_results_test_1_idx">
+      <ColNames>id_user</ColNames>
     </index>
     <key id="253" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="254" parent="232" name="fk_new_table_1">
-      <ColNames>id-user</ColNames>
+    <foreign-key id="254" parent="232" name="fk_results_user_with_user">
+      <ColNames>id_user</ColNames>
       <RefSchemaName>TestingSystem</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="255" parent="233" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="256" parent="233" name="input_data">
@@ -1053,12 +1059,14 @@
       <DataType>varchar(300)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="257" parent="233" name="output_data">
       <Position>3</Position>
       <DataType>varchar(300)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="258" parent="233" name="id_question">
       <Position>4</Position>
@@ -1066,7 +1074,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="259" parent="233" name="fk_test_data_questions_1_idx">
+    <index id="259" parent="233" name="fk_test_data_with_question_idx">
       <ColNames>id_question</ColNames>
     </index>
     <key id="260" parent="233" name="PRIMARY">
@@ -1074,17 +1082,17 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="261" parent="233" name="fk_test_data_questions_1">
+    <foreign-key id="261" parent="233" name="fk_test_data_with_question">
       <ColNames>id_question</ColNames>
       <RefSchemaName>TestingSystem</RefSchemaName>
       <RefTableName>questions</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="262" parent="234" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="263" parent="234" name="login">
@@ -1092,18 +1100,21 @@
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="264" parent="234" name="password">
       <Position>3</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="265" parent="234" name="name">
       <Position>4</Position>
       <DataType>varchar(150)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>cp1251_general_ci</Collation>
     </column>
     <column id="266" parent="234" name="id_group">
       <Position>5</Position>
@@ -1114,6 +1125,7 @@
     <column id="267" parent="234" name="count_questions">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="268" parent="234" name="count_true_answers">
@@ -1132,11 +1144,12 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="272" parent="234" name="fk_users_1">
+    <foreign-key id="272" parent="234" name="fk_users_with_group">
       <ColNames>id_group</ColNames>
       <RefSchemaName>TestingSystem</RefSchemaName>
       <RefTableName>groups</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
   </database-model>

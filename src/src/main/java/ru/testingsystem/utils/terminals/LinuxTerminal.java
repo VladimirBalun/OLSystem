@@ -33,7 +33,6 @@ public class LinuxTerminal extends Terminal{
 
     @Override
     public boolean runProgram(String nameFile, String fileExtension, List<TestData> testDataForProgram) {
-        System.out.println("running in terminal");
         boolean resultRunningProgram = false;
         try {
             resultRunningProgram = testProgramUsingTestData(nameFile, testDataForProgram);
@@ -47,7 +46,6 @@ public class LinuxTerminal extends Terminal{
 
 
     private boolean testProgramUsingTestData(String nameExeFile, List<TestData> testDataForProgram) throws IOException{
-        System.out.println("testing");
         String commandForRunProgram = (commandForwardToCatalog + " && ./" + nameExeFile + " ");
         for (TestData testData : testDataForProgram){
             BufferedReader bufferedReader = runCommand(commandForRunProgram + testData.getInputData());

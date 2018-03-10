@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>Система тестирования ТИ ДГТУ</title>
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
-    <link rel="stylesheet" href="<c:url value="/resources/css/login_css.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/css/auethentification.css"/>">
     <link rel="stylesheet" href="<c:url value="/resources/libs/animate.css"/>">
     <link rel="shortcut icon" href="<c:url value="/resources/img/icon.png"/>" type="image/x-icon">
     <script src="<c:url value="/resources/libs/jquery.min.js"/>"></script>

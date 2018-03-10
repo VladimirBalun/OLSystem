@@ -30,4 +30,8 @@ public interface BasicDataService {
 
     void setNameCollege(String nameOfCollege);
 
+    String getProgrammingLanguageOlympiad();
+
+    void setProgrammingLanguageOlympiad(String nameLanguage);
+
 }

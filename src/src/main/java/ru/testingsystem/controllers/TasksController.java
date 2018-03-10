@@ -4,8 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.Question;
 import ru.testingsystem.olympiad.Olympiad;
+
+import java.util.List;
+import java.util.Queue;
 
 @Controller
 @RequestMapping("/tasks")
@@ -15,8 +19,7 @@ public class TasksController {
     private Olympiad olympiad;
 
     @RequestMapping(value = "/selectedTask", method = RequestMethod.GET)
-    public @ResponseBody
-    Question showSelectedTask(@RequestParam(value = "number_question") String numberQuestion){
+    public @ResponseBody Question showSelectedTask(@RequestParam(value = "number_question") String numberQuestion){
         return olympiad.getQuestion(Integer.parseInt(numberQuestion));
     }
 
@@ -41,6 +44,21 @@ public class TasksController {
                 return "Задание выполнено";
         }
         return "Неизвестная ошибка";
+    }
+
+    @RequestMapping(value = "/reloadLogs", method = RequestMethod.GET)
+    public @ResponseBody Queue<Log> reloadLogsRunningOlympiad(){
+        return olympiad.getLogsOfRunningTest();
+    }
+
+    @RequestMapping(value = "/reloadQuestions", method = RequestMethod.GET)
+    public @ResponseBody List<Question> reloadQuestionsOlympiad(){
+        return olympiad.getQuestions();
+    }
+
+    @RequestMapping(value = "/reloadStatistic", method = RequestMethod.GET)
+    public @ResponseBody String reloadUserStatisticOlympiad(){
+        return olympiad.getStatisticUser();
     }
 
 }

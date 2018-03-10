@@ -9,11 +9,20 @@ $(document).ready(function(){
     var sectionTasks = $("#section_tasks");
     var sectionSendTask = $("#section_send_task");
 
+    var btnFinishOlympiad = $("#end_test");
     var btnTasks = $("#tasks");
     var btnSendTask = $("#send_task");
 
     btnTasks.css("border-bottom", "2px solid red");
     sectionSendTask.hide();
+
+    btnFinishOlympiad.click(function () {
+        if(confirm("Вы уверены, что завершить?")){
+            $(location).attr("href", "/finishOlympiad");
+        } else {
+            return false;
+        }
+    });
 
     btnTasks.click(function(){
         sectionSendTask.hide();
@@ -53,26 +62,74 @@ $(document).ready(function(){
         } else {
             loggerCheckTask.text("Началась обработка задания");
             animate(loggerCheckTask);
-            $.ajax({
-                type: formSendTask.attr('method'),
-                url: formSendTask.attr('action'),
-                data: formSendTask.serialize(),
-                success: function (response) {
-                    loggerCheckTask.html(response);
-                    animate(loggerCheckTask);
+            $.post(formSendTask.attr("action"), formSendTask.serialize(), function(response) {
+                loggerCheckTask.html(response);
+                animate(loggerCheckTask);
+                switch (response){
+                    case "Ошибка компиляции" :
+                        reloadLogs();
+                        break;
+                    case "Задание выполнено" :
+                        reloadLogs();
+                        reloadQuestions();
+                        reloadUserStatistic();
+                        break;
+                    case "Ошибка в результате программы" :
+                        reloadLogs();
+                        break;
                 }
             });
         }
         event.preventDefault();
     });
 
+    function reloadLogs(){
+        var oldLogs = $(".logs");
+        oldLogs.remove();
+        $("#logs_running_test").append("<p class='logs'></p>");
+        $.get("/tasks/reloadLogs", function (logs) {
+            $.each(logs, function(index, log) {
+                $(".logs").append(log.time + " - " + log.description + "</br>");
+            });
+        });
+    }
+
+    function reloadQuestions(){
+        $(".task").remove();
+        $(".task_option").remove();
+        $.get("/tasks/reloadQuestions", function (questions) {
+            if(questions.length === 0){
+                $(location).attr("href", "/finishOlympiad");
+            }
+            $.each(questions, function(index, question) {
+                $("#form_change").append(
+                    "<button value=" + question.number + "  name='number_question' class='task'>" +
+                        "<p class='title_question'>Задание " + question.number + "</p>" +
+                        "<p class='comment_question'>" + question.title + "</p>" +
+                    "</button>");
+                $("select[name='name_question']").append(
+                    "<option class='task_option'>" + question.title + "</option>"
+                );
+            });
+        });
+    }
+
+    function reloadUserStatistic(){
+        var statistic = $(".run_tasks");
+        statistic.html("");
+        $.get("/tasks/reloadStatistic", function(response) {
+            statistic.html("Выполненных заданий: " + response);
+        });
+    }
+
+
     /**
      * Script is running timer on page of tasks. After the
      * end of the timer, forwards to the page end of the test,
      */
-    var hours = 2;
-    var minutes = 0;
-    var seconds = 0;
+    var hours = 0;
+    var minutes = 30;
+    var seconds = 25;
 
     var timer = setInterval(function (){
         if(seconds === 0){
@@ -91,7 +148,12 @@ $(document).ready(function(){
         } else {
             seconds--;
         }
-        $(".timer").html(hours + ":" + minutes + ":" + seconds);
+        $(".timer").html((hours.toString().length === 1 ?  "0" + hours : hours) + ":" +
+                         (minutes.toString().length === 1 ? "0" + minutes : minutes) +":" +
+                         (seconds.toString().length === 1 ? "0" + seconds : seconds));
+        if(hours === 0 && minutes < 10){
+            $(".timer").css("color", "#ff574b");
+        }
     }, 1000);
 
     // Blocking is the transition to the back

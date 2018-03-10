@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.testingsystem.data.service.BasicDataService;
 import ru.testingsystem.olympiad.Olympiad;
 
-
 @Controller
 public class FinishTestController {
 

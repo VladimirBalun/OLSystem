@@ -23,12 +23,21 @@ public class CompilerCppTest {
     @Qualifier("compilerCpp")
     private Compiler compilerCppLanguage;
 
-    /**
-     * Method creates test program, which will count a count chars in
-     * the string. After checks compilation of the program.
-     */
     @Test
-    public void compileProgram(){
+    public void runFailCompilation(){
+        String testTextProgram = "#include <iostream>\n" +
+                "#include <cstring>\n" +
+                "int main(int argc, char *argv[])\n" +
+                "{\n" +
+                "    illegal syntax\n" +
+                "    std::cout << strlen(argv[1]);\n" +
+                "    return 0;\n" +
+                "}";
+        Assert.assertFalse(compilerCppLanguage.compileProgram(testTextProgram));
+    }
+
+    @Test
+    public void runSuccessfulCompilation(){
         String testTextProgram = "#include <iostream>\n" +
                                  "#include <cstring>\n" +
                                  "int main(int argc, char *argv[])\n" +
@@ -39,10 +48,6 @@ public class CompilerCppTest {
         Assert.assertTrue(compilerCppLanguage.compileProgram(testTextProgram));
     }
 
-    /**
-     * Method generates test input data for program and checks the
-     * program the correct answer of the program on input data for its.
-     */
     @Test
     public void runProgramAndCheckResult(){
         // Fill test data for check compiler

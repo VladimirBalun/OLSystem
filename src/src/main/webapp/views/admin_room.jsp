@@ -320,6 +320,41 @@
             </section><!-- end result_of_test -->
 
 
+            <section class="settings" hidden>
+                <p class="title_admin">Основные настройки:</p>
+                <form action="/settings/changeTime" name="change_time_olympiad" method="POST" class="wrapper_admin row">
+                    <div class="col-lg-5 col-md-5">
+                        <label class="label_admin">Текущее время прохождения олимпиады:</label>
+                        <input class="input_admin" type="text" disabled="true" value="2:0:0">
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <label class="label_admin">Введите новое время прохождения:</label>
+                        <input name="new_time" class="input_admin without_ampm" type="time">
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <button name="btn_sort_results" class="button_admin">Изменить</button>
+                    </div>
+                </form>
+                <form action="/settings/changeLanguage" name="change_language_olympiad" method="POST" class="wrapper_admin row">
+                    <div class="col-lg-5 col-md-5">
+                        <label class="label_admin">Текущий язык для проведения олимпиады:</label>
+                        <input id="cur_language" class="input_admin" type="text" disabled="true" value="${programmingLanguage}">
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <label class="label_admin">Выберите новый язык для проведения:</label>
+                        <select name="new_language" class="select_admin">
+                            <option>Не выбрано</option>
+                            <c:forEach items="${programmingLanguages}" var="language">
+                                <option>${language.value}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <button name="btn_sort_results" class="button_admin">Изменить</button>
+                    </div>
+                </form>
+            </section>
+
         </div><!-- end description_admin -->
 
 
@@ -339,5 +374,6 @@
     <script src="<c:url value="/resources/js/admin_room-page/users.js"/>"></script>
     <script src="<c:url value="/resources/js/admin_room-page/groups.js"/>"></script>
     <script src="<c:url value="/resources/js/admin_room-page/results.js"/>"></script>
+    <script src="<c:url value="/resources/js/admin_room-page/settings.js"/>"></script>
 
 <jsp:include page="footer.jsp"/>

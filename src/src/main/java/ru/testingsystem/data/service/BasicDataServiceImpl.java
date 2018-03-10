@@ -83,4 +83,14 @@ public class BasicDataServiceImpl implements BasicDataService {
         log.debug("Name of college for Testing System was changed on " + nameOfCollege);
     }
 
+    public String getProgrammingLanguageOlympiad(){
+        return basicDataDAO.getProgrammingLanguageOlympiad();
+    }
+
+    @Transactional
+    public void setProgrammingLanguageOlympiad(String nameLanguage){
+        basicDataDAO.setProgrammingLanguageOlympiad(nameLanguage);
+        log.debug("Programming language for passing Olympiad was changed on  " + nameLanguage);
+    }
+
 }

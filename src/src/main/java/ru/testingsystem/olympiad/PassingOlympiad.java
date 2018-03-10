@@ -19,7 +19,7 @@ import java.util.*;
 @Component
 public class PassingOlympiad implements Olympiad {
 
-    private final int MAX_COUNT_LOGS_IN_JOURNAL = 19;
+    private final int MAX_COUNT_LOGS_IN_JOURNAL = 9;
 
     private final QuestionsService questionsService;
     private final TestDataService testDataService;
@@ -36,7 +36,6 @@ public class PassingOlympiad implements Olympiad {
         this.compiler = compiler;
         questions = questionsService.getQuestions();
         logsOfRunningOlympiad = new LinkedList<Log>();
-        System.out.println(questions.isEmpty());
     }
 
     public void startOlympiad(String login, String password){
@@ -59,6 +58,7 @@ public class PassingOlympiad implements Olympiad {
     public Question getQuestion(int number){
         for (Question question : questions) {
             if(question.getNumber() == number){
+                System.out.println(question.toString());
                 return question;
             }
         }
@@ -72,14 +72,14 @@ public class PassingOlympiad implements Olympiad {
     public ResultRunningProgram checkTask(String nameQuestion, String textProgram){
         List<TestData> testData = testDataService.getTestDataForQuestion(nameQuestion);
         if(!compiler.compileProgram(textProgram)){
-            addLog(new Log("Ошибка компиляции", getCurrentTime()));
+            addLog(new Log("Ошибка компиляции в задании " + nameQuestion, getCurrentTime()));
             return ResultRunningProgram.ERROR_COMPILATION;
         }
         if(!compiler.runProgram(testData)){
-            addLog(new Log("Ошибка в результате программы", getCurrentTime()));
+            addLog(new Log("Ошибка в тестах для задания " + nameQuestion, getCurrentTime()));
             return ResultRunningProgram.LOGIC_ERROR_IN_PROGRAM;
         } else {
-            addLog(new Log("Задание выполнено", getCurrentTime()));
+            addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
             delQuestion(nameQuestion);
             currentUser.addTrueAnswer();
             return ResultRunningProgram.SUCCESS;

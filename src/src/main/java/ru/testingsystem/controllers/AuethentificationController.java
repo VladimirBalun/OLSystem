@@ -12,9 +12,6 @@ import ru.testingsystem.authentication.Auethentification;
 import ru.testingsystem.data.service.GroupsService;
 import ru.testingsystem.olympiad.Olympiad;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-
 @Controller
 @RequestMapping("/auethentification")
 public class AuethentificationController {
@@ -34,36 +31,33 @@ public class AuethentificationController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/logIn", method = RequestMethod.POST)
-    public String logIn(@RequestParam(value = "login_sign_in") String login,
-                                      @RequestParam(value = "pass_sign_in") String password,
-                                      HttpServletResponse response){
-        // Redirect processes in JS(auethentification-page.js)
+    @RequestMapping(value = "/logIn", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
+    public @ResponseBody String logIn(@RequestParam(value = "login_sign_in") String login,
+                                      @RequestParam(value = "pass_sign_in") String password) {
+        // Redirect is processing with JS(auethentification.js)
         RoleUser roleUser = auethentification.authenticate(login, password);
         switch (roleUser) {
             case ADMIN:
-                return "redirect:/adminRoom/showPage";
+                return "admin_room";
             case USER:
-                Cookie cookie = new Cookie("time", "02:00:00");
-                cookie.setMaxAge(3600);
-                response.addCookie(cookie);
                 olympiad.startOlympiad(login, password);
-                return "redirect:/tasks/showPage";
+                return "tasks";
             case UNKNOWN:
                 return "Не правильные данные";
         }
         return "Не правильные данные";
     }
 
-    @RequestMapping(value = "/SignUp", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/SignUp", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public @ResponseBody String signUp(@RequestParam(value = "login_sign_up") String login,
                          @RequestParam(value = "pass_sign_up") String password,
                          @RequestParam(value = "name_sign_up") String name,
-                         @RequestParam(value = "group_sign_up") String group){
-        // Redirect processes in JS(auethentification-page.js)
+                         @RequestParam(value = "group_sign_up") String group) {
+        // Redirect is processing with JS(auethentification.js)
         if(auethentification.register(login, password, name, group)){
             olympiad.startOlympiad(login, password);
-            return "tasks_page";
+            return "tasks";
         } else {
             return "Пользователь с таким логином уже зарегистрирован";
         }

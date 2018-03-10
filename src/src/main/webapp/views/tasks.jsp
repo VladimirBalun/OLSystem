@@ -48,7 +48,7 @@
                         <div>
                             <p class="event_log">Журнал событий</p>
                         </div>
-                        <div>
+                        <div id="logs_running_test">
                             <p class="logs">
                                 <c:forEach var="logRunningTest" items="${logs}">
                                    ${logRunningTest.time} : ${logRunningTest.description}</br>
@@ -62,7 +62,7 @@
                 <div>
                     <select name="name_question">
                         <c:forEach var="question" items="${questions}">
-                            <option>${question.title}</option>
+                            <option class="task_option">${question.title}</option>
                         </c:forEach>
                     </select>
                 </div>

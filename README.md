@@ -11,6 +11,7 @@ languages will be added soon. Compiler installation directories are taken from t
 administrator room, in which administrator can:
 - change basic information about system(title, description and much more); 
 - add, remove and change tasks;
+- change programming language for passing olympiad or test;
 - change time for the that is given for the passage olympiad or test;
 - add, remove and change groups or classes for grouping participants;
 - remove participants;
@@ -74,8 +75,7 @@ Enter the ATS directory and run the build script on OS X or Linux/BSD:
 
     ./build
 
-Information for Linux and Mac was added later. Everything will build in
-directory:
+Everything will build in directory:
 
     ../src/target/
 

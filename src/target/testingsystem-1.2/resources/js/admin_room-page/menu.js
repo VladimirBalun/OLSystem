@@ -3,7 +3,8 @@ var tabsMenu = {
     tabQuestions : $("#tab_questions"),
     tabResultsOfTests : $("#tab_results_test"),
     tabGroups : $("#tab_groups"),
-    tabUsers : $("#tab_users")
+    tabUsers : $("#tab_users"),
+    tabSettings : $("#tab_settings")
 };
 
 var sections = {
@@ -11,7 +12,8 @@ var sections = {
     questions : $(".questions"),
     resultsOfTests : $(".result_of_test"),
     groups : $(".groups"),
-    users : $(".users")
+    users : $(".users"),
+    settings : $(".settings")
 };
 
 
@@ -44,6 +46,10 @@ $(document).ready(function() {
     //Forward on section of users
     tabsMenu.tabUsers.click(function () {
         forwardToNewTabInMenu(tabsMenu.tabUsers, sections.users);
+    });
+
+    tabsMenu.tabSettings.click(function (){
+       forwardToNewTabInMenu(tabsMenu.tabSettings, sections.settings);
     });
 
 });

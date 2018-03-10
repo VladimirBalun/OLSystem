@@ -30,4 +30,8 @@ public interface BasicDataDAO {
 
     void setNameCollege(String nameOfCollege);
 
+    String getProgrammingLanguageOlympiad();
+
+    void setProgrammingLanguageOlympiad(String nameLanguage);
+
 }

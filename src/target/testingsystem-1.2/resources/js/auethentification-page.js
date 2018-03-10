@@ -27,6 +27,7 @@ $(document).ready(function() {
             enableButton(btnSignIn);
             return false;
         }
+        authenticate(formSignIn, btnSignIn);
     });
 
     formSignUp.submit(function(){
@@ -58,7 +59,29 @@ $(document).ready(function() {
             enableButton(btnSignUp);
             return false;
         }
+        authenticate(formSignUp, btnSignUp);
     });
+
+    function authenticate(form, btn){
+        disableButton(btn);
+        $.post(form.attr("action"), form.serialize(), function(response){
+            switch (response){
+                case "tasks" :
+                    $(location).attr("href", "/tasks/showPage");
+                    btn.val("Подключаюсь...");
+                    break;
+                case "admin_room" :
+                    $(location).attr("href", "/adminRoom/showPage");
+                    btn.val("Подключаюсь...");
+                    break;
+                default :
+                    loggerSignIn.html(response);
+                    animate(loggerSignIn);
+                    enableButton(btnSignIn);
+            }
+        });
+        event.preventDefault();
+    }
 
     function animate(elem){
         var effect = elem.data("effect");

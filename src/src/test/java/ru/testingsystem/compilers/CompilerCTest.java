@@ -28,12 +28,21 @@ public class CompilerCTest {
     @Qualifier("compilerC")
     private Compiler compilerCLanguage;
 
-    /**
-     * Method creates test program, which will count a count chars in
-     * the string. After checks compilation of the program.
-     */
     @Test
-    public void compileProgram(){
+    public void runFailCompilation(){
+        String testTextProgram = "#include <stdio.h>\n" +
+                                 "#include <string.h>\n" +
+                                 "int main(int argc, char *argv[])\n" +
+                                 "{\n" +
+                                 "    illegal syntax\n" +
+                                 "    printf(\"%ld\", strlen(argv[1]));\n" +
+                                 "    return 0;\n" +
+                                 "}";
+        Assert.assertFalse(compilerCLanguage.compileProgram(testTextProgram));
+    }
+
+    @Test
+    public void runSuccessfulCompilation(){
         String testTextProgram = "#include <stdio.h>\n" +
                                  "#include <string.h>\n" +
                                  "int main(int argc, char *argv[])\n" +
@@ -43,6 +52,7 @@ public class CompilerCTest {
                                  "}";
         Assert.assertTrue(compilerCLanguage.compileProgram(testTextProgram));
     }
+
 
     /**
      * Method generates test input data for program and checks the
