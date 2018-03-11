@@ -34,13 +34,11 @@ public class BasicDataDAOImpl implements BasicDataDAO {
         }
     }
 
-    private void reloadDataInDB(String name, String data){
-        String strQuery = "UPDATE basic_data SET data = '" + data + "' " +
-                          "WHERE name = '" + name + "'";
-        dataBase.execUpdate(strQuery);
-        //Update basic data
-        basicData.clear();
-        loadDataFromDB();
+    private void changeDataByName(String name, String data){
+        String query = "UPDATE basic_data SET data = '" + data + "' " +
+                        "WHERE name = '" + name + "'";
+        dataBase.execUpdate(query);
+        basicData.put(name, data);
     }
 
     public String getTitleTestingSystem(){
@@ -75,36 +73,44 @@ public class BasicDataDAOImpl implements BasicDataDAO {
         return basicData.get("languageOlympiad");
     }
 
+    public String getTimePassingOlympiad() {
+        return basicData.get("timeOlympiad");
+    }
+
     public void setTitleTestingSystem(String titleOfTest){
-        reloadDataInDB("titleTestingSystem", titleOfTest);
+        changeDataByName("titleTestingSystem", titleOfTest);
     }
 
     public void setDescriptionTestingSystem(String descriptionOfTest){
-        reloadDataInDB("descriptionTestingSystem", descriptionOfTest);
+        changeDataByName("descriptionTestingSystem", descriptionOfTest);
     }
 
     public void setTitleResultOlympiad(String titleOfResult){
-        reloadDataInDB("titleResultOlympiad", titleOfResult);
+        changeDataByName("titleResultOlympiad", titleOfResult);
     }
 
     public void setDescriptionResultOlympiad(String descriptionOfResult){
-        reloadDataInDB("descriptionResultOlympiad", descriptionOfResult);
+        changeDataByName("descriptionResultOlympiad", descriptionOfResult);
     }
 
     public void setAddressCollege(String address){
-        reloadDataInDB("addressCollege", address);
+        changeDataByName("addressCollege", address);
     }
 
     public void setPhoneNumberCollege(String phoneNumber){
-        reloadDataInDB("phoneNumberCollege", phoneNumber);
+        changeDataByName("phoneNumberCollege", phoneNumber);
     }
 
     public void setNameCollege(String nameOfCollege){
-        reloadDataInDB("nameCollege", nameOfCollege);
+        changeDataByName("nameCollege", nameOfCollege);
     }
 
     public void setProgrammingLanguageOlympiad(String nameLanguage){
-        reloadDataInDB("languageOlympiad", nameLanguage);
+        changeDataByName("languageOlympiad", nameLanguage);
+    }
+
+    public void setTimePassingOlympiad(String time) {
+        changeDataByName("timeOlympiad", time);
     }
 
 }

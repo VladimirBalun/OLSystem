@@ -28,7 +28,7 @@ public class CompilerC implements Compiler {
 
     @Override
     public boolean runProgram(List<TestData> testDataForProgram) {
-        return  terminal.runProgram(nameFile, FILE_EXTENSION, testDataForProgram);
+        return  terminal.runExeProgram(nameFile, FILE_EXTENSION, testDataForProgram);
     }
 
 }

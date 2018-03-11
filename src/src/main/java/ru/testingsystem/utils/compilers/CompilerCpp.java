@@ -28,8 +28,7 @@ public class CompilerCpp implements Compiler {
 
     @Override
     public boolean runProgram(List<TestData> testDataForProgram) {
-        System.out.println("running in compiler");
-        return  terminal.runProgram(nameFile, FILE_EXTENSION, testDataForProgram);
+        return  terminal.runExeProgram(nameFile, FILE_EXTENSION, testDataForProgram);
     }
 
 }

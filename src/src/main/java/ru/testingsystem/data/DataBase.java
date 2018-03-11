@@ -15,6 +15,7 @@ public class DataBase {
 
     @Getter
     private static DataBase instance = new DataBase();
+
     private Properties properties;
     private Properties connectionInfo = new Properties();
     private Connection connection;
@@ -34,7 +35,6 @@ public class DataBase {
         String urlDB = properties.getProperty("url");
         connectionInfo.put("user", properties.getProperty("user"));
         connectionInfo.put("password", properties.getProperty("password"));
-        connectionInfo.put("charSet", properties.getProperty("charset"));
         try {
             Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {

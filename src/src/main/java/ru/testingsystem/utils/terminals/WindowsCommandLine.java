@@ -32,10 +32,11 @@ public class WindowsCommandLine extends Terminal {
     }
 
     @Override
-    public boolean runProgram(String nameFile, String fileExtension, List<TestData> testDataForProgram) {
+    public boolean runExeProgram(String nameFile, String fileExtension, List<TestData> testDataForProgram) {
         boolean resultRunningProgram = false;
         try {
-            resultRunningProgram = testProgramUsingTestData(nameFile, testDataForProgram);
+            String commandForRunProgram = (commandForwardToCatalog + " && " + nameFile + "exe");
+            resultRunningProgram = testProgramUsingTestData(commandForRunProgram, testDataForProgram);
         } catch (IOException e){
             log.error("Error during test program. File: ");
         } finally {
@@ -44,11 +45,26 @@ public class WindowsCommandLine extends Terminal {
         return resultRunningProgram;
     }
 
-    private boolean testProgramUsingTestData(String nameExeFile, List<TestData> testDataForProgram) throws IOException{
-        String commandForRunProgram = commandForwardToCatalog + " && " + nameExeFile + ".exe ";
+    @Override
+    public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestData> testDataForProgram) {
+        boolean resultRunningProgram = false;
+        try {
+            String commandForRunProgram = (commandForwardToCatalog + " && " + nameVM + nameFile + " ");
+            resultRunningProgram = testProgramUsingTestData(commandForRunProgram, testDataForProgram);
+        } catch (IOException e){
+            log.error("Error during test program. File: ");
+        } finally {
+            removeSourceAndExeFile(nameFile + fileExtension, nameFile);
+        }
+        return resultRunningProgram;
+    }
+
+    private boolean testProgramUsingTestData(String commandForRunProgram, List<TestData> testDataForProgram) throws IOException{
         for (TestData testData : testDataForProgram){
-            BufferedReader bufferedReader = runCommand(commandForRunProgram + testData.getInputData());
-            if(!bufferedReader.readLine().equals(testData.getOutputData())) {
+            BufferedReader bufferedReader = runCommand(commandForRunProgram + " " +testData.getInputData());
+            String resultProgram = bufferedReader.readLine() == null ? "" : bufferedReader.readLine();
+            log.debug(commandForRunProgram + testData.getInputData() + "[result = " + resultProgram +" : output = " + testData.getOutputData() +"]");
+            if(!resultProgram.equals(testData.getOutputData())) {
                 return false;
             }
         }

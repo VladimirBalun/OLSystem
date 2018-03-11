@@ -8,6 +8,7 @@ public class SettingController extends AdminRoomController {
 
     @RequestMapping(value = "/changeTime", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public String changeTimePassingOlympiad(@RequestParam(value = "new_time") String newTime){
+        basicDataService.setTimePassingOlympiad(newTime);
         return "Время проведения олимпиадны успешно изменено на " + newTime;
     }
 

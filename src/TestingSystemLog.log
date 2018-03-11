@@ -250,3 +250,261 @@
 [main] INFO  ru.testingsystem.data.DataBase  - Database is open.
 [main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
 [main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] DEBUG ru.testingsystem.configuration.CompilerConfig  - Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 106429
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 748315
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 397410
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 241480
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 689416
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] DEBUG ru.testingsystem.configuration.CompilerConfig  - Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 858886
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] DEBUG ru.testingsystem.configuration.CompilerConfig  - Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 483861
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 230704
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 551906
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 419681
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 713155
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] DEBUG ru.testingsystem.configuration.CompilerConfig  - Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 762256
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 208319
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 754985
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 685217
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 437987
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CurrentLanguageConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 485275
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 923418
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 573291
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 936864
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 56177
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CurrentLanguageConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 163942[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 691151[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 86058[result = 5 : output = 5]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 250019[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 327506[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CurrentLanguageConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 254653[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 305430[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 111455[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 94580[result = 5 : output = 5]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 167445[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test text : 
+#include <iostream>
+#include <cstring>
+int main(int argc, char *argv[])
+{
+    std::cout << strlen(argv[1]);
+    return 0;
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 711242[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 702461[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 610403[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 580826[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test 946495[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test text : 
+#include <iostream>
+#include <cstring>
+int main(int argc, char *argv[])
+{
+    illegal syntax
+    std::cout << strlen(argv[1]);
+    return 0;
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test text : 
+#include <iostream>
+#include <cstring>
+int main(int argc, char *argv[])
+{
+    std::cout << strlen(argv[1]);
+    return 0;
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test995692[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test844569[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test123318[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test787869[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test556548[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && g++ test.cpp -o test text : 
+#include <iostream>
+#include <cstring>
+int main(int argc, char *argv[])
+{
+    illegal syntax
+    std::cout << strlen(argv[1]);
+    return 0;
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test text : 
+#include <stdio.h>
+#include <string.h>
+int main(int argc, char *argv[])
+{
+    printf("%ld", strlen(argv[1]));
+    return 0;
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test583207[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test599006[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test576880[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test495391[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && ./test55456[result = 5 : output = 5]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && gcc test.c -o test text : 
+#include <stdio.h>
+#include <string.h>
+int main(int argc, char *argv[])
+{
+    illegal syntax
+    printf("%ld", strlen(argv[1]));
+    return 0;
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class Main{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && javatest 49517[result = bash: javatest: command not found : output = 5]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class Main{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class Main{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && javatest 27305[result = bash: javatest: command not found : output = 5]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && javatest 918808[result = bash: javatest: command not found : output = 6]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && javatest 400255[result = bash: javatest: command not found : output = 6]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 91119[result = Error: Could not find or load main class test : output = 5]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - File test.exe wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class main{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class test{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 125999[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 502345[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 50460[result = 5 : output = 5]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 918439[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 608342[result = 6 : output = 6]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - Exe file wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class test{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] INFO  ru.testingsystem.data.DataBase  - Connection with data base is open.
+[main] INFO  ru.testingsystem.configuration.CompilerConfig  - Was selected Cpp language for passing Olympiad
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class test{
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 407252[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 814548[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 576068[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 804518[result = 6 : output = 6]
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - cd /home/vova/AFSSources/ && java test 188673[result = 6 : output = 6]
+[main] WARN  ru.testingsystem.utils.terminals.Terminal  - Exe file wasn't deleted
+[main] DEBUG ru.testingsystem.utils.terminals.LinuxTerminal  - Command for compile: cd /home/vova/AFSSources/ && javac test.java text : 
+class test{
+   illegal syntax
+   public static void main(String args[]){
+       System.out.println(args[0].length());
+   }
+}

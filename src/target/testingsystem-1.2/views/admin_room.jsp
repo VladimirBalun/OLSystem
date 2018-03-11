@@ -325,11 +325,11 @@
                 <form action="/settings/changeTime" name="change_time_olympiad" method="POST" class="wrapper_admin row">
                     <div class="col-lg-5 col-md-5">
                         <label class="label_admin">Текущее время прохождения олимпиады:</label>
-                        <input class="input_admin" type="text" disabled="true" value="2:0:0">
+                        <input id="cur_time" class="input_admin" type="text" disabled="true" value="2:0:0">
                     </div>
                     <div class="col-lg-5 col-md-5">
                         <label class="label_admin">Введите новое время прохождения:</label>
-                        <input name="new_time" class="input_admin without_ampm" type="time">
+                        <input name="new_time" class="input_admin" type="text">
                     </div>
                     <div class="col-lg-2 col-md-2">
                         <button name="btn_sort_results" class="button_admin">Изменить</button>

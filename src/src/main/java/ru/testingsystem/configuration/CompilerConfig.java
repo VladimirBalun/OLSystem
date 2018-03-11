@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.testingsystem.data.service.BasicDataService;
+import ru.testingsystem.utils.compilers.ByteCodeInterpreterJava;
 import ru.testingsystem.utils.compilers.Compiler;
 import ru.testingsystem.utils.compilers.CompilerC;
 import ru.testingsystem.utils.compilers.CompilerCpp;
@@ -21,18 +22,23 @@ public class CompilerConfig {
     private Map<String, String> programmingLanguages;
 
     @Bean
-    public Compiler compilerForOlympiad(){
+    public Compiler compilerOrInterpreterForOlympiad(){
         String curLanguage = basicDataService.getProgrammingLanguageOlympiad();
         String CLanguage = programmingLanguages.get("C");
         String CppLanguage = programmingLanguages.get("Cpp");
+        String JavaLanguage = programmingLanguages.get("Java");
 
         if(curLanguage.equals(CLanguage)) {
-            log.debug("C language for passing Olympiad");
+            log.info("Was selected C language for passing Olympiad");
             return new CompilerC();
         }
         if (curLanguage.equals(CppLanguage)) {
-            log.debug("Cpp language for passing Olympiad");
+            log.info("Was selected Cpp language for passing Olympiad");
             return new CompilerCpp();
+        }
+        if (curLanguage.equals(JavaLanguage)) {
+            log.info("Was selected Java language for passing Olympiad");
+            return new ByteCodeInterpreterJava();
         }
         return new CompilerC();
     }
@@ -45,6 +51,11 @@ public class CompilerConfig {
     @Bean
     public Compiler compilerCpp(){
         return new CompilerCpp();
+    }
+
+    @Bean
+    public Compiler byteCodeInterpreterJava(){
+        return new ByteCodeInterpreterJava();
     }
 
 }

@@ -14,11 +14,6 @@ import ru.testingsystem.utils.compilers.Compiler;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Current test checks serviceability of checks tasks with C language
- * compiler. Here checks compilation and correct running of the
- * program.
- */
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:spring-context.xml")
@@ -53,11 +48,6 @@ public class CompilerCTest {
         Assert.assertTrue(compilerCLanguage.compileProgram(testTextProgram));
     }
 
-
-    /**
-     * Method generates test input data for program and checks the
-     * program the correct answer of the program on input data for its.
-     */
     @Test
     public void runProgramAndCheckResult(){
         // Fill test data for check compiler

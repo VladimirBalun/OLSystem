@@ -18,7 +18,7 @@ public class LinuxTerminal extends Terminal{
     public boolean compile(String commandCompilation, String nameFile, String fileExtension, String textProgram){
         createSourceFile(nameFile, fileExtension, textProgram);
         String command = commandForwardToCatalog + " && " + commandCompilation;
-        log.debug("Command for compile: " + command);
+        log.debug("Command for compile: " + command + " text : \n" + textProgram);
         boolean resultCompilation = false;
         try {
             BufferedReader bufferedReader = runCommand(command);
@@ -32,10 +32,11 @@ public class LinuxTerminal extends Terminal{
     }
 
     @Override
-    public boolean runProgram(String nameFile, String fileExtension, List<TestData> testDataForProgram) {
+    public boolean runExeProgram(String nameFile, String fileExtension, List<TestData> testDataForProgram) {
         boolean resultRunningProgram = false;
         try {
-            resultRunningProgram = testProgramUsingTestData(nameFile, testDataForProgram);
+            String commandForRunProgram = (commandForwardToCatalog + " && ./" + nameFile);
+            resultRunningProgram = testProgramUsingTestData(commandForRunProgram, testDataForProgram);
         } catch (IOException e){
             log.error("Error during test program. File: ");
         } finally {
@@ -44,12 +45,26 @@ public class LinuxTerminal extends Terminal{
         return resultRunningProgram;
     }
 
+    @Override
+    public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestData> testData) {
+        boolean resultRunningProgram = false;
+        try {
+            String commandForRunProgram = (commandForwardToCatalog + " && " + nameVM + " " + nameFile + " ");
+            resultRunningProgram = testProgramUsingTestData(commandForRunProgram, testData);
+        } catch (IOException e){
+            log.error("Error during test program. File: ");
+        } finally {
+            removeSourceAndExeFile(nameFile + fileExtension, nameFile);
+        }
+        return resultRunningProgram;
+    }
 
-    private boolean testProgramUsingTestData(String nameExeFile, List<TestData> testDataForProgram) throws IOException{
-        String commandForRunProgram = (commandForwardToCatalog + " && ./" + nameExeFile + " ");
+    private boolean testProgramUsingTestData(String commandForRunProgram, List<TestData> testDataForProgram) throws IOException{
         for (TestData testData : testDataForProgram){
-            BufferedReader bufferedReader = runCommand(commandForRunProgram + testData.getInputData());
-            if(!bufferedReader.readLine().equals(testData.getOutputData())) {
+            BufferedReader bufferedReader = runCommand(commandForRunProgram + " " + testData.getInputData());
+            String resultProgram = bufferedReader.readLine() == null ? "" : bufferedReader.readLine();
+            log.debug(commandForRunProgram + testData.getInputData() + "[result = " + resultProgram +" : output = " + testData.getOutputData() +"]");
+            if(!resultProgram.equals(testData.getOutputData())) {
                 return false;
             }
         }

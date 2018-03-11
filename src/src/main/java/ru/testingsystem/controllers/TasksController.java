@@ -19,8 +19,8 @@ public class TasksController {
     private Olympiad olympiad;
 
     @RequestMapping(value = "/selectedTask", method = RequestMethod.GET)
-    public @ResponseBody Question showSelectedTask(@RequestParam(value = "number_question") String numberQuestion){
-        return olympiad.getQuestion(Integer.parseInt(numberQuestion));
+    public @ResponseBody Question showSelectedTask(@RequestParam(value = "name_selected_question") String nameQuestion){
+        return olympiad.getQuestion(nameQuestion);
     }
 
     @RequestMapping(value = "/showPage", method = RequestMethod.GET)

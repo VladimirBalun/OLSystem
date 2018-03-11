@@ -24,7 +24,7 @@
             <div class="row tasks">
                 <form id="form_change" action="<c:url value="/tasks/selectedTask"/>" method="GET" class="wrapper_tasks">
                     <c:forEach var="question" items="${questions}">
-                        <button value="${question.number}" name="number_question" class="task">
+                        <button value="${question.title}" name="name_selected_question" class="task">
                             <p class="title_question">Задание ${question.number}</p>
                             <p class="comment_question">${question.title}</p>
                         </button>

@@ -25,20 +25,22 @@ public class TestDataDAOImpl implements TestDataDAO {
 
     public List<TestData> getTestDataForQuestion(String nameQuestion){
         List<TestData> testDataForQuestion = new ArrayList<>();
-        String query = "SELECT io.input_data, io.output_data " +
-                       "FROM test_data_questions io " +
-                       "WHERE io.id_question = (SELECT q.id FROM questions q WHERE q.title = '" + nameQuestion + "')";
+        String query = "SELECT input_data, output_data " +
+                       "FROM test_data_questions " +
+                       "WHERE id_question = (SELECT q.id FROM questions q WHERE q.title = '" + nameQuestion + "')";
         ResultSet resultQuery = dataBase.execSelect(query);
         try {
             while(resultQuery.next()){
-                String inputData = resultQuery.getString(1);
-                String outputData = resultQuery.getString(2);
+                String inputData = resultQuery.getString("INPUT_DATA");
+                String outputData = resultQuery.getString("OUTPUT_DATA");
                 TestData testData = new TestData(inputData, outputData);
+                System.out.println("DAO : " + testData.toString());
                 testDataForQuestion.add(testData);
             }
         } catch (SQLException e) {
             log.error("Error is reading test data for Question. Query: " + query);
         }
+        System.out.println("DAO is empty : " + testDataForQuestion.isEmpty());
         return testDataForQuestion;
     }
 

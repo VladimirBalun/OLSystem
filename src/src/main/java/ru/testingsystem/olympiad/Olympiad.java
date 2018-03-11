@@ -2,7 +2,6 @@ package ru.testingsystem.olympiad;
 
 import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.Question;
-import ru.testingsystem.utils.compilers.ResultRunningProgram;
 
 import java.util.List;
 import java.util.Queue;
@@ -17,7 +16,7 @@ public interface Olympiad {
 
     List<Question> getQuestions();
 
-    Question getQuestion(int number);
+    Question getQuestion(String title);
 
     Queue<Log> getLogsOfRunningTest();
 

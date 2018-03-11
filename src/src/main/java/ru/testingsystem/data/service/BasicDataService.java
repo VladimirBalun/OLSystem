@@ -34,4 +34,8 @@ public interface BasicDataService {
 
     void setProgrammingLanguageOlympiad(String nameLanguage);
 
+    String getTimePassingOlympiad();
+
+    void setTimePassingOlympiad(String time);
+
 }

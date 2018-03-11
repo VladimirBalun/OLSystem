@@ -93,4 +93,14 @@ public class BasicDataServiceImpl implements BasicDataService {
         log.debug("Programming language for passing Olympiad was changed on  " + nameLanguage);
     }
 
+    public String getTimePassingOlympiad() {
+        return basicDataDAO.getTimePassingOlympiad();
+    }
+
+    @Transactional
+    public void setTimePassingOlympiad(String time) {
+        basicDataDAO.setTimePassingOlympiad(time);
+        log.debug("Time for passing Olympiad was changed on  " + time);
+    }
+
 }

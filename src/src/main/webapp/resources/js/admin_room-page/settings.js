@@ -9,6 +9,11 @@ formChangeTimeOlympiad.submit(function () {
         logger.html("Последняя информация: Не введено новое время для прохождения олимпиады.");
         return false;
     }
+    if(!newTime.match(/^(?:2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$/)){
+        logger.html("Последняя информация: Вы ввлеи неправильный формат времени, используйте формат hh:mm:ss");
+        return false;
+    }
+    $("#cur_time").html(newTime);
     sendDataAndGetResult(formChangeTimeOlympiad)
 });
 

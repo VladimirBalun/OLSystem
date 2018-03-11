@@ -40,7 +40,7 @@ $(document).ready(function(){
 
     formChangeQuestion.submit(function(){
         var number = $(this).find(".task:focus").val();
-        $.get(formChangeQuestion.attr("action"), {number_question : number}, function(question){
+        $.get(formChangeQuestion.attr("action"), {name_selected_question : number}, function(question){
             $(".untitle").html(question.title);
             $(".txt_question").html(question.text);
             $(".input_data").html(question.inputData);
@@ -99,6 +99,7 @@ $(document).ready(function(){
         $(".task_option").remove();
         $.get("/tasks/reloadQuestions", function (questions) {
             if(questions.length === 0){
+                $("textarea[name='text_program']").val("");
                 $(location).attr("href", "/finishOlympiad");
             }
             $.each(questions, function(index, question) {

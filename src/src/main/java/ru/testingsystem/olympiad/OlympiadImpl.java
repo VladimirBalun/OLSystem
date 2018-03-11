@@ -2,14 +2,9 @@ package ru.testingsystem.olympiad;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.testingsystem.data.entity.Log;
-import ru.testingsystem.data.entity.TestData;
 import ru.testingsystem.data.entity.User;
-import ru.testingsystem.data.service.TestDataService;
-import ru.testingsystem.utils.compilers.Compiler;
-import ru.testingsystem.utils.compilers.ResultRunningProgram;
 import ru.testingsystem.data.entity.Question;
 import ru.testingsystem.data.service.QuestionsService;
 
@@ -17,25 +12,23 @@ import java.util.*;
 
 @Log4j
 @Component
-public class PassingOlympiad implements Olympiad {
+public class OlympiadImpl implements Olympiad {
 
     private final int MAX_COUNT_LOGS_IN_JOURNAL = 9;
 
     private final QuestionsService questionsService;
-    private final TestDataService testDataService;
-    private final Compiler compiler;
+    private final CheckingProgram checkingProgram;
 
     private User currentUser;
     private List<Question> questions;
     private Queue<Log> logsOfRunningOlympiad;
 
     @Autowired
-    public PassingOlympiad(QuestionsService questionsService, TestDataService testDataService, @Qualifier("compilerC") Compiler compiler) {
+    public OlympiadImpl(QuestionsService questionsService, CheckingProgram checkingProgram) {
         this.questionsService = questionsService;
-        this.testDataService = testDataService;
-        this.compiler = compiler;
+        this.checkingProgram = checkingProgram;
         questions = questionsService.getQuestions();
-        logsOfRunningOlympiad = new LinkedList<Log>();
+        logsOfRunningOlympiad = new LinkedList<>();
     }
 
     public void startOlympiad(String login, String password){
@@ -55,10 +48,9 @@ public class PassingOlympiad implements Olympiad {
         return questions;
     }
 
-    public Question getQuestion(int number){
+    public Question getQuestion(String title){
         for (Question question : questions) {
-            if(question.getNumber() == number){
-                System.out.println(question.toString());
+            if(question.getTitle().equals(title)){
                 return question;
             }
         }
@@ -70,19 +62,21 @@ public class PassingOlympiad implements Olympiad {
     }
 
     public ResultRunningProgram checkTask(String nameQuestion, String textProgram){
-        List<TestData> testData = testDataService.getTestDataForQuestion(nameQuestion);
-        if(!compiler.compileProgram(textProgram)){
-            addLog(new Log("Ошибка компиляции в задании " + nameQuestion, getCurrentTime()));
-            return ResultRunningProgram.ERROR_COMPILATION;
-        }
-        if(!compiler.runProgram(testData)){
-            addLog(new Log("Ошибка в тестах для задания " + nameQuestion, getCurrentTime()));
-            return ResultRunningProgram.LOGIC_ERROR_IN_PROGRAM;
-        } else {
-            addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
-            delQuestion(nameQuestion);
-            currentUser.addTrueAnswer();
-            return ResultRunningProgram.SUCCESS;
+        switch (checkingProgram.checkTask(nameQuestion, textProgram)){
+            case ERROR_COMPILATION:
+                addLog(new Log("Ошибка компиляции в задании " + nameQuestion, getCurrentTime()));
+                return ResultRunningProgram.ERROR_COMPILATION;
+            case LOGIC_ERROR_IN_PROGRAM:
+                addLog(new Log("Ошибка в тестах для задания " + nameQuestion, getCurrentTime()));
+                return ResultRunningProgram.LOGIC_ERROR_IN_PROGRAM;
+            case SUCCESS:
+                addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
+                delQuestion(nameQuestion);
+                currentUser.addTrueAnswer();
+                return ResultRunningProgram.SUCCESS;
+            default :
+                addLog(new Log("Неизвестная ошибка", getCurrentTime()));
+                return ResultRunningProgram.UNKNOWN_ERROR;
         }
     }
 

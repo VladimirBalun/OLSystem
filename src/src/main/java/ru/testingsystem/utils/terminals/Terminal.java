@@ -13,7 +13,8 @@ public abstract class Terminal {
     String commandForwardToCatalog = "cd " + pathSourceAndExePrograms;
 
     abstract public boolean compile(String commandCompilation, String nameFile, String fileExtension, String textProgram);
-    abstract public boolean runProgram(String nameFile, String fileExtension, List<TestData> testData);
+    abstract public boolean runExeProgram(String nameFile, String fileExtension, List<TestData> testData);
+    abstract public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestData> testData);
 
     public Terminal(){
         final File catalogSources = new File(pathSourceAndExePrograms);
@@ -37,11 +38,11 @@ public abstract class Terminal {
     void removeSourceAndExeFile(String nameSourceFile, String nameExeFile){
         File source = new File(pathSourceAndExePrograms + nameSourceFile);
         if(!source.delete()) {
-            log.warn("File test.cpp wasn't deleted");
+            log.warn("Source file wasn't deleted");
         }
         File exe = new File(pathSourceAndExePrograms + nameExeFile);
         if(!exe.delete()) {
-            log.warn("File test.exe wasn't deleted");
+            log.warn("Exe file wasn't deleted");
         }
     }
 

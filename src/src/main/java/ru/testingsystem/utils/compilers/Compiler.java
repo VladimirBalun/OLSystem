@@ -8,6 +8,6 @@ public interface Compiler {
 
     boolean compileProgram(String textProgram);
 
-    boolean runProgram(List<TestData> testData);
+    boolean runProgram(List<TestData> testDataForProgram);
 
 }
