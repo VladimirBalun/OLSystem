@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.testingsystem.data.entity.TestData;
+import ru.testingsystem.data.domain.TestDataQuestion;
 import ru.testingsystem.utils.terminals.Terminal;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class CompilerCpp implements Compiler {
     }
 
     @Override
-    public boolean runProgram(List<TestData> testDataForProgram) {
+    public boolean runProgram(List<TestDataQuestion> testDataForProgram) {
         return  terminal.runExeProgram(nameFile, FILE_EXTENSION, testDataForProgram);
     }
 

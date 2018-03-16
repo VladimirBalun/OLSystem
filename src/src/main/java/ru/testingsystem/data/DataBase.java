@@ -23,7 +23,7 @@ public class DataBase {
 
     private DataBase(){
         try {
-            Resource resource = new ClassPathResource("/jdbc.properties");
+            Resource resource = new ClassPathResource("/data.properties");
             properties = PropertiesLoaderUtils.loadProperties(resource);
         } catch (IOException e) {
             log.error("File with data for connection wasn't read");
@@ -32,11 +32,11 @@ public class DataBase {
     }
 
     private void connect(){
-        String urlDB = properties.getProperty("url");
-        connectionInfo.put("user", properties.getProperty("user"));
-        connectionInfo.put("password", properties.getProperty("password"));
+        String urlDB = properties.getProperty("db.url");
+        connectionInfo.put("user", properties.getProperty("db.username"));
+        connectionInfo.put("password", properties.getProperty("db.password"));
         try {
-            Class.forName(properties.getProperty("driver"));
+            Class.forName(properties.getProperty("db.driver"));
         } catch (ClassNotFoundException e) {
             log.error("Not found driver for data base");
         }

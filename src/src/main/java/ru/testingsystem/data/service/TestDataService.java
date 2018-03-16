@@ -1,6 +1,6 @@
 package ru.testingsystem.data.service;
 
-import ru.testingsystem.data.entity.TestData;
+import ru.testingsystem.data.domain.TestDataQuestion;
 
 import java.util.List;
 
@@ -8,6 +8,6 @@ public interface TestDataService {
 
     void addTestDataForQuestion(String nameQuestion, String inputData, String outputData);
 
-    List<TestData> getTestDataForQuestion(String nameQuestion);
+    List<TestDataQuestion> getTestDataForQuestion(String nameQuestion);
 
 }

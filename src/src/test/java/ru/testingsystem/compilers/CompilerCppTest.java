@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import ru.testingsystem.data.entity.TestData;
+import ru.testingsystem.data.domain.TestDataQuestion;
 import ru.testingsystem.utils.compilers.Compiler;
 
 import java.util.ArrayList;
@@ -51,10 +51,10 @@ public class CompilerCppTest {
     @Test
     public void runProgramAndCheckResult(){
         // Fill test data for check compiler
-        List<TestData> testDataForProgram = new ArrayList<>();
+        List<TestDataQuestion> testDataForProgram = new ArrayList<>();
         for (int i = 0; i < 5; i++){
             String randomData = String.valueOf((int) (Math.random() * 1000000));
-            TestData testData = new TestData(randomData, String.valueOf(randomData.length()));
+            TestDataQuestion testData = new TestDataQuestion(randomData, String.valueOf(randomData.length()), null);
             testDataForProgram.add(testData);
         }
         Assert.assertTrue(compilerCppLanguage.runProgram(testDataForProgram));

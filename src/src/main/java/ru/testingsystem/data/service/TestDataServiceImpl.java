@@ -4,8 +4,10 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.dao.TestDataDAO;
-import ru.testingsystem.data.entity.TestData;
+import ru.testingsystem.data.domain.Question;
+import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.repository.QuestionRepository;
+import ru.testingsystem.data.repository.TestDataQuestionRepository;
 
 import java.util.List;
 
@@ -14,16 +16,19 @@ import java.util.List;
 public class TestDataServiceImpl implements TestDataService {
 
     @Autowired
-    private TestDataDAO testDataDAO;
+    private TestDataQuestionRepository testDataQuestionRepository;
+    @Autowired
+    private QuestionRepository questionRepository;
 
     @Transactional
     public void addTestDataForQuestion(String nameQuestion, String inputData, String outputData) {
-        testDataDAO.addTestDataForQuestion(nameQuestion, inputData, outputData);
-        log.debug("TestDataDAO data [" + inputData + "][" + outputData + "] was added for question " + nameQuestion);
+        Question question = questionRepository.findByTitle(nameQuestion);
+        TestDataQuestion testDataQuestion = new TestDataQuestion(inputData, outputData, question);
+        testDataQuestionRepository.saveAndFlush(testDataQuestion);
     }
 
-    public List<TestData> getTestDataForQuestion(String nameQuestion){
-        return testDataDAO.getTestDataForQuestion(nameQuestion);
+    public List<TestDataQuestion> getTestDataForQuestion(String nameQuestion){
+        return testDataQuestionRepository.findAll();
     }
 
 }

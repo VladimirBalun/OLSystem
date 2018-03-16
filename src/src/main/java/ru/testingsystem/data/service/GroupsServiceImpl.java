@@ -1,42 +1,52 @@
 package ru.testingsystem.data.service;
 
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.entity.Group;
-import ru.testingsystem.data.dao.GroupsDAO;
+import ru.testingsystem.data.domain.Group;
+import ru.testingsystem.data.repository.GroupRepository;
 
 import java.util.List;
 
-@Log4j
 @Service
 public class GroupsServiceImpl implements GroupsService {
 
     @Autowired
-    private GroupsDAO groupsDAO;
+    private GroupRepository groupRepository;
 
-    @Transactional
     public List<Group> getGroups() {
-        return groupsDAO.getGroups();
+        return groupRepository.findAll();
     }
 
-    @Transactional
-    public void addGroup(String nameGroup) {
-        groupsDAO.addGroup(nameGroup);
-        log.debug("Group " + nameGroup + " was added");
+    public boolean addGroup(String nameGroup) {
+        Group group = groupRepository.findByName(nameGroup);
+        if(group == null) {
+            groupRepository.saveAndFlush(new Group(nameGroup));
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Transactional
-    public void changeGroup(String oldName, String newName) {
-        groupsDAO.changeGroup(oldName, newName);
-        log.debug("Name of group " + oldName + " was changed on " + oldName);
+    public boolean changeNameGroup(String oldName, String newName) {
+        Group oldGroup = groupRepository.findByName(oldName);
+        Group newGroup = groupRepository.findByName(newName);
+        if(oldGroup != null && newGroup == null){
+            oldGroup.setName(newName);
+            groupRepository.save(oldGroup);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Transactional
-    public void deleteGroup(String nameGroup) {
-        groupsDAO.deleteGroup(nameGroup);
-        log.debug("Group " + nameGroup + " was deleted");
+    public boolean removeGroup(String nameGroup) {
+        Group group = groupRepository.findByName(nameGroup);
+        if(group != null) {
+            groupRepository.deleteByName(nameGroup);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

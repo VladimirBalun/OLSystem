@@ -1,5 +1,4 @@
-ru/testingsystem/terminals/TerminalTest.class
 ru/testingsystem/compilers/CompilerCTest.class
-ru/testingsystem/compilers/CompilerJavaTest.class
+ru/testingsystem/compilers/ByteCodeInterpreterJavaTest.class
 ru/testingsystem/auethentification/AuethentificationTest.class
 ru/testingsystem/compilers/CompilerCppTest.class
