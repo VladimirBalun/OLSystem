@@ -4,8 +4,8 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.domain.Question;
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.Question;
+import ru.testingsystem.data.entity.TestDataQuestion;
 import ru.testingsystem.data.repository.QuestionRepository;
 import ru.testingsystem.data.repository.TestDataQuestionRepository;
 

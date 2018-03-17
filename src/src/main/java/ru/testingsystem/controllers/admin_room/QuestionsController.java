@@ -11,7 +11,7 @@ public class QuestionsController extends AdminRoomController{
 
     @RequestMapping(value = "/showQuestion", method = RequestMethod.GET)
     public Question showQuestion(@RequestParam(value = "name_question") String nameQuestion){
-        return questionsService.getQuestion(nameQuestion);
+        return questionsService.getQuestionByTitle(nameQuestion);
     }
 
     @RequestMapping(value = "/addQuestion", method = RequestMethod.POST)

@@ -4,7 +4,6 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.testingsystem.data.entity.Log;
-import ru.testingsystem.data.entity.User;
 import ru.testingsystem.data.entity.Question;
 import ru.testingsystem.data.service.QuestionsService;
 
@@ -19,7 +18,7 @@ public class OlympiadImpl implements Olympiad {
     private final QuestionsService questionsService;
     private final CheckingProgram checkingProgram;
 
-    private User currentUser;
+    //private User currentUser;
     private List<Question> questions;
     private Queue<Log> logsOfRunningOlympiad;
 
@@ -32,16 +31,17 @@ public class OlympiadImpl implements Olympiad {
     }
 
     public void startOlympiad(String login, String password){
-        currentUser = User.builder()
-                .login(login)
-                .password(password)
-                .countTrueAnswers(0)
-                .countQuestions(questionsService.getCountQuestions())
-                .build();
+//        currentUser = User.builder()
+//                .login(login)
+//                .password(password)
+//                .countTrueAnswers(0)
+//                .countQuestions(questionsService.getCountQuestions())
+//                .build();
     }
 
     public String getStatisticUser() {
-        return String.valueOf(currentUser.getCountTrueAnswers() + " / " + currentUser.getCountQuestions());
+//        return String.valueOf(currentUser.getCountTrueAnswers() + " / " + currentUser.getCountQuestions());
+        return "0/0";
     }
 
     public List<Question> getQuestions() {
@@ -72,7 +72,6 @@ public class OlympiadImpl implements Olympiad {
             case SUCCESS:
                 addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
                 delQuestion(nameQuestion);
-                currentUser.addTrueAnswer();
                 return ResultRunningProgram.SUCCESS;
             default :
                 addLog(new Log("Неизвестная ошибка", getCurrentTime()));

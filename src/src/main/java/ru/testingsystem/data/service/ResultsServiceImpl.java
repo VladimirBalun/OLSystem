@@ -3,10 +3,8 @@ package ru.testingsystem.data.service;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.dao.SortingResults;
-import ru.testingsystem.data.entity.Result;
-import ru.testingsystem.data.dao.ResultsDAO;
+import ru.testingsystem.data.entity.ResultOlympiad;
+import ru.testingsystem.data.repository.ResultOlympiadRepository;
 
 import java.util.List;
 
@@ -15,11 +13,10 @@ import java.util.List;
 public class ResultsServiceImpl implements ResultsService {
 
     @Autowired
-    private ResultsDAO resultsDAO;
+    private ResultOlympiadRepository resultOlympiadRepository;
 
-    @Transactional
-    public List<Result> getResultsOfUsers(SortingResults method){
-        return resultsDAO.getResultsOfUsers(method);
+    public List<ResultOlympiad> getResultsUsers(){
+        return resultOlympiadRepository.findAll();
     }
 
 }

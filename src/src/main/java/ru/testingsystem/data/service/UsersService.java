@@ -6,13 +6,11 @@ import java.util.List;
 
 public interface UsersService {
 
-    boolean isValidLoginAndPassword(String login, String password);
+    boolean isValidDataUser(String login, String password);
 
-    boolean isEmptyLoginForSignUp(String login);
+    boolean removeUser(String nameUser);
 
-    void delUser(String nameUser);
-
-    void addUser(String login, String password, String name, String group);
+    boolean addUser(String login, String password, String name, String group);
 
     List<User> getUsers();
 

@@ -3,103 +3,112 @@ package ru.testingsystem.data.service;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.dao.BasicDataDAO;
+import ru.testingsystem.data.entity.BasicData;
+import ru.testingsystem.data.repository.BasicDataRepository;
 
 @Log4j
 @Service
 public class BasicDataServiceImpl implements BasicDataService {
 
     @Autowired
-    private BasicDataDAO basicDataDAO;
+    private BasicDataRepository basicDataRepository;
 
     public String getTitleTestingSystem() {
-        return basicDataDAO.getTitleTestingSystem();
+        return basicDataRepository.findByName("titleTestingSystem").getData();
     }
 
-    @Transactional
-    public void setTitleTestingSystem(String titleOfTest) {
-        basicDataDAO.setTitleTestingSystem(titleOfTest);
-        log.debug("Title of Testing System was changed on " + titleOfTest);
+    public void setTitleTestingSystem(String title) {
+        BasicData basicData = basicDataRepository.findByName("titleTestingSystem");
+        basicData.setData(title);
+        basicDataRepository.save(basicData);
+        log.debug("Title of Testing System was changed on [" + title + "].");
     }
 
     public String getDescriptionTestingSystem() {
-        return basicDataDAO.getDescriptionTestingSystem();
+        return basicDataRepository.findByName("descriptionTestingSystem").getData();
     }
 
-    @Transactional
-    public void setDescriptionTestingSystem(String descriptionOfTest) {
-        basicDataDAO.setDescriptionTestingSystem(descriptionOfTest);
-        log.debug("Description of Testing System was changed on " + descriptionOfTest);
+    public void setDescriptionTestingSystem(String description) {
+        BasicData basicData = basicDataRepository.findByName("descriptionTestingSystem");
+        basicData.setData(description);
+        basicDataRepository.save(basicData);
+        log.debug("Description of Testing System was changed on " + description + "].");
     }
 
     public String getTitleResultOlympiad() {
-        return basicDataDAO.getTitleResultOlympiad();
+        return basicDataRepository.findByName("titleResultOlympiad").getData();
     }
 
-    @Transactional
-    public void setTitleResultOlympiad(String titleOfResult) {
-        basicDataDAO.setTitleResultOlympiad(titleOfResult);
-        log.debug("Title of result Olympiad was changed on " + titleOfResult);
+    public void setTitleResultOlympiad(String titleResult) {
+        BasicData basicData = basicDataRepository.findByName("titleResultOlympiad");
+        basicData.setData(titleResult);
+        basicDataRepository.save(basicData);
+        log.debug("Title of result Olympiad was changed on " + titleResult);
     }
 
     public String getDescriptionResultOlympiad() {
-        return basicDataDAO.getDescriptionResultOlympiad();
+        return basicDataRepository.findByName("descriptionResultOlympiad").getData();
     }
 
-    @Transactional
-    public void setDescriptionResultOlympiad(String descriptionOfResult) {
-        basicDataDAO.setDescriptionResultOlympiad(descriptionOfResult);
-        log.debug("Description of result Olympiad was changed on " + descriptionOfResult);
+    public void setDescriptionResultOlympiad(String descriptionResult) {
+        BasicData basicData = basicDataRepository.findByName("descriptionResultOlympiad");
+        basicData.setData(descriptionResult);
+        basicDataRepository.save(basicData);
+        log.debug("Description of result Olympiad was changed on " + descriptionResult);
     }
 
     public String getAddressCollege() {
-        return basicDataDAO.getAddressCollege();
+        return basicDataRepository.findByName("addressCollege").getData();
     }
 
-    @Transactional
     public void setAddressCollege(String address) {
-        basicDataDAO.setAddressCollege(address);
+        BasicData basicData = basicDataRepository.findByName("addressCollege");
+        basicData.setData(address);
+        basicDataRepository.save(basicData);
         log.debug("Address of Testing System was changed on " + address);
     }
 
     public String getPhoneNumberCollege() {
-        return basicDataDAO.getPhoneNumberCollege();
+        return basicDataRepository.findByName("phoneNumberCollege").getData();
     }
 
-    @Transactional
     public void setPhoneNumberCollege(String phoneNumber) {
-        basicDataDAO.setPhoneNumberCollege(phoneNumber);
+        BasicData basicData = basicDataRepository.findByName("phoneNumberCollege");
+        basicData.setData(phoneNumber);
+        basicDataRepository.save(basicData);
         log.debug("Phone number of Testing System was changed on " + phoneNumber);
     }
 
     public String getNameCollege() {
-        return basicDataDAO.getNameCollege();
+        return basicDataRepository.findByName("nameCollege").getData();
     }
 
-    @Transactional
-    public void setNameCollege(String nameOfCollege) {
-        basicDataDAO.setNameCollege(nameOfCollege);
-        log.debug("Name of college for Testing System was changed on " + nameOfCollege);
+    public void setNameCollege(String nameCollege) {
+        BasicData basicData = basicDataRepository.findByName("nameCollege");
+        basicData.setData(nameCollege);
+        basicDataRepository.save(basicData);
+        log.debug("Name of college for Testing System was changed on " + nameCollege);
     }
 
     public String getProgrammingLanguageOlympiad(){
-        return basicDataDAO.getProgrammingLanguageOlympiad();
+        return basicDataRepository.findByName("languageOlympiad").getData();
     }
 
-    @Transactional
     public void setProgrammingLanguageOlympiad(String nameLanguage){
-        basicDataDAO.setProgrammingLanguageOlympiad(nameLanguage);
+        BasicData basicData = basicDataRepository.findByName("languageOlympiad");
+        basicData.setData(nameLanguage);
+        basicDataRepository.save(basicData);
         log.debug("Programming language for passing Olympiad was changed on  " + nameLanguage);
     }
 
     public String getTimePassingOlympiad() {
-        return basicDataDAO.getTimePassingOlympiad();
+        return basicDataRepository.findByName("timeOlympiad").getData();
     }
 
-    @Transactional
     public void setTimePassingOlympiad(String time) {
-        basicDataDAO.setTimePassingOlympiad(time);
+        BasicData basicData = basicDataRepository.findByName("timeOlympiad");
+        basicData.setData(time);
+        basicDataRepository.save(basicData);
         log.debug("Time for passing Olympiad was changed on  " + time);
     }
 

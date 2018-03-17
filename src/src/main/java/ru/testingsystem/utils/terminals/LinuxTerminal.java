@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 
 import java.io.*;
 import java.util.List;

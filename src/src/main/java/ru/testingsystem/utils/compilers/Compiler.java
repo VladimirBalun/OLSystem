@@ -1,6 +1,6 @@
 package ru.testingsystem.utils.compilers;
 
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 
 import java.util.List;
 

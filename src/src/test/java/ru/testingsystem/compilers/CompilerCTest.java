@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 import ru.testingsystem.utils.compilers.Compiler;
 
 import java.util.ArrayList;

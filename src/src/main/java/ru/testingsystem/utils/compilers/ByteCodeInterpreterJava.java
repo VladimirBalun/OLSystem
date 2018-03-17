@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 import ru.testingsystem.utils.terminals.Terminal;
 
 import java.util.List;

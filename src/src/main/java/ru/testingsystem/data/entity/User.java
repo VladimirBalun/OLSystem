@@ -1,34 +1,105 @@
 package ru.testingsystem.data.entity;
 
-import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
 
-    private String login;
-    private String name;
-    private String password;
-    private String group;
-    private String bestResult;
-    private int countTrueAnswers;
-    private int countQuestions;
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
+    @Column(name = "id", unique = true, nullable = false)
+    private long id;
 
-    @Builder
-    private User(String login, String name, String password, String group, String bestResult, int countTrueAnswers, int countQuestions){
+    @Column(name = "login", length = 30, nullable = false)
+    private String login;
+
+    @Column(name = "password", length = 30, nullable = false)
+    private String password;
+
+    @Column(name = "name", length = 150, nullable = false)
+    private String name;
+
+    @Column(name = "count_true_answers", nullable = false)
+    private long countTrueAnswers;
+
+    @Column(name = "count_questions", nullable = false)
+    private long countQuestions;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id_group", nullable = false)
+    private Group group;
+
+    public User(){
+
+    }
+
+    public User(String login, String password, String name, long countTrueAnswers, long countQuestions, Group group) {
         this.login = login;
-        this.name = name;
         this.password = password;
-        this.group = group;
-        this.bestResult = bestResult;
+        this.name = name;
         this.countTrueAnswers = countTrueAnswers;
+        this.countQuestions = countQuestions;
+        this.group = group;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getCountTrueAnswers() {
+        return countTrueAnswers;
+    }
+
+    public void setCountTrueAnswers(long countTrueAnswers) {
+        this.countTrueAnswers = countTrueAnswers;
+    }
+
+    public long getCountQuestions() {
+        return countQuestions;
+    }
+
+    public void setCountQuestions(long countQuestions) {
         this.countQuestions = countQuestions;
     }
 
-    public void addTrueAnswer(){
-        countTrueAnswers++;
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
 }

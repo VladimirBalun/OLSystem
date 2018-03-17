@@ -25,12 +25,11 @@ public class AuethentificationImpl implements Auethentification {
     }
 
     private boolean isUser(String login, String password){
-        return usersService.isValidLoginAndPassword(login, password);
+        return usersService.isValidDataUser(login, password);
     }
 
     public boolean register(String login, String password, String name, String group){
-        if(usersService.isEmptyLoginForSignUp(login)){
-            usersService.addUser(login, password, name, group);
+        if(usersService.addUser(login, password, name, group)){
             return true;
         } else {
             return false;

@@ -11,7 +11,7 @@ public class UsersController extends AdminRoomController {
 
     @RequestMapping(value = "/delUser", method = RequestMethod.POST)
     public List<User> removerUser(@RequestParam(value = "name_user_for_del") String nameUser){
-        usersService.delUser(nameUser);
+        usersService.removeUser(nameUser);
         return usersService.getUsers();
     }
 

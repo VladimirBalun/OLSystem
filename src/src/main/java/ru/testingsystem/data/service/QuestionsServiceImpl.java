@@ -1,49 +1,55 @@
 package ru.testingsystem.data.service;
 
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.dao.QuestionsDAO;
 import ru.testingsystem.data.entity.Question;
+import ru.testingsystem.data.repository.QuestionRepository;
 
 import java.util.List;
 
-@Log4j
 @Service
 public class QuestionsServiceImpl implements QuestionsService {
 
     @Autowired
-    private QuestionsDAO questionsDAO;
+    private QuestionRepository questionRepository;
 
-    @Transactional
-    public void addQuestion(String titleQuestion, String textQuestion) {
-        questionsDAO.addQuestion(new Question(titleQuestion, textQuestion));
-        log.debug("Question " + titleQuestion + " was added");
+    public boolean addQuestion(String title, String text) {
+        questionRepository.saveAndFlush(new Question(title, text));
+        return true;
     }
 
-    @Transactional
-    public void removeQuestion(String titleQuestion) {
-        questionsDAO.removeQuestion(titleQuestion);
-        log.debug("Question " + titleQuestion + " was added");
+    public boolean removeQuestion(String title) {
+        Question question = questionRepository.findByTitle(title);
+        if(question != null){
+            questionRepository.deleteByTitle(title);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Transactional
-    public void changeQuestion(String nameQuestion, String newTitle, String newText) {
-        questionsDAO.changeQuestion(nameQuestion, newTitle, newText);
-        log.debug("Question " + nameQuestion + " was changed on " + newTitle + " : " + newText);
+    public boolean changeQuestion(String oldTitle, String newTitle, String newText) {
+        Question question = questionRepository.findByTitle(oldTitle);
+        if(question != null){
+            question.setTitle(newTitle);
+            question.setText(newText);
+            questionRepository.save(question);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public Question getQuestion(String titleQuestion) {
-        return questionsDAO.getQuestion(titleQuestion);
+    public Question getQuestionByTitle(String title) {
+        return questionRepository.findByTitle(title);
     }
 
-    public int getCountQuestions(){
-        return questionsDAO.getCountQuestions();
+    public long getCountQuestions(){
+        return questionRepository.count();
     }
 
     public List<Question> getQuestions() {
-        return questionsDAO.getQuestions();
+        return questionRepository.findAll();
     }
 
 }

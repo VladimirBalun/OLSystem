@@ -1,6 +1,6 @@
 package ru.testingsystem.data.service;
 
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 
 import java.util.List;
 

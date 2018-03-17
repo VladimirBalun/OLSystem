@@ -1,7 +1,7 @@
 package ru.testingsystem.utils.terminals;
 
 import lombok.extern.log4j.Log4j;
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 
 import java.io.*;
 import java.util.List;

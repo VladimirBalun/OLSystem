@@ -1,30 +1,59 @@
 package ru.testingsystem.data.entity;
 
-import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+import javax.persistence.*;
+
+@Entity
+@Table(name = "questions")
 public class Question {
 
-    private int number;
-    private String title;
-    private String text;
-    private String inputData;
-    private String outputData;
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
+    @Column(name = "id", unique = true, nullable = false)
+    private long id;
 
-    @Builder
-    private Question(int number, String title, String text, String inputData, String outputData) {
-        this.title = title;
-        this.text = text;
-        this.number = number;
-        this.inputData = inputData;
-        this.outputData = outputData;
+    @Column(name = "title", length = 300, nullable = false)
+    private String title;
+
+    @Column(name = "text", length = 5000, nullable = false)
+    private String text;
+
+    public Question(){
+
     }
 
-    public Question(String title, String text){
+    public Question(String title){
         this.title = title;
+    }
+
+    public Question(String title, String text) {
+        this.title = title;
+        this.text = text;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
         this.text = text;
     }
 

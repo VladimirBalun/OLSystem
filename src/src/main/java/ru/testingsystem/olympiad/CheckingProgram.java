@@ -3,7 +3,7 @@ package ru.testingsystem.olympiad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import ru.testingsystem.data.domain.TestDataQuestion;
+import ru.testingsystem.data.entity.TestDataQuestion;
 import ru.testingsystem.data.service.TestDataService;
 import ru.testingsystem.utils.compilers.Compiler;
 

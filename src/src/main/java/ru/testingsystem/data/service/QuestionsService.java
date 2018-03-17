@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface QuestionsService {
 
-    void addQuestion(String titleQuestion, String txtQuestion);
+    boolean addQuestion(String title, String text);
 
-    void removeQuestion(String titleQuestion);
+    boolean removeQuestion(String titleQuestion);
 
-    void changeQuestion(String nameQuestion, String newTitle, String newText);
+    boolean changeQuestion(String oldTitle, String newTitle, String newText);
 
-    Question getQuestion(String titleQuestion);
+    Question getQuestionByTitle(String title);
 
-    int getCountQuestions();
+    long getCountQuestions();
 
     List<Question> getQuestions();
 

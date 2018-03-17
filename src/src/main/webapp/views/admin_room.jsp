@@ -184,8 +184,8 @@
                                     <tr class="del_row_users">
                                         <td>${user.name}</td>
                                         <td>${user.login}</td>
-                                        <td>${user.group}</td>
-                                        <td>${user.bestResult}</td>
+                                        <td>0</td>
+                                        <td>0</td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
@@ -303,20 +303,6 @@
                         </table>
                     </div>
                 </div><!-- end wrapper_admin -->
-                <form action="<c:url value="/results/sort"/>" name="sort_results" method="GET" class="wrapper_admin row">
-                    <div class="col-lg-10 col-md-10">
-                        <label class="label_admin">Выберите способ сортировки:</label>
-                        <select name="name_sort" class="select_admin">
-                            <option>Не выбрано</option>
-                            <option>По ФИО</option>
-                            <option>По дате проведения</option>
-                            <option>По результатам теста</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-2 col-md-2">
-                        <button name="btn_sort_results" class="button_admin">Сортировать</button>
-                    </div>
-                </form>
             </section><!-- end result_of_test -->
 
 

@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingGroupsService {
 
-    @AfterReturning(pointcut = "execution(* ru.testingsystem.data.service.GroupsService.addGroup(nameGroup))",
-                    returning= "resultAdding", argNames = "resultAdding, nameGroup")
-    public void logAddingGroup(boolean resultAdding, String nameGroup){
+    @AfterReturning(pointcut = "execution(* ru.testingsystem.data.service.GroupsService.addGroup(name))",
+                    returning= "resultAdding", argNames = "resultAdding, name")
+    public void logAddingGroup(boolean resultAdding, String name){
         if (resultAdding){
-            log.debug("Group [" + nameGroup + "] was added.");
+            log.debug("Group [" + name + "] was added.");
         } else {
-            log.debug("Group [" + nameGroup + "] wasn't added. This group is exist.");
+            log.debug("Group [" + name + "] wasn't added. This group is exist.");
         }
     }
 
@@ -27,17 +27,17 @@ public class LoggingGroupsService {
             log.debug("Name of group [" + oldName + "] was changed on " + newName + "].");
         } else {
             log.debug("Name of group [" + oldName + "] wasn't changed. Group [" + oldName + "] " +
-                      "not found or new name of group [" + newName + "] already exist");
+                      "not found or new name of group [" + newName + "] already exist.");
         }
     }
 
-    @AfterReturning(pointcut = "execution(* ru.testingsystem.data.service.GroupsService.removeGroup(nameGroup))",
-            returning= "resultRemoving", argNames = "resultRemoving, nameGroup")
-    public void logRemovingGroup(boolean resultRemoving, String nameGroup){
+    @AfterReturning(pointcut = "execution(* ru.testingsystem.data.service.GroupsService.removeGroup(name))",
+            returning= "resultRemoving", argNames = "resultRemoving, name")
+    public void logRemovingGroup(boolean resultRemoving, String name){
         if (resultRemoving){
-            log.debug("Group " + nameGroup + " was deleted.");
+            log.debug("Group " + name + " was deleted.");
         } else {
-            log.debug("Group " + nameGroup + " wasn't deleted. This group not found.");
+            log.debug("Group " + name + " wasn't deleted. This group not found.");
         }
     }
 

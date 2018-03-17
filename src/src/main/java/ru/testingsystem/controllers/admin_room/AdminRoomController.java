@@ -4,13 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ru.testingsystem.data.dao.SortingResults;
 import ru.testingsystem.data.service.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.*;
 
 @Controller
@@ -31,10 +26,10 @@ public class AdminRoomController {
     protected TestDataService testDataService;
 
     @Autowired
-    private Map<String, String> programminLanguages;
+    private Map<String, String> programmingLanguages;
 
     @RequestMapping("/showPage")
-    public ModelAndView showPage() throws IOException {
+    public ModelAndView showPage() {
         ModelAndView modelAndView = new ModelAndView();
 
         modelAndView.addObject("title", basicDataService.getTitleTestingSystem());
@@ -49,8 +44,8 @@ public class AdminRoomController {
         modelAndView.addObject("questions", questionsService.getQuestions());
         modelAndView.addObject("users", usersService.getUsers());
         modelAndView.addObject("groups",groupsService.getGroups());
-        modelAndView.addObject("resultsTest", resultsService.getResultsOfUsers(SortingResults.DATE));
-        modelAndView.addObject("programmingLanguages", programminLanguages);
+        modelAndView.addObject("resultsTest", resultsService.getResultsUsers());
+        modelAndView.addObject("programmingLanguages", programmingLanguages);
 
 
         modelAndView.setViewName("admin_room");

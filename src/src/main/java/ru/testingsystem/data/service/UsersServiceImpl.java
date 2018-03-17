@@ -3,9 +3,9 @@ package ru.testingsystem.data.service;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.testingsystem.data.dao.UsersDAO;
+import ru.testingsystem.data.entity.Group;
 import ru.testingsystem.data.entity.User;
+import ru.testingsystem.data.repository.UserRepository;
 
 import java.util.List;
 
@@ -14,41 +14,47 @@ import java.util.List;
 public class UsersServiceImpl implements UsersService {
 
     @Autowired
-    private UsersDAO usersDAO;
+    private UserRepository userRepository;
 
-    public boolean isValidLoginAndPassword(String login, String password) {
-        return usersDAO.isValidLoginAndPassword(login, password);
+    public boolean isValidDataUser(String login, String password) {
+        User user = userRepository.findByLoginAndPassword(login, password);
+        if(user != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public boolean isEmptyLoginForSignUp(String login) {
-        return usersDAO.isEmptyLoginForSignUp(login);
+    public boolean removeUser(String name) {
+        User user = userRepository.findByName(name);
+        if(user != null){
+            log.debug("User [" + name + "] was deleted.");
+            userRepository.deleteByName(name);
+            return true;
+        } else {
+            log.debug("User [" + name + "] wasn't deleted. This is user not found.");
+            return false;
+        }
     }
 
-    @Transactional
-    public void delUser(String nameUser) {
-        usersDAO.delUser(nameUser);
-        log.debug("User " + nameUser + " was deleted");
+    public boolean addUser(String name, String login, String password, String nameGroup) {
+        User user = userRepository.findByLogin(login);
+        if(user == null){
+            User newUser = new User(login, password, name, 0,0, new Group(nameGroup));
+            userRepository.saveAndFlush(newUser);
+            log.debug("User login=[" + login + "] and name=[" + name + "] was added");
+            return true;
+        } else {
+            log.debug("User login=[" + login + "] wasn't added. This user is exist.");
+            return false;
+        }
     }
 
-    @Transactional
-    public void addUser(String login, String password, String name, String group) {
-        User user = User.builder()
-                .login(login)
-                .password(password)
-                .name(name)
-                .group(group)
-                .build();
-        usersDAO.addUser(user);
-        log.debug("User " + login + " : " + name + " was added");
-    }
-
-    @Transactional
     public List<User> getUsers() {
-        return usersDAO.getUsers();
+        return userRepository.findAll();
     }
 
-    @Transactional
     public List<User> getUsersFromGroup(String nameGroup) {
-        return usersDAO.getUsersFromGroup(nameGroup);
+        return userRepository.findByGroup(new Group(nameGroup));
     }
 }

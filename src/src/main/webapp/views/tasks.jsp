@@ -25,7 +25,7 @@
                 <form id="form_change" action="<c:url value="/tasks/selectedTask"/>" method="GET" class="wrapper_tasks">
                     <c:forEach var="question" items="${questions}">
                         <button value="${question.title}" name="name_selected_question" class="task">
-                            <p class="title_question">Задание ${question.number}</p>
+                            <p class="title_question">Задание</p>
                             <p class="comment_question">${question.title}</p>
                         </button>
                     </c:forEach>
@@ -35,9 +35,9 @@
                 <p class="untitle">${questions.get(0).title}</p>
                 <p class="txt_question">${questions.get(0).text}</p>
                 <b>Пример входных данных:</b>
-                <p class="input_data">${questions.get(0).inputData}</p>
+                <p class="input_data"></p>
                 <b >Пример выходных данных:</b>
-                <p class="output_data">${questions.get(0).outputData}</p>
+                <p class="output_data"></p>
             </div><!-- end description -->
         </section>
 

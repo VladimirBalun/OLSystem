@@ -2,7 +2,7 @@ package ru.testingsystem.data.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.testingsystem.data.domain.Group;
+import ru.testingsystem.data.entity.Group;
 import ru.testingsystem.data.repository.GroupRepository;
 
 import java.util.List;
@@ -17,10 +17,10 @@ public class GroupsServiceImpl implements GroupsService {
         return groupRepository.findAll();
     }
 
-    public boolean addGroup(String nameGroup) {
-        Group group = groupRepository.findByName(nameGroup);
+    public boolean addGroup(String name) {
+        Group group = groupRepository.findByName(name);
         if(group == null) {
-            groupRepository.saveAndFlush(new Group(nameGroup));
+            groupRepository.saveAndFlush(new Group(name));
             return true;
         } else {
             return false;
@@ -39,10 +39,10 @@ public class GroupsServiceImpl implements GroupsService {
         }
     }
 
-    public boolean removeGroup(String nameGroup) {
-        Group group = groupRepository.findByName(nameGroup);
+    public boolean removeGroup(String name) {
+        Group group = groupRepository.findByName(name);
         if(group != null) {
-            groupRepository.deleteByName(nameGroup);
+            groupRepository.deleteByName(name);
             return true;
         } else {
             return false;
