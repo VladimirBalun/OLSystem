@@ -35,8 +35,8 @@ function sendDataAndUpdateUsers(form){
             $("<tr class='del_row_users'>").appendTo($("#body_table_users"))
                 .append($("<td>").text(user.name))
                 .append($("<td>").text(user.login))
-                .append($("<td>").text(user.group))
-                .append($("<td>").text(user.bestResult));
+                .append($("<td>").text(user.group.name))
+                .append($("<td>").text(user.countTrueAnswers + "/" + user.countQuestions));
             $("<option class='del_option_users'>").appendTo($(".select_users"))
                 .append(user.name);
         });

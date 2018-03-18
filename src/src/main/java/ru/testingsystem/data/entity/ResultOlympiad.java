@@ -1,11 +1,16 @@
 package ru.testingsystem.data.entity;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "results_test")
+@Getter
+@Setter
+@Table(name = "results_olympiad")
 public class ResultOlympiad {
 
     @Id
@@ -28,41 +33,10 @@ public class ResultOlympiad {
 
     }
 
+    @Builder
     public ResultOlympiad(int countTrueAnswers, int countQuestions, User user) {
         this.countTrueAnswers = countTrueAnswers;
         this.countQuestions = countQuestions;
-        this.user = user;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public int getCountTrueAnswers() {
-        return countTrueAnswers;
-    }
-
-    public void setCountTrueAnswers(int countTrueAnswers) {
-        this.countTrueAnswers = countTrueAnswers;
-    }
-
-    public int getCountQuestions() {
-        return countQuestions;
-    }
-
-    public void setCountQuestions(int countQuestions) {
-        this.countQuestions = countQuestions;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
         this.user = user;
     }
 

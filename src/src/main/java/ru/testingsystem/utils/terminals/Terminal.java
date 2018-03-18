@@ -1,7 +1,7 @@
 package ru.testingsystem.utils.terminals;
 
 import lombok.extern.log4j.Log4j;
-import ru.testingsystem.data.entity.TestDataQuestion;
+import ru.testingsystem.data.entity.TestData;
 
 import java.io.*;
 import java.util.List;
@@ -13,8 +13,8 @@ public abstract class Terminal {
     String commandForwardToCatalog = "cd " + pathSourceAndExePrograms;
 
     abstract public boolean compile(String commandCompilation, String nameFile, String fileExtension, String textProgram);
-    abstract public boolean runExeProgram(String nameFile, String fileExtension, List<TestDataQuestion> testData);
-    abstract public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestDataQuestion> testData);
+    abstract public boolean runExeProgram(String nameFile, String fileExtension, List<TestData> testData);
+    abstract public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestData> testData);
 
     public Terminal(){
         final File catalogSources = new File(pathSourceAndExePrograms);

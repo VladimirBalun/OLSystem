@@ -2,6 +2,7 @@ package ru.testingsystem.data.service;
 
 import ru.testingsystem.data.entity.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public interface UsersService {
@@ -11,6 +12,8 @@ public interface UsersService {
     boolean removeUser(String nameUser);
 
     boolean addUser(String login, String password, String name, String group);
+
+    User getUserByLoginAndPassword(String login, String password);
 
     List<User> getUsers();
 

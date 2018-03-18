@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.testingsystem.data.entity.BasicData;
 import ru.testingsystem.data.repository.BasicDataRepository;
 
-@Log4j
 @Service
 public class BasicDataServiceImpl implements BasicDataService {
 
@@ -21,7 +20,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("titleTestingSystem");
         basicData.setData(title);
         basicDataRepository.save(basicData);
-        log.debug("Title of Testing System was changed on [" + title + "].");
     }
 
     public String getDescriptionTestingSystem() {
@@ -32,7 +30,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("descriptionTestingSystem");
         basicData.setData(description);
         basicDataRepository.save(basicData);
-        log.debug("Description of Testing System was changed on " + description + "].");
     }
 
     public String getTitleResultOlympiad() {
@@ -43,7 +40,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("titleResultOlympiad");
         basicData.setData(titleResult);
         basicDataRepository.save(basicData);
-        log.debug("Title of result Olympiad was changed on " + titleResult);
     }
 
     public String getDescriptionResultOlympiad() {
@@ -54,7 +50,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("descriptionResultOlympiad");
         basicData.setData(descriptionResult);
         basicDataRepository.save(basicData);
-        log.debug("Description of result Olympiad was changed on " + descriptionResult);
     }
 
     public String getAddressCollege() {
@@ -65,7 +60,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("addressCollege");
         basicData.setData(address);
         basicDataRepository.save(basicData);
-        log.debug("Address of Testing System was changed on " + address);
     }
 
     public String getPhoneNumberCollege() {
@@ -76,7 +70,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("phoneNumberCollege");
         basicData.setData(phoneNumber);
         basicDataRepository.save(basicData);
-        log.debug("Phone number of Testing System was changed on " + phoneNumber);
     }
 
     public String getNameCollege() {
@@ -87,7 +80,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("nameCollege");
         basicData.setData(nameCollege);
         basicDataRepository.save(basicData);
-        log.debug("Name of college for Testing System was changed on " + nameCollege);
     }
 
     public String getProgrammingLanguageOlympiad(){
@@ -98,7 +90,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("languageOlympiad");
         basicData.setData(nameLanguage);
         basicDataRepository.save(basicData);
-        log.debug("Programming language for passing Olympiad was changed on  " + nameLanguage);
     }
 
     public String getTimePassingOlympiad() {
@@ -109,7 +100,6 @@ public class BasicDataServiceImpl implements BasicDataService {
         BasicData basicData = basicDataRepository.findByName("timeOlympiad");
         basicData.setData(time);
         basicDataRepository.save(basicData);
-        log.debug("Time for passing Olympiad was changed on  " + time);
     }
 
 }

@@ -35,9 +35,9 @@
                 <p class="untitle">${questions.get(0).title}</p>
                 <p class="txt_question">${questions.get(0).text}</p>
                 <b>Пример входных данных:</b>
-                <p class="input_data"></p>
+                <p class="input_data">${questions.get(0).inputData}</p>
                 <b >Пример выходных данных:</b>
-                <p class="output_data"></p>
+                <p class="output_data">${questions.get(0).outputData}</p>
             </div><!-- end description -->
         </section>
 

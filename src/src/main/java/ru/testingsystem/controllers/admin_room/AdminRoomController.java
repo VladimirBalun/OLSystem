@@ -47,7 +47,6 @@ public class AdminRoomController {
         modelAndView.addObject("resultsTest", resultsService.getResultsUsers());
         modelAndView.addObject("programmingLanguages", programmingLanguages);
 
-
         modelAndView.setViewName("admin_room");
         return modelAndView;
     }

@@ -1,8 +1,13 @@
 package ru.testingsystem.data.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "basic_data")
 public class BasicData {
 
@@ -19,22 +24,6 @@ public class BasicData {
 
     public BasicData(String name, String data) {
         this.name = name;
-        this.data = data;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
         this.data = data;
     }
 

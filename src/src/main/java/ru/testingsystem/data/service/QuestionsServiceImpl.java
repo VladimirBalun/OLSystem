@@ -3,7 +3,9 @@ package ru.testingsystem.data.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.testingsystem.data.entity.Question;
+import ru.testingsystem.data.entity.TestData;
 import ru.testingsystem.data.repository.QuestionRepository;
+import ru.testingsystem.data.repository.TestDataRepository;
 
 import java.util.List;
 
@@ -12,6 +14,8 @@ public class QuestionsServiceImpl implements QuestionsService {
 
     @Autowired
     private QuestionRepository questionRepository;
+    @Autowired
+    private TestDataRepository testDataRepository;
 
     public boolean addQuestion(String title, String text) {
         questionRepository.saveAndFlush(new Question(title, text));
@@ -49,7 +53,15 @@ public class QuestionsServiceImpl implements QuestionsService {
     }
 
     public List<Question> getQuestions() {
-        return questionRepository.findAll();
+        List<Question> questions = questionRepository.findAll();
+        for(Question question : questions){
+            TestData testData = testDataRepository.findByQuestion(question).get(0);
+            if(testData != null){
+                question.setInputData(testData.getInputData());
+                question.setOutputData(testData.getOutputData());
+            }
+        }
+        return questions;
     }
 
 }

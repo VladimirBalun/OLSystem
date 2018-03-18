@@ -1,89 +1,69 @@
 package ru.testingsystem.olympiad;
 
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.Question;
+import ru.testingsystem.data.entity.User;
 import ru.testingsystem.data.service.QuestionsService;
+import ru.testingsystem.data.service.UsersService;
 
 import java.util.*;
 
-@Log4j
 @Component
 public class OlympiadImpl implements Olympiad {
 
-    private final int MAX_COUNT_LOGS_IN_JOURNAL = 9;
-
-    private final QuestionsService questionsService;
-    private final CheckingProgram checkingProgram;
-
-    //private User currentUser;
-    private List<Question> questions;
-    private Queue<Log> logsOfRunningOlympiad;
-
     @Autowired
-    public OlympiadImpl(QuestionsService questionsService, CheckingProgram checkingProgram) {
-        this.questionsService = questionsService;
-        this.checkingProgram = checkingProgram;
-        questions = questionsService.getQuestions();
-        logsOfRunningOlympiad = new LinkedList<>();
-    }
+    private QuestionsService questionsService;
+    @Autowired
+    private UsersService usersService;
+    @Autowired
+    private CheckingProgram checkingProgram;
+
+    private User currentUser;
 
     public void startOlympiad(String login, String password){
-//        currentUser = User.builder()
-//                .login(login)
-//                .password(password)
-//                .countTrueAnswers(0)
-//                .countQuestions(questionsService.getCountQuestions())
-//                .build();
+        currentUser = usersService.getUserByLoginAndPassword(login, password);
+        currentUser.setQuestionsUser(questionsService.getQuestions());
     }
 
     public String getStatisticUser() {
-//        return String.valueOf(currentUser.getCountTrueAnswers() + " / " + currentUser.getCountQuestions());
-        return "0/0";
+       return String.valueOf(currentUser.getCountTrueAnswers() + "/" + currentUser.getCountQuestions());
     }
 
     public List<Question> getQuestions() {
-        return questions;
+        return currentUser.getQuestionsUser();
     }
 
     public Question getQuestion(String title){
-        for (Question question : questions) {
+        for (Question question : currentUser.getQuestionsUser()) {
             if(question.getTitle().equals(title)){
                 return question;
             }
         }
-        return questions.get(0);
+        return currentUser.getQuestionsUser().get(0);
     }
 
     public Queue<Log> getLogsOfRunningTest(){
-        return logsOfRunningOlympiad;
+        return currentUser.getLogsUser();
     }
 
     public ResultRunningProgram checkTask(String nameQuestion, String textProgram){
         switch (checkingProgram.checkTask(nameQuestion, textProgram)){
             case ERROR_COMPILATION:
-                addLog(new Log("Ошибка компиляции в задании " + nameQuestion, getCurrentTime()));
+                currentUser.addLog(new Log("Ошибка компиляции в задании " + nameQuestion, getCurrentTime()));
                 return ResultRunningProgram.ERROR_COMPILATION;
             case LOGIC_ERROR_IN_PROGRAM:
-                addLog(new Log("Ошибка в тестах для задания " + nameQuestion, getCurrentTime()));
+                currentUser.addLog(new Log("Ошибка в тестах для задания " + nameQuestion, getCurrentTime()));
                 return ResultRunningProgram.LOGIC_ERROR_IN_PROGRAM;
             case SUCCESS:
-                addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
+                currentUser.addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
                 delQuestion(nameQuestion);
                 return ResultRunningProgram.SUCCESS;
             default :
-                addLog(new Log("Неизвестная ошибка", getCurrentTime()));
+                currentUser.addLog(new Log("Неизвестная ошибка", getCurrentTime()));
                 return ResultRunningProgram.UNKNOWN_ERROR;
         }
-    }
-
-    private void addLog(Log log){
-        if(logsOfRunningOlympiad.size() > MAX_COUNT_LOGS_IN_JOURNAL){
-            logsOfRunningOlympiad.remove();
-        }
-        logsOfRunningOlympiad.add(log);
     }
 
     private String getCurrentTime() {
@@ -94,17 +74,12 @@ public class OlympiadImpl implements Olympiad {
     }
 
     private void delQuestion(String title){
-        for (Question question : questions) {
-            if(question.getTitle().equals(title)){
-                questions.remove(question);
-                return;
-            }
-        }
+        currentUser.removeQuestion(title);
     }
 
     public void finishOlympiad(){
-        questions.clear();
-        logsOfRunningOlympiad.clear();
+        currentUser.getQuestionsUser().clear();
+        currentUser.getLogsUser().clear();
     }
 
 }

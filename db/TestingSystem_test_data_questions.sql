@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: localhost    Database: TestingSystem
+-- Host: 127.0.0.1    Database: TestingSystem
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.17.10.1
 
@@ -30,7 +30,7 @@ CREATE TABLE `test_data_questions` (
   PRIMARY KEY (`id`),
   KEY `fk_test_data_with_question_idx` (`id_question`),
   CONSTRAINT `fk_test_data_with_question` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `test_data_questions` (
 
 LOCK TABLES `test_data_questions` WRITE;
 /*!40000 ALTER TABLE `test_data_questions` DISABLE KEYS */;
-INSERT INTO `test_data_questions` VALUES (1,'add','3',1),(2,'ad','2',1),(3,'ad4545','6',1),(4,'sdfsd','sdfsf',3);
+INSERT INTO `test_data_questions` VALUES (1,'add','3',1),(2,'ad','2',1),(3,'ad4545','6',1),(4,'sdfsd','sdfsf',3),(5,'sdf','sdf',2),(6,'тест','тест',3),(7,'testdata','testdata',3),(8,'inputData','outputData',1);
 /*!40000 ALTER TABLE `test_data_questions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-09 20:39:58
+-- Dump completed on 2018-03-18 11:11:52

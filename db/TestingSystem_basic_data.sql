@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: localhost    Database: TestingSystem
+-- Host: 127.0.0.1    Database: TestingSystem
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.17.10.1
 
@@ -35,7 +35,7 @@ CREATE TABLE `basic_data` (
 
 LOCK TABLES `basic_data` WRITE;
 /*!40000 ALTER TABLE `basic_data` DISABLE KEYS */;
-INSERT INTO `basic_data` VALUES ('addressCollege','Адрес учебного заведения'),('descriptionResultOlympiad','??????? ?? ???????, ???? ??? ?????'),('descriptionTestingSystem','????????'),('languageOlympiad','C'),('nameCollege','Название института</br>Название института</br>Название института</br>Название института</br>'),('phoneNumberCollege','+7(99999)-67-67-5'),('titleResultOlympiad','Олимпиада завершена'),('titleTestingSystem','Система тестирования');
+INSERT INTO `basic_data` VALUES ('addressCollege','Адрес учебного заведения1'),('descriptionResultOlympiad','Описание результата проведения олимпиады1'),('descriptionTestingSystem','Новое описание системы1'),('languageOlympiad','Cpp'),('nameCollege','1Название института</br>Название института</br>Название института</br>Название института</br>'),('phoneNumberCollege','+7(99999)-67-67-51'),('timeOlympiad','01:30:00'),('titleResultOlympiad','Олимпиада завершена1'),('titleTestingSystem','Система тестирования1');
 /*!40000 ALTER TABLE `basic_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-09 20:39:59
+-- Dump completed on 2018-03-18 11:11:53

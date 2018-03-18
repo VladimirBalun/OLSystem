@@ -53,10 +53,11 @@ public class AuethentificationController {
     public @ResponseBody String signUp(@RequestParam(value = "login_sign_up") String login,
                          @RequestParam(value = "pass_sign_up") String password,
                          @RequestParam(value = "name_sign_up") String name,
-                         @RequestParam(value = "group_sign_up") String group) {
+                         @RequestParam(value = "group_sign_up") String nameGroup) {
         // Redirect is processing with JS(auethentification.js)
-        if(auethentification.register(login, password, name, group)){
+        if(auethentification.register(login, password, name, nameGroup)){
             olympiad.startOlympiad(login, password);
+            System.out.println("controller");
             return "tasks";
         } else {
             return "Пользователь с таким логином уже зарегистрирован";

@@ -184,8 +184,8 @@
                                     <tr class="del_row_users">
                                         <td>${user.name}</td>
                                         <td>${user.login}</td>
-                                        <td>0</td>
-                                        <td>0</td>
+                                        <td>${user.group.name}</td>
+                                        <td>${user.countTrueAnswers}/${user.countQuestions}</td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

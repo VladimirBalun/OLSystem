@@ -1,10 +1,18 @@
 package ru.testingsystem.data.entity;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "users")
 public class User {
 
@@ -29,14 +37,21 @@ public class User {
     @Column(name = "count_questions", nullable = false)
     private long countQuestions;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_group", nullable = false)
     private Group group;
+
+    @Transient
+    private List<Question> questionsUser;
+
+    @Transient
+    private Queue<Log> logsUser = new LinkedList<>();
 
     public User(){
 
     }
 
+    @Builder
     public User(String login, String password, String name, long countTrueAnswers, long countQuestions, Group group) {
         this.login = login;
         this.password = password;
@@ -46,60 +61,20 @@ public class User {
         this.group = group;
     }
 
-    public long getId() {
-        return id;
+    public void addLog(Log log){
+        if(logsUser.size() > 14){
+            logsUser.remove();
+        }
+        logsUser.add(log);
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public long getCountTrueAnswers() {
-        return countTrueAnswers;
-    }
-
-    public void setCountTrueAnswers(long countTrueAnswers) {
-        this.countTrueAnswers = countTrueAnswers;
-    }
-
-    public long getCountQuestions() {
-        return countQuestions;
-    }
-
-    public void setCountQuestions(long countQuestions) {
-        this.countQuestions = countQuestions;
-    }
-
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
+    public void removeQuestion(String title){
+        for (Question question : questionsUser) {
+            if(question.getTitle().equals(title)){
+                questionsUser.remove(question);
+                return;
+            }
+        }
     }
 
 }

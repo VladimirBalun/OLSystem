@@ -1,13 +1,15 @@
 package ru.testingsystem.data.service;
 
-import ru.testingsystem.data.entity.TestDataQuestion;
+import ru.testingsystem.data.entity.TestData;
 
 import java.util.List;
 
 public interface TestDataService {
 
-    void addTestDataForQuestion(String nameQuestion, String inputData, String outputData);
+    boolean addTestDataForQuestion(String titleQuestion, String inputData, String outputData);
 
-    List<TestDataQuestion> getTestDataForQuestion(String nameQuestion);
+    boolean removeTestDataQuestion(String inputData, String outputData);
+
+    List<TestData> getTestDataForQuestion(String nameQuestion);
 
 }

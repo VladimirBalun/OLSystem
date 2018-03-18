@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: localhost    Database: TestingSystem
+-- Host: 127.0.0.1    Database: TestingSystem
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.17.10.1
 
@@ -28,7 +28,7 @@ CREATE TABLE `questions` (
   `text` varchar(5000) CHARACTER SET cp1251 NOT NULL,
   PRIMARY KEY (`id`),
   KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `questions` (
 
 LOCK TABLES `questions` WRITE;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
-INSERT INTO `questions` VALUES (1,'Число символов в строке','Посчитайте количество символов в троке'),(2,'Новый вопрос','Нужно что-то сделать '),(3,'Старый вопрос','Нужно что-то сделать');
+INSERT INTO `questions` VALUES (1,'Число символов в строке','Посчитайте количество символов в троке'),(2,'Новый вопрос','Нужно что-то сделать '),(3,'Старый вопрос','Нужно что-то сделать'),(5,'new','new');
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-09 20:39:59
+-- Dump completed on 2018-03-18 11:11:53

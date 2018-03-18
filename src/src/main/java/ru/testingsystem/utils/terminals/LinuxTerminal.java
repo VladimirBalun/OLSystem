@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.testingsystem.data.entity.TestDataQuestion;
+import ru.testingsystem.data.entity.TestData;
 
 import java.io.*;
 import java.util.List;
@@ -32,7 +32,7 @@ public class LinuxTerminal extends Terminal{
     }
 
     @Override
-    public boolean runExeProgram(String nameFile, String fileExtension, List<TestDataQuestion> testDataForProgram) {
+    public boolean runExeProgram(String nameFile, String fileExtension, List<TestData> testDataForProgram) {
         boolean resultRunningProgram = false;
         try {
             String commandForRunProgram = (commandForwardToCatalog + " && ./" + nameFile);
@@ -46,7 +46,7 @@ public class LinuxTerminal extends Terminal{
     }
 
     @Override
-    public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestDataQuestion> testData) {
+    public boolean runByteCodeProgram(String nameVM, String nameFile, String fileExtension, List<TestData> testData) {
         boolean resultRunningProgram = false;
         try {
             String commandForRunProgram = (commandForwardToCatalog + " && " + nameVM + " " + nameFile + " ");
@@ -59,8 +59,8 @@ public class LinuxTerminal extends Terminal{
         return resultRunningProgram;
     }
 
-    private boolean testProgramUsingTestData(String commandForRunProgram, List<TestDataQuestion> testDataForProgram) throws IOException{
-        for (TestDataQuestion testData : testDataForProgram){
+    private boolean testProgramUsingTestData(String commandForRunProgram, List<TestData> testDataForProgram) throws IOException{
+        for (TestData testData : testDataForProgram){
             BufferedReader bufferedReader = runCommand(commandForRunProgram + " " + testData.getInputData());
             String resultProgram = bufferedReader.readLine() == null ? "" : bufferedReader.readLine();
             log.debug(commandForRunProgram + testData.getInputData() + "[result = " + resultProgram +" : output = " + testData.getOutputData() +"]");

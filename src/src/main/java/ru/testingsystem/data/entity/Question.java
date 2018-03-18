@@ -1,10 +1,14 @@
 package ru.testingsystem.data.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "questions")
 public class Question {
 
@@ -20,6 +24,12 @@ public class Question {
     @Column(name = "text", length = 5000, nullable = false)
     private String text;
 
+    @Transient
+    private String inputData;
+
+    @Transient
+    private String outputData;
+
     public Question(){
 
     }
@@ -30,30 +40,6 @@ public class Question {
 
     public Question(String title, String text) {
         this.title = title;
-        this.text = text;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
         this.text = text;
     }
 

@@ -3,6 +3,7 @@ package ru.testingsystem.data.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.testingsystem.data.entity.Group;
+import ru.testingsystem.data.entity.User;
 import ru.testingsystem.data.repository.GroupRepository;
 
 import java.util.List;
