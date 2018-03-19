@@ -10,7 +10,7 @@ public interface Olympiad {
 
     void startOlympiad(String login, String password);
 
-    ResultRunningProgram checkTask(String nameQuestion, String textProgram);
+    String checkTask(String nameQuestion, String textProgram);
 
     String getStatisticUser();
 

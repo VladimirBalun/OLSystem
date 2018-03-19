@@ -35,15 +35,7 @@ public class TasksController {
 
     @RequestMapping(value = "/checkTask", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public @ResponseBody String checkTask(@RequestParam(value = "name_question") String nameQuestion, @RequestParam(value = "text_program") String txtProgram){
-        switch (olympiad.checkTask(nameQuestion, txtProgram)){
-            case ERROR_COMPILATION:
-                return "Ошибка компиляции";
-            case LOGIC_ERROR_IN_PROGRAM:
-                return "Ошибка в результате программы";
-            case SUCCESS:
-                return "Задание выполнено";
-        }
-        return "Неизвестная ошибка";
+        return olympiad.checkTask(nameQuestion, txtProgram);
     }
 
     @RequestMapping(value = "/reloadLogs", method = RequestMethod.GET)

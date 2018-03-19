@@ -5,9 +5,9 @@
 
 ATS(Automatic Testing System) - it's cross-platform system for conducting olympiads, tests, 
 control works and individual solutions of tasks on programming. Work with the system takes
-place in the web browser. At the moment system is supporting only C and C++ language, but another 
-languages will be added soon. Compiler installation directories are taken from the registry 
-(windows-version) or from the path variable (linux-version) Also *ATS* supports 
+place in the web browser. At the moment system is supporting only C, C++, Java and Python languages, 
+but another languages will be added soon. Compiler installation directories are taken from the registry 
+(windows-version) or from the path variable (linux-version). Also *ATS* supports 
 administrator room, in which administrator can:
 - change basic information about system(title, description and much more); 
 - add, remove and change tasks;
@@ -74,10 +74,14 @@ Enter the ATS directory and run the build script on Windows:
 Enter the ATS directory and run the build script on OS X or Linux/BSD:
 
     ./build
+    
+If you don't have installing programming languages(compilers) on your computer, you can 
+run script and choose the ones you need programming languages(C, C++, Python and Java 
+must be already installed after building ATS) for passing olympiad. On Linux/BSD:
 
-Everything will build in directory:
+    ./languages
 
-    ../src/target/
+Script for Windows will be added later...
 
 ## Version
 The system is in constant development(current beta-version 1.2). Watch out for changes!. 

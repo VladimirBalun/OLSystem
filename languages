@@ -1,0 +1,21 @@
+#!/bin/bash
+
+clear
+
+echo -n "Do you want to install Python language for passing olympiad?[y/n]"
+read item
+case "$item" in
+    y|Y|Yes|YES|yes) 
+	echo "Installing Python.."
+	sudo apt-get install python3.6
+    	;;
+esac
+
+echo -n "Do you want to install C/C++ languages for passing olympiad?[y/n]"
+read item
+case "$item" in
+    y|Y|Yes|YES|yes) 
+	echo "Installing C/C++.."
+	sudo apt-get install build-essential
+    	;;
+esac

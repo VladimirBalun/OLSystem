@@ -1,12 +1,16 @@
 package ru.testingsystem.olympiad;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.Question;
+import ru.testingsystem.data.entity.TestData;
 import ru.testingsystem.data.entity.User;
 import ru.testingsystem.data.service.QuestionsService;
+import ru.testingsystem.data.service.TestDataService;
 import ru.testingsystem.data.service.UsersService;
+import ru.testingsystem.checkingTask.Program;
 
 import java.util.*;
 
@@ -16,9 +20,12 @@ public class OlympiadImpl implements Olympiad {
     @Autowired
     private QuestionsService questionsService;
     @Autowired
+    private TestDataService testDataService;
+    @Autowired
     private UsersService usersService;
     @Autowired
-    private CheckingProgram checkingProgram;
+    @Qualifier("programForCheckingPrograms")
+    private Program program;
 
     private User currentUser;
 
@@ -48,21 +55,25 @@ public class OlympiadImpl implements Olympiad {
         return currentUser.getLogsUser();
     }
 
-    public ResultRunningProgram checkTask(String nameQuestion, String textProgram){
-        switch (checkingProgram.checkTask(nameQuestion, textProgram)){
+    public String checkTask(String nameQuestion, String textProgram){
+        List<TestData> testData = testDataService.getTestDataForQuestion(nameQuestion);
+        switch (program.checkProgram(nameQuestion, textProgram, testData)){
+            case ERROR_CREATION_SOURCE_FILE:
+                currentUser.addLog(new Log("Ошибка при создании исходника " + nameQuestion, getCurrentTime()));
+                return "Ошибка при создании исходника.";
             case ERROR_COMPILATION:
                 currentUser.addLog(new Log("Ошибка компиляции в задании " + nameQuestion, getCurrentTime()));
-                return ResultRunningProgram.ERROR_COMPILATION;
-            case LOGIC_ERROR_IN_PROGRAM:
+                return "Ошибка компиляции.";
+            case ERROR_RUNNING_PROGRAM:
                 currentUser.addLog(new Log("Ошибка в тестах для задания " + nameQuestion, getCurrentTime()));
-                return ResultRunningProgram.LOGIC_ERROR_IN_PROGRAM;
+                return "Ошибка во время выполнения программы.";
             case SUCCESS:
                 currentUser.addLog(new Log("Задание " + nameQuestion + " выполнено", getCurrentTime()));
                 delQuestion(nameQuestion);
-                return ResultRunningProgram.SUCCESS;
+                return "Задание успешно выполнено.";
             default :
                 currentUser.addLog(new Log("Неизвестная ошибка", getCurrentTime()));
-                return ResultRunningProgram.UNKNOWN_ERROR;
+                return "Неизвестная ошибка.";
         }
     }
 
