@@ -29,11 +29,7 @@ public class AuethentificationImpl implements Auethentification {
     }
 
     public boolean register(String login, String password, String name, String group){
-        if(usersService.addUser(login, password, name, group)){
-            return true;
-        } else {
-            return false;
-        }
+        return usersService.addUser(login, password, name, group);
     }
 
 }

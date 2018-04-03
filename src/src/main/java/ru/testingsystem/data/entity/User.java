@@ -3,6 +3,7 @@ package ru.testingsystem.data.entity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.Queue;
 @Entity
 @Getter
 @Setter
+@ToString
 @Table(name = "users")
 public class User {
 

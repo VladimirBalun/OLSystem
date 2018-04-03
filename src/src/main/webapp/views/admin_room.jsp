@@ -331,7 +331,7 @@
                         <select name="new_language" class="select_admin">
                             <option>Не выбрано</option>
                             <c:forEach items="${programmingLanguages}" var="language">
-                                <option>${language.value}</option>
+                                <option>${language.name}</option>
                             </c:forEach>
                         </select>
                     </div>

@@ -15,7 +15,7 @@ public class AppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext container) {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(DataBaseConfig.class);
+        rootContext.register(DataConfig.class);
         container.addListener(new ContextLoaderListener(rootContext));
         AnnotationConfigWebApplicationContext dispatcherServlet = new AnnotationConfigWebApplicationContext();
         dispatcherServlet.register(MVCConfig.class);

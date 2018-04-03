@@ -1,16 +1,27 @@
 package ru.testingsystem.data.service;
 
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.testingsystem.data.entity.BasicData;
+import ru.testingsystem.data.entity.ProgrammingLanguage;
 import ru.testingsystem.data.repository.BasicDataRepository;
+import ru.testingsystem.data.repository.ProgrammingLanguageRepository;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class BasicDataServiceImpl implements BasicDataService {
 
     @Autowired
     private BasicDataRepository basicDataRepository;
+    @Autowired
+    private ProgrammingLanguageRepository programmingLanguageRepository;
+
+    public List<ProgrammingLanguage> getAllProgrammingLanguagesOlympiad() {
+        return programmingLanguageRepository.findAll();
+    }
 
     public String getTitleTestingSystem() {
         return basicDataRepository.findByName("titleTestingSystem").getData();

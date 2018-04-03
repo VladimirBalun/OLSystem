@@ -24,7 +24,7 @@
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Зарегистрироваться</label>
             <div class="login-form">
 
-                <form method="POST" action="<c:url value="/auethentification/logIn"/>" class="sign-in-htm">
+                <form method="GET" action="<c:url value="/auethentification/logIn"/>" class="sign-in-htm">
                     <div class="group">
                         <label class="label">Логин</label>
                         <input name="login_sign_in" type="text" class="input">
@@ -39,7 +39,7 @@
                     <p class="log_in animated" data-effect="tada"></p>
                 </form><!-- end sign-in-html -->
 
-                <form method="post" action="<c:url value="/auethentification/SignUp"/>" class="sign-up-htm">
+                <form method="GET" action="<c:url value="/auethentification/SignUp"/>" class="sign-up-htm">
                     <div class="group">
                         <label  class="label">Логин</label>
                         <input name="login_sign_up" type="text" class="input">

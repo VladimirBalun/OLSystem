@@ -44,13 +44,16 @@ public class Terminal {
         return isCreated;
     }
 
-    public void removeSourceAndExeFiles(String ... fileNames){
+    public boolean removeSourceAndExeFiles(String ... fileNames){
+        boolean isDeleted = true;
         for (String name : fileNames){
             File file = new File(PATH_SOURCE_FILES + name);
             if(!file.delete()){
                 log.warn("File [" + name + "] wasn't deleted. Path: " + PATH_SOURCE_FILES);
+                isDeleted = false;
             }
         }
+        return isDeleted;
     }
 
 }

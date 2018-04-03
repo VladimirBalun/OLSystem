@@ -4,7 +4,9 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/spring-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/ru/testingsystem/configuration/CompilerConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/ru/testingsystem/configuration/DataConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/ru/testingsystem/configuration/MVCConfig.java</file>
         </fileset>
       </configuration>
     </facet>

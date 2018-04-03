@@ -1,6 +1,7 @@
 package ru.testingsystem.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import ru.testingsystem.olympiad.Olympiad;
 public class AuethentificationController {
 
     @Autowired
+    @Qualifier("auethentificationImpl")
     private Auethentification auethentification;
     @Autowired
     private GroupsService groupsService;
@@ -31,14 +33,14 @@ public class AuethentificationController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/logIn", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
+    @RequestMapping(value = "/logIn", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
     public @ResponseBody String logIn(@RequestParam(value = "login_sign_in") String login,
                                       @RequestParam(value = "pass_sign_in") String password) {
         // Redirect is processing with JS(auethentification.js)
         RoleUser roleUser = auethentification.authenticate(login, password);
         switch (roleUser) {
             case ADMIN:
-                return "admin_room";
+                return "adminRoom";
             case USER:
                 olympiad.startOlympiad(login, password);
                 return "tasks";
@@ -49,7 +51,7 @@ public class AuethentificationController {
     }
 
 
-    @RequestMapping(value = "/SignUp", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
+    @RequestMapping(value = "/SignUp", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
     public @ResponseBody String signUp(@RequestParam(value = "login_sign_up") String login,
                          @RequestParam(value = "pass_sign_up") String password,
                          @RequestParam(value = "name_sign_up") String name,

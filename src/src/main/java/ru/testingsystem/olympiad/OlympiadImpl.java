@@ -2,7 +2,9 @@ package ru.testingsystem.olympiad;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 import ru.testingsystem.data.entity.Log;
 import ru.testingsystem.data.entity.Question;
 import ru.testingsystem.data.entity.TestData;
@@ -24,7 +26,7 @@ public class OlympiadImpl implements Olympiad {
     @Autowired
     private UsersService usersService;
     @Autowired
-    @Qualifier("programForCheckingPrograms")
+    @Qualifier("languageForPassingOlympiad")
     private Program program;
 
     private User currentUser;

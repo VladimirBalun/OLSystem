@@ -64,7 +64,7 @@ $(document).ready(function() {
 
     function authenticate(form, btn){
         disableButton(btn);
-        $.post(form.attr("action"), form.serialize(), function(response){
+        $.get(form.attr("action"), form.serialize(), function(response){
             switch (response){
                 case "tasks" :
                     $(location).attr("href", "/tasks/showPage");

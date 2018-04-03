@@ -1,6 +1,12 @@
 package ru.testingsystem.data.service;
 
+import ru.testingsystem.data.entity.ProgrammingLanguage;
+
+import java.util.List;
+
 public interface BasicDataService {
+
+    List<ProgrammingLanguage> getAllProgrammingLanguagesOlympiad();
 
     String getTitleTestingSystem();
 
