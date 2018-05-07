@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+         <meta charset="UTF-8"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>OLSystem - automatic system for passing olympics</title>
+         <link rel="icon" href="img/blue-icon.png">
+         <link rel="stylesheet" href="font-awesome.min.css"/>
+         <link rel="stylesheet" href="bootstrap.min.css">
+         <link rel="stylesheet" href="admin-room.css">
+    </head>
+    <body>
+ 
+  	    <div id="app" class="hidden-sm hidden-xs">
+      
+            <header hidden-sm>
+                <div class="info">
+                    <img class="icon" src="img/white-icon.png">
+                    <p class="name-system">OLSystem </p>
+                </div>
+            </header>
+
+            <nav>
+                <router-link id="link-information" class="link" to="/">Информация</router-link>
+                <router-link id="link-tasks" class="link" to="/tasks">Задания</router-link>
+                <router-link id="link-test-data" class="link" to="/testData">Тестовые данные</router-link>
+                <router-link id="link-users" class="link" to="/users">Участники</router-link>
+                <router-link id="link-results" class="link" to="/results">Результаты</router-link>
+                <router-link id="link-settings" class="link" to="/settings">Настройки</router-link>
+            </nav>
+
+            <section class="main-part">
+                <div class="block header-block">
+                    <div class="title">{{ titleTemplate }}</div>
+                </div>
+                <router-view></router-view>
+                <footer class="block">
+                    <p class="event" :class="{ 'warning-label' : isFailureEvent, 'successfull-label' : !isFailureEvent }">
+                        <i v-if="isFailureEvent === false && event != ''" class="fa fa-check-circle" aria-hidden="true"></i>
+						<i v-if="isFailureEvent === true && event != ''" class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        {{ event }}
+                    </p>
+                    <button v-if="event != ''" @click="event = ''" title="Очистить панель оповещений." id="btn-clear-event"></button>
+                </footer>
+            </section>
+
+        </div>
+
+        <div id="small-version" class="hidden-lg hidden-md">
+            К сожалению комната администратора OLSystem не поддреживается для таких маленьких экранов,
+            но вы можете попробовать воспользоваться 'Ctrl' + '-', если это вам поможет...
+        </div>
+
+        <script src="build/bundle.js"></script>
+    
+    </body>
+</html>

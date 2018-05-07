@@ -1,13 +1,14 @@
-![Logo](./img/ATS.jpg "Automatic Testing System of olympiad/school/university
+![Logo](./img/OLSystem.png "Automatic Testing System of olympiad/school/university
  programs in different programming languages")
 
-## About ATS
+## About OLSystem
 
-ATS(Automatic Testing System) - it's cross-platform system for conducting olympiads, tests, 
-control works and individual solutions of tasks on programming. Work with the system takes
+OLSystem - it's cross-platform system for conducting olympiads, tests, 
+control works and individual solutions of tasks on programming. It' adapted for different devices
+(mobiles, tablets, laptops and computers). Work with the system takes
 place in the web browser. At the moment system is supporting only C, C++, Java and Python languages, 
 but another languages will be added soon. Compiler installation directories are taken from the registry 
-(windows-version) or from the path variable (linux-version). Also *ATS* supports 
+(windows-version) or from the path variable (linux-version). Also *OLSystem* supports 
 administrator room, in which administrator can:
 - change basic information about system(title, description and much more); 
 - add, remove and change tasks;
@@ -18,10 +19,11 @@ administrator room, in which administrator can:
 - observe for the results of all participants.
 
 The appearance of the system you can see 
-[here](https://github.com/VladimirBalun/ATS/tree/master/img).
+[here](https://github.com/VladimirBalun/OLSystem/tree/master/img) and you can open appearance
+of each page without server side in browser from directory examples.
 
-## What you need to build ATS
-For build *ATS* on your computer, you will need to have the following
+## What you need to build OLSystem
+For build *OLSystem* on your computer, you will need to have the following
 applications:
 - Git
 - JDK/JRE
@@ -54,37 +56,27 @@ Linux/BSD users should use their appropriate package managers to install:
     apt-get install mysql-server
     apt-get install mysql-client
 
-Don't forget to use administrative rights, where you need it! After 
-installation on all OS, run:
+## How to build OLSystem
+Clone a copy of the main OLSystem git repo by running:
 
-    java -version
-    mvn --version
+    git clone https://github.com/VladimirBalun/OLSystem.git
 
-If installed, you'll need to see the versions JDK/JRE and Maven.
-
-## How to build ATS
-Clone a copy of the main ATS git repo by running:
-
-    git clone https://github.com/VladimirBalun/ATS.git
-
-Enter the ATS directory and run the build script on Windows:
+Enter the OLSystem directory and run the build script on Windows:
 
     build.bat
 
-Enter the ATS directory and run the build script on OS X or Linux/BSD:
+Enter the OLSystem directory and run the build script on OS X or Linux/BSD:
 
     ./build
     
 If you don't have installing programming languages(compilers) on your computer, you can 
 run script and choose the ones you need programming languages(C, C++, Python and Java 
-must be already installed after building ATS) for passing olympiad. On Linux/BSD:
+must be already installed after building OLSystem) for passing olympiad. On Linux/BSD:
 
     ./languages
 
 Script for Windows will be added later...
 
-## Version
-The system is in constant development(current beta-version 1.2). Watch out for changes!. 
 ____
 Documentation will be supplemented over time, but if you have any questions, please 
 contact: vladimirbalun@yandex.ru
