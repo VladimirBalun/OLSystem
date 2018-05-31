@@ -1,4 +1,11 @@
 ﻿echo off
-cd src
-cls 
+cd OLSystem 
 @mvn install
+
+cd ..
+cd ProgChecker
+mkdir build
+cd build
+cmake ..
+
+

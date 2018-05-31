@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Jura|Russo+One|Roboto');
+
+.wrapper {
+    position: relative;
+	height: 100%;
+    background: radial-gradient(40% 40%, white, #DEDEE2);
+}
+
+/*****************************************
+    Styles for header and navigation
+*****************************************/
+header {
+    padding-top: 20px;
+	height: 100px;
+    width: 100%;
+	background-color: white;
+}
+
+.logo {
+    float: left;
+    width: 50px;
+    margin: 2px 15px 0 0;
+}
+
+.contacts {
+    text-align: right;
+}
+
+.name-olympiad {
+    margin: 2px 0 0 0;
+    font-family: 'Russo One', sans-serif;
+    color: #516171;
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.name-system {
+    color: #757577;
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+}
+
+.number {
+    margin: 2px 0 0 0;
+    color: #516171;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 1px;
+    font-size: 23px;
+}
+
+.creator {
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Jura', sans-serif;
+    color: #757577;
+}
+
+/*****************************************
+    Styles for basic part of application
+*****************************************/
+section {
+	height: calc(100vh - 100px - 100px);
+}
+
+.information {
+    height: 100%;
+    padding: calc((100vh - 110px - 110px) / 3) 0 calc((100vh - 110px - 110px) / 3) 0;
+}
+
+.title {
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 3px;
+    font-size: 23px;
+    color: #005BAA;
+    font-weight: bold;
+}
+
+.description {
+    overflow: auto;
+    max-height: 180px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.mobile-information {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 15px 15px 15px 15px;
+}
+
+.mobile-title{
+    overflow: auto;
+    height: 45px;
+    padding: 8px 10px 0 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #005BAA;
+    background-color: white;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.mobile-description{
+    overflow: auto;
+    flex-grow: 1;
+    margin-bottom: 30px;
+    padding: 8px 10px 8px 10px;
+    font-size: 16px;
+    color: #3C3F41;
+    background-color: white;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.tablet-information {
+    padding: calc((100vh - 110px - 110px) / 4) 0 calc((100vh - 110px - 110px) / 4) 0;
+}
+
+.tablet-description {
+    padding: 5px 10% 15px 10% ;
+    font-size: 18px;
+}
+
+.tablet-title {
+    text-align: center;
+    font-size: 25px;
+    color: #005BAA;
+    font-weight: bold;
+}
+
+.tablet-information a {
+    margin-left: 30%;
+}
+
+.start-image {
+    height: 100%;
+}
+
+.start-image img {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: calc(105vh / 2);
+}
+
+/*****************************************
+    Styles for footer
+*****************************************/
+footer {
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	background-color: #06528C;
+}
+
+footer div {
+    padding-top: 30px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 27px;
+    font-family: 'Russo One', sans-serif;
+}
+
+footer div a {
+    color: white;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777, 0 4px 0 #666666, 0 5px 0 #555555, 0 6px 0 #444444, 0 7px 0 #333333, 0 8px 7px #000B21;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+}
+
+footer div a:hover {
+    color: #B4C8E0;
+    text-decoration: none;
+}
+
+/*****************************************
+    Media queries for mobile devices
+*****************************************/
+@media screen and (max-device-width: 480px) {
+
+    header {
+        height: 55px;
+        padding-top: 9px;
+    }
+
+    .logo {
+        width: 30px;
+        -webkit-transform: translateY(-1px);
+        -moz-transform: translateY(-1px);
+        -o-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+    }
+
+    .name-system {
+        font-size: 14px;
+        -webkit-transform: translateY(-2px);
+        -moz-transform: translateY(-2px);
+        -o-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+    }
+
+    section {
+        height: calc(100vh - 55px - 55px);
+    }
+
+    footer {
+        height: 55px;
+    }
+
+    footer div {
+        padding-top: 12px;
+        font-size: 20px;
+    }
+
+}

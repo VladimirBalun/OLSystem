@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>OLSystem - automatic system for passing olympics</title>
+		<link rel="icon" href="img/blue-icon.png">
+        <link rel="stylesheet" href="olympiad.css"/>
+	    <link rel="stylesheet" href="libs/bootstrap.min.css"/>
+        <link rel="stylesheet" href="libs/font-awesome.min.css"/>
+
+	</head>
+	<body>
+	
+		<div class="container-fluid wrapper">	
+			
+
+			<header id="header" class="row">
+				 <!-- For mobiles -->
+				<div class="hidden-lg hidden-md hidden-sm col-xs-6">
+					<i v-on:click="openMobileMenu" class="fa fa-list fa-2x" aria-hidden="true"></i>
+				</div>
+				<div class="mobile-menu hidden-lg hidden-md hidden-sm col-xs-6">
+					<i v-on:click="finishOlympiad" class="fa fa-window-close-o fa-2x" aria-hidden="true"></i>
+				</div><!-- End mobile-menu -->
+				<!-- For computers and tablets -->
+				<div class="title-page col-lg-6 col-md-6 hidden-sm hidden-xs">
+					<img class="icon" :src="linkToIconOlympiad"/>
+					<p class="hidden-xs">Название проводимой олимпиады </p>
+				</div><!-- End title-page -->
+				<nav class="col-lg-6 col-md-6 col-sm-12 hidden-xs">
+					<img class="icon hidden-lg hidden-md" :src="linkToIconOlympiad"/>
+					<button v-on:click="finishOlympiad">Завершить выполнение</button>
+					<button @click="isActivePageTasks = false" :class="{'border-selected-btn' : !isActivePageTasks}">Проверить задание</button>
+					<button @click="isActivePageTasks = true" :class="{'border-selected-btn' : isActivePageTasks}">Задания</button>
+				</nav>
+			</header>
+
+
+			<!-- Page tasks  -->
+			<section v-show="isActivePageTasks" class="page-tasks row">
+				<form method="GET" class="tasks col-lg-3 col-md-3 col-sm-3 hidden-xs">
+					<p class="tip">Выберите задание:</p>
+                    <button v-for="task in tasks" v-on:click="changeSelectedTask(task.title)">
+                        <p class="btn-label">Задание</p>
+                        <p>{{ task.title }}</p>
+                    </button>
+				</form>
+				<div class="selected-task col-lg-9 col-md-9">
+
+                    <p class="tip">Название задания:</p>
+					<div class="wrapper-task">
+						<button @click="selectNextTask" class="btn-forward hidden-lg hidden-md hidden-sm">>></button>
+						<button @click="selectBackTask" class="btn-forward hidden-lg hidden-md hidden-sm"><<</button>
+						<p id="title-task">{{ currentTask.title }}</p>
+					</div><!-- End wrapper-task-->
+
+                    <p class="tip">Текст задания:</p>
+					<div class="wrapper-task">
+						<p id="text-task">{{ currentTask.description }}</p>
+					</div><!-- End wrapper-task -->
+
+                    <p class="tip">Пример тестовых данныx:</p>
+                    <div class="wrapper-task">
+						<p id="test-data-task">
+							Входные данные: {{ currentTask.inputData }}</br>
+							Выходные данные: {{ currentTask.outputData }}</br>
+						</p>
+					</div><!-- End wrapper-task -->
+
+				</div><!-- End selected-task -->
+			</section>
+
+
+			<!-- Page sending task  -->
+			<section v-show="!isActivePageTasks" class="page-sending-task row">
+				<div class="section-events col-lg-3 col-md-3 col-sm-3 hidden-xs">
+					<p class="tip">Все события участника:</p>
+					<div class="events">
+                        <p v-for="event in events">
+							<i v-if="event.status === true" class="fa fa-check-circle" aria-hidden="true" hidden></i>
+							<i v-if="event.status === false" class="fa fa-exclamation-circle" aria-hidden="true" hidden></i>
+							{{ event.text }}
+						</p>
+					</div>
+				</div><!-- End tasks -->
+				<div class="selected-task col-lg-9 col-md-9">
+					<p class="tip" :class="{'warning-message' : isEmptySelectTasks}">Выберите задание:</p>
+					<select name="task" v-model="selectedTask" :class="{'empty-edit' : isEmptySelectTasks}">
+						<option  v-for="task in tasks">{{ task.title }}</option>
+					</select>
+					<p class="tip" :class="{'warning-message' : isEmptyTextarea}">Введите текст программы [{{ textProgram.length  }}/2000]:</p>
+					<textarea name="textProgram" maxlength="2000" v-model="textProgram" autofocus :class="{'empty-edit' : isEmptyTextarea}"></textarea>
+					<p class="tip">Последняя информация:</p>
+
+					<div class="wrapper-events">
+						<div class="last-event">
+							<i v-if="eventStatus === 'success'" class="fa fa-check-circle" aria-hidden="true" hidden></i>
+							<i v-if="eventStatus === 'error'" class="fa fa-exclamation-circle" aria-hidden="true" hidden></i>
+							{{ eventMessage }}
+						</div>
+						<button v-on:click="sendProgram" class="btn-check-task">Проверить</button>
+					</div>
+				</div><!-- End selected-task -->
+			</section>
+
+
+			<footer>
+				<p class="statistic col-lg-6 col-md-6 col-sm-6 hidden-xs">Текущий результат: {{ countCorrectAnswers }}/{{ countTasks }}</p>
+				<p class="statistic hidden-lg hidden-md hidden-sm col-xs-4">{{ countCorrectAnswers }}/{{ countTasks }}</p>
+				<p class="timer col-lg-6 col-md-6 col-sm-6 col-xs-8">{{ timeToEndOlympiad }}</p>
+			</footer>
+
+
+		</div>
+
+		<script src="libs/vue.min.js"></script>
+		<script src="olympiad.js"></script>
+
+	</body>
+</html>

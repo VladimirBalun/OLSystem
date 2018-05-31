@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css?family=Jura|Russo+One|Roboto');
+
+@font-face{
+    font-family: 'FontAwesome';
+    src: url('fonts/fontawesome-webfont.eot?v=4.6.3');
+    src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format("embedded-opentype"),
+    url('fonts/fontawesome-webfont.woff2?v=4.6.3') format("woff2"), url('fonts/fontawesome-webfont.woff?v=4.6.3') format("woff"),
+    url('fonts/fontawesome-webfont.ttf?v=4.6.3') format("truetype"),
+    url('fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/************************************
+* Common styles
+************************************/
+::-webkit-scrollbar-track {
+	background-color: white;
+}	
+
+::-webkit-scrollbar-button { 
+	background-color: #F3F2F3; 
+	width: 6px;
+	height: 0;
+} 
+
+.title-page p,
+nav button,
+.timer, 
+.statistic,
+form button p,
+.btn-label{
+	font-family: Roboto, sans-serif;
+}
+
+select[name="task"], 
+.wrapper-task,
+.last-event,
+textarea{
+    font-family: Jura, sans-serif;
+}
+
+button, 
+select, 
+textarea {
+	outline: none;
+	border: 0;
+}
+
+.wrapper {
+	height: 100%;
+	position: relative;
+}
+
+/************************************
+* Styles for header
+************************************/
+header {
+	height: 50px;
+	background-color: #4A76A8;
+}
+
+.title-page p {
+    font-family: 'Russo One', sans-serif;
+	padding-top: 11px;
+	color: white;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.icon{
+	float: left;
+	width: 28px;
+	margin: 9px 15px 0 0;
+}
+
+nav {
+	height: 100%;
+}
+
+nav button {
+	height: 100%;
+	float: right;
+	padding: 0 16px 0 15px;
+	background-color: #4A76A8;
+	font-size: 15px;
+	color: white;
+	transition: .5s;
+	position: relative;
+}
+
+nav button:hover {
+	background-color: #3A5D85;
+}
+
+.border-selected-btn::after {	
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 42%;
+    border: 7px solid transparent;
+    border-bottom: 7px solid #CECBC9;	
+}
+
+/************************************
+* Styles for mobile header
+************************************/
+.mobile-menu {
+	text-align: right;
+}
+
+.fa-list {
+	padding-top: 12px;
+	color: white;
+}
+
+.fa-window-close-o {
+	padding-top: 12px;	
+	color: #1E3C5F;
+}
+
+.fa-exclamation-circle {
+	color: #BA0001;
+	margin-right: 9px;
+}
+
+.fa-check-circle {
+	color: #06528C;
+	margin-right: 9px;
+}
+
+/************************************
+* Styles for part of tasks
+************************************/
+.page-tasks {
+	height: calc(100vh - 120px);
+	background-color: #EEEEEE;
+	-webkit-box-shadow: inset 0 30px 30px  -30px rgba(154, 147, 140, 0.8) , inset 0 -30px 30px -30px rgba(154, 147, 140, 0.8);
+	-moz-box-shadow: inset 0 30px 30px  -30px rgba(154, 147, 140, 0.8) , inset 0 -30px 30px -30px rgba(154, 147, 140, 0.8);
+    -o-box-shadow: inset 0 30px 30px  -30px rgba(154, 147, 140, 0.8) , inset 0 -30px 30px -30px rgba(154, 147, 140, 0.8);
+    -ms-box-shadow: inset 0 30px 30px  -30px rgba(154, 147, 140, 0.8) , inset 0 -30px 30px -30px rgba(154, 147, 140, 0.8);
+    box-shadow: inset 0 30px 30px  -30px rgba(154, 147, 140, 0.8) , inset 0 -30px 30px -30px rgba(154, 147, 140, 0.8);
+}
+
+.tasks {
+	padding-top: 10px;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+.tasks button {
+	line-height: .8;	
+	margin-bottom: 10px;
+	padding-left: 12px;
+	width: 100%;
+	height: 60px;
+	background-color: white;
+
+	text-align: left;
+	font-weight: 700;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -o-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -ms-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.tasks button:hover {
+	border-bottom: 0;	
+	background-color: #F3F3F4;
+}
+
+.btn-label {
+	padding-top: 10px;
+	letter-spacing: 1px;
+	font-size: 16px;
+	color: #BA0001;		
+}
+
+.selected-task {
+	height: 100%;
+	display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.selected-task p {
+	padding-top: 10px;	
+	letter-spacing: 1px;
+}
+
+.wrapper-task {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	background-color: white;	
+}
+
+.wrapper-task:nth-child(4) {
+	flex-grow:1;
+	overflow: auto;
+}
+
+.wrapper-task:nth-child(6) {
+	height: 75px;
+	margin-bottom: 15px;
+	overflow: auto;
+}
+
+#title-task {
+	padding: 10px 15px 0 15px;	
+	font-size: 21px;
+	color: #555555;
+}
+
+#text-task, 
+#test-data-task {
+	padding: 15px 15px 0 15px; 	
+	font-size: 16px;
+	color: #555555;
+}
+
+.tip{
+	color: #ABAAAB;
+}
+
+.btn-forward {
+	margin: 9px 10px 10px 0;
+	padding: 5px 10px 5px 10px;
+	background-color: white;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -o-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+	font-size: 16px;
+	color: #BA0001;
+	font-weight: 600;
+	float: right;
+}
+
+/************************************
+* Styles for part of chcekcing task
+************************************/
+.page-sending-task{	
+	height: calc(100vh - 120px);
+	background-color: #EEEEEE;
+	box-shadow: inset 0 30px 30px  -30px rgba(154, 147, 140, 0.8) , inset 0 -30px 30px -30px rgba(154, 147, 140, 0.8);	
+}
+
+.section-events {
+	height: 100%;
+	padding-top: 10px;
+}
+
+.events{
+    display: inline-block;
+    padding: 15px;
+	height: calc(100vh - 175px);
+ 	margin-bottom: 15px;
+  	overflow: auto;
+ 	color: #656565;
+ 	background-color: white;
+ 	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);	
+}
+
+.events p {
+    font-family: 'Jura', sans-serif;
+    font-size: 15px;
+    padding: 5px 0 5px 3px;
+    color: #2B2B2C;
+}
+
+.wrapper-events{
+	width: 100%;
+}
+
+.last-event{
+	float: left;
+ 	height: 40px;
+ 	width: 70%;	
+	padding: 10px 15px 0 15px;	 
+ 	overflow: auto;	
+	letter-spacing: 1px;	
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	font-size: 16px;
+	margin-bottom: 15px;
+	background-color: white;
+}
+
+.btn-check-task{
+	float: right;
+	width: 28%;
+	height: 40px;	
+	margin-bottom: 10px;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);	
+	font-size: 20px;
+    color: white;
+    background: #d11717;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));  
+    transition: All 0.5s ease; 
+}
+
+.btn-check-task:hover {
+    background-color: #ff3434;
+}
+
+textarea{
+	flex-grow:1;	
+	padding: 10px 15px 0 15px;		
+	letter-spacing: 1px;	
+	margin-bottom: 200px;
+	font-size: 20px;	
+	resize : none;
+}
+
+textarea[name="textProgram"]:focus, 
+select[name="task"]:focus {
+	border: 1px solid #03A9F4;
+}
+
+select[name="task"]{
+	height: 40px;
+	padding: 0 10px 0 10px;	
+	font-size: 17px;
+}
+
+.empty-edit {
+	border: 1px solid red;	
+}
+
+.warning-message {
+	color : #BD0E0F;
+}
+
+textarea,
+select {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+/************************************
+* Styles for footer
+************************************/
+footer {
+	position: absolute;	
+	height: 70px;
+	width: 100%;
+	left: 0;	
+	background-color: #06528C;
+}
+
+.timer {
+	float: right;
+	text-align: right;	
+	padding-top: 15px;
+	color: white;
+	font-size: 30px;
+	letter-spacing: 2px;	
+	font-family: 'Russo One', sans-serif;		
+}
+
+.statistic {
+	text-align: left;	
+	padding-top: 20px;
+	font-size: 22px;
+	font-weight: 300;
+	color: white;
+}
+
+/************************************
+* Minor changing of styles for mobiles
+************************************/
+@media screen and (max-device-width: 480px) {
+
+	.title-page p,
+	select[name="task"] {
+		font-size: 18px;
+	}
+
+	#text-task, 
+	#test-data-task {
+		font-size: 16px;
+	}
+
+	footer {
+		height: 50px;
+	}
+
+	.timer {
+		padding-top: 12px;
+		font-size: 18px;
+	}
+
+	.statistic {
+		padding-top: 13px;
+		font-size: 18px;	
+	}
+
+	.page-tasks {
+		height: calc(100vh - 100px);
+	}
+
+	.page-sending-task {
+		height: calc(100vh - 100px);
+	}
+
+	.last-event{
+		width: 100%;
+	}
+
+	.btn-check-task{
+		width: 100%;
+	}	
+
+	.wrapper-task:nth-child(6) {
+		min-height: 40px;
+	}	
+
+}

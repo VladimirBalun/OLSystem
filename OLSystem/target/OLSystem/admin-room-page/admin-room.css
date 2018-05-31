@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css?family=Jura|Russo+One');
+
+@font-face{
+    font-family: FontAwesome;
+    src: url('fonts/fontawesome-webfont.eot?v=4.6.3');
+    src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format("embedded-opentype"),
+    url('fonts/fontawesome-webfont.woff2?v=4.6.3') format("woff2"), url('fonts/fontawesome-webfont.woff?v=4.6.3') format("woff"),
+    url('fonts/fontawesome-webfont.ttf?v=4.6.3') format("truetype"),
+    url('fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body,
+#app {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #E6E6E6;
+}
+
+#small-version {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 34px;
+    line-height: 54px;
+    padding: 30% 10% 10% 10%;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    color: #525255;
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 47px;
+    transform: translateX(3px);
+}
+
+button,
+input,
+select,
+textarea {
+    outline: none;
+    border: 0;
+}
+
+/**************************************  
+    Styles for header
+***************************************/
+header {
+    height: 60px;
+    width: 100%;
+    background-color: #4A76A8;
+    border-bottom: 1px solid #C1C1C1;
+}
+
+.info {
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.icon {
+    margin: 14px 15px 0 15px;
+    width: 30px;
+    float: left;
+}
+
+.name-system {
+    float: left;
+    color: #E8F0EF;
+    font-family: Russo One, sans-serif;
+    font-size: 20px;
+    margin-top: 17px;
+    letter-spacing: 2px;
+}
+
+/**************************************  
+    Styles for navigation
+***************************************/
+nav {
+    width: 19%;
+    float: left;
+    height: calc(100vh - 60px);
+    background-color: #1D2328; 
+}
+
+.link{
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: block;
+    color: #D4DCDB;
+    padding: 12px 0 12px 15px;
+    border-bottom: 1px solid #3D484D;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.link:hover {
+    color: #D4DCDB;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #194E84;
+}
+
+.link:focus {
+    color: #D4DCDB;
+    text-decoration: none;  
+}
+
+#link-information::before,
+#link-users::before,
+#link-tasks::before,
+#link-test-data::before,
+#link-results::before,
+#link-settings::before {
+    font-family: FontAwesome;
+    padding-right: 10px;
+}
+
+#link-information::before {
+    content: "\f15c";
+}
+
+#link-users::before {
+    content: "\f0c0";
+}
+
+#link-tasks::before {
+    content: "\f0ae";
+}
+
+#link-test-data::before {
+    content: "\f0ce";
+}
+
+#link-results::before {
+    content: "\f044";
+}
+
+#link-settings::before {
+    content: "\f013";
+}
+
+/**************************************  
+    Styles for basic part of application
+***************************************/
+.header-block {
+    width: 100.5%;
+}
+
+.main-part {
+    position: relative;
+    padding: 0 3px 0 3px;
+    margin: 10px 0 0 1%;
+    float: left;
+    height: calc(100vh - 90px);
+    width: 79%;
+}
+
+.section {
+    position: absolute;
+    height: calc(100% - 135px);
+    overflow: auto;
+}
+
+.block {
+    padding: 15px 15px 0 15px;
+    overflow: auto;
+    background-color: white;
+    margin: 8px 0 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.title{
+    font-family: Roboto, sans-serif;
+    font-size: 17px;
+    color: #292F35;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-bottom: 9px;
+}
+
+.event {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline;
+}
+
+#btn-clear-event {
+    color: #373A3C;
+    float: right;
+    transform: translate(5px, -6px);
+    background-color: unset;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+#btn-clear-event:hover {
+    color: #BD0E0F;
+}
+
+#btn-clear-event::after {
+    font-family: FontAwesome;
+    content: "\f00d";
+    font-size: 21px;
+}
+
+input,
+textarea,
+select {
+    color: #4E4E50;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    height: 33px;
+    margin-bottom: 5px;
+    border: 1px solid #3A8BCE;
+    -o-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.4), 1px 1px 5px rgba(255, 255, 255, 1);
+    -moz-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.4), 1px 1px 5px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.4), 1px 1px 5px rgba(255, 255, 255, 1);
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.4), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid #AFDAED;
+}
+
+select {
+    padding: 0 10px 0 10px;
+}
+
+.checkbox{
+    height: auto;
+    box-shadow: 0;
+    margin: 0;
+}
+
+.blue-btn {
+    width: 140px;
+    height: 33px;
+    color: white;
+    background-color: #4A76A8;
+    margin-bottom: 15px;
+    padding: 0 30px 0 30px;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.blue-btn:hover {
+    background-color: #114575;
+}
+
+.main-help {
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.block-help {
+    letter-spacing: 1px;
+    font-family: 'Jura', sans-serif;
+    color: #74797D;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+/**********************************
+    Styles for event-messages
+**********************************/
+.warning-edit {
+    border: 1px solid #BD0E0F;
+}
+
+.warning-label {
+    color: #BD0E0F;
+}
+
+.successfull-label {
+    color: #2F67A8;
+}
+
+/**********************************
+    Styles for tables
+**********************************/
+th {
+    background-color: #373A3C;
+    padding: 9px 15px 9px 15px;
+    color: white;
+    border: 1px solid #373A3C;
+}
+
+tbody {
+    border: 1px solid #DDDDDD;
+}
