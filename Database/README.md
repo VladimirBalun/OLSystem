@@ -19,15 +19,15 @@ and administrators.
 - Table **role** contains data about role of user(PARTICIPANT or ADMIN).
 - Table **users_role** linking table of users with their roles.
 
-![structure](database.png "Structure of database")
+![structure](diagram.png "Structure of database")
 
 
 ## How to import database for OLSystem
 For import database on your computer, you will need to have MySQL server and 
-download file *database_import.sql* in current directory. Assuming you're on
+download file *database.sql* in current directory. Assuming you're on
 a Linux or Windows console:
 
     mysql -u <username> -p<password> <databasename> < <filename.sql> // template
-    mysql -u root -padmin OLSystem < database_import.sql             // example
+    mysql -u root -padmin OLSystem < database.sql                    // example
     
 After importing you will get structure of database and its initial necessary data.

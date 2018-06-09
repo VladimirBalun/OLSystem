@@ -35,10 +35,6 @@
 				status : false
 			},
 			{
-				text : "20:16 - Задание \"Спички\" успешно выполено.",
-				status : true
-			},
-			{
 				text : "20:16 - Задание \"Ход конем\" не выполнено. Ошибка при тестировании программы.",
 				status : false
 			},
@@ -62,7 +58,7 @@
 
 		countCorrectAnswers : 0,
 		countTasks : 0,
-		timeToEndOlympiad : "2:00:00",
+		timeToEndOlympiad : "1:26:12",
 
 		eventMessage : '',
 		eventStatus : ''

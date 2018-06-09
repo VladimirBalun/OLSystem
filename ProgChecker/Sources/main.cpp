@@ -1,66 +1,56 @@
 #include <iostream>
-#include <memory>
 
-#include "Checking/Program.h"
-#include "Checking/Languages.h"
-#include "Checking/EResultsChecking.h"
-#include "Data/Accesses/JsonUtil.h"
+#include "Utils/FileSystem.h"
+#include "SystemChecking/System.h"
+#include "Exceptions/SystemCheckingException.h"
+#include "Network/Server.h"
+#include "Exceptions/NetworkException.h"
 
-void initial_system_check(const std::string& lang);
+std::unique_ptr<SystemChecking::ISystem> create_checking_system(const std::string& language, const std::string& compilerOrInterpreter);
+std::unique_ptr<Network::IServer> create_server(const std::string& address, const std::string& port);
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
+    #define COUNT_CMD_ARGUMENTS 4 // 1-[PROGRAMMING_LANGUAGE] 2-[COMPILER_OR_INTERPRETER] 3-[ADDRESS] 4-[PORT]
+    if(argc < COUNT_CMD_ARGUMENTS)
+    {
+        std::string tutorialRunningProgram = Utils::read_file("Resources/TutorialRunningProgram.txt");
+        std::cout << tutorialRunningProgram << std::endl;
+        LOG_ERROR(__FILE__, "Incorrect input parameters for program.");
+        return EXIT_FAILURE;
+    }
 
-    std::string currLang = argv[1];
-    initial_system_check(currLang);
-
-//    Program::setLanguageForPrograms(currLang.c_str());
-//    Program program("/home/vova/main", "#include <iostream>\n"
-//                                       "#include <string>\n"
-//                                       "\n"
-//                                       "int main()\n"
-//                                       "{\n"
-//                                       "\tstd::string buff;\n"
-//                                       "\tstd::cin >> buff; \n"
-//                                       "\tstd::cout << buff << std::endl; \n"
-//                                       "\n"
-//                                       "\treturn 0;\n"
-//                                       "}");
-//    std::vector<std::shared_ptr<TestData>> testData;
-//    testData.push_back(std::make_shared<TestData>("23", "23"));
-//    std::cout << program.checkProgram(testData) << std::endl;
-//    Program program2("/home/vova/second", "#include <iostream>\n"
-//                                       "#include <string>\n"
-//                                       "\n"
-//                                       "int main()\n"
-//                                       "{\n"
-//                                       "\tstd::string buff;\n"
-//                                       "\tstd::cin >> buff;\n"
-//                                       "\tstd::cout << buff << std::endl;\n"
-//                                       "\treturn 0;\n"
-//                                       "}");
-//    testData.push_back(std::make_shared<TestData>("29", "29"));
-//    std::cout << program2.checkProgram(testData) << std::endl;
-
-
-    //parseTaskFromJson("Sd");
-    std::cout << generateJsonResponse(100) << std::endl;
+    std::unique_ptr<SystemChecking::ISystem> checkingSystem = create_checking_system(argv[1], argv[2]);
+    std::unique_ptr<Network::IServer> server = create_server(argv[3], argv[4]);
+    server->startServer();
 
     return EXIT_SUCCESS;
-
 }
 
-void initial_system_check(const std::string& lang)
+std::unique_ptr<SystemChecking::ISystem> create_checking_system(const std::string& language, const std::string& compilerOrInterpreter)
 {
-    Languages languages;
-    if (!languages.checkEnteringLanguage(lang))
+    try
     {
-        std::cerr << "Error." << std::endl;
-        exit(USER_ERROR);
+        return std::make_unique<SystemChecking::System>(language, compilerOrInterpreter);
     }
-    if (!languages.checkLanguageOnPC(lang))
+    catch (Exceptions::SystemCheckingException &e)
     {
-        std::cerr << "Error. Language \""  << lang << "\" doesn't installed in your PC.\n"
-                     "You can run script \"languages.sh\" for installing it..." << std::endl;
-        exit(USER_ERROR);
+        std::cerr << e.what() << std::endl;
+        LOG_ERROR(__FILE__, e.what());
+        exit(EXIT_FAILURE);
+    }
+}
+
+std::unique_ptr<Network::IServer> create_server(const std::string& address, const std::string& port)
+{
+    try
+    {
+        return std::make_unique<Network::Server>(address, port);
+    }
+    catch (Exceptions::NetworkException &e)
+    {
+        std::cerr << e.what() << std::endl;
+        LOG_ERROR(__FILE__, e.what());
+        exit(EXIT_FAILURE);
     }
 }

@@ -7,4 +7,3 @@ project(ProgChecker)
 
 add_subdirectory (Sources)
 #add_subdirectory (Tests)
-

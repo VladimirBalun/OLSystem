@@ -1,0 +1,12 @@
+#ifndef _ERESULTS_CHECKING_H_
+#define _ERESULTS_CHECKING_H_
+
+enum EResultChecking {
+    SUCCESSFUL_CHECKING = 100,
+    COMPILATION_ERROR = 101,
+    RUN_TIME_ERROR = 102,
+    SECURITY_ERROR = 103,
+    UNKNOWN_ERROR = 104,
+};
+
+#endif

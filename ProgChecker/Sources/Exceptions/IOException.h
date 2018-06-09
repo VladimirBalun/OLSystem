@@ -16,4 +16,4 @@ namespace Exceptions
 
 }
 
-#endif // _IOEXCEPTION_H
+#endif

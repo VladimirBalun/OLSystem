@@ -1,5 +1,4 @@
-![Logo](./img/OLSystem.png "Automatic Testing System of olympiad/school/university
- programs in different programming languages")
+![Logo](./OLSystem.png)
 
 ## About OLSystem
 
@@ -18,9 +17,15 @@ administrator room, in which administrator can:
 - remove participants;
 - observe for the results of all participants.
 
-The appearance of the system you can see 
-[here](https://github.com/VladimirBalun/OLSystem/tree/master/img) and you can open appearance
-of each page without server side in browser from directory examples.
+This system consists of four main modules:
+
+- [GUI - Vue.js](./GUI)
+- [Database - MySQL](./Database)
+- [Program for checking tasks - C++](./ProgChecker)
+- [The whole system that unites all - Java](./OLSystem)
+
+Each module is a separate unit. Thanks to this, independently of other modules, it is possible to change 
+a certain module or completely replace it with another one.
 
 ## What you need to build OLSystem
 For build *OLSystem* on your computer, you will need to have the following
@@ -30,12 +35,13 @@ applications:
 - TomCat
 - Maven
 - MySQL
+- CMake
 
 For Windows, you have to download and install [Git](https://git-scm.com/download), 
 [JDK/JRE](http://www.oracle.com/technetwork/java/index-jsp-138363.html), 
 [TomCat](https://tomcat.apache.org/download-80), 
-[Maven](http://maven.apache.org/download.cgi) and
-[MySQL](https://dev.mysql.com/downloads/installer/). After installation you
+[Maven](http://maven.apache.org/download.cgi),
+[MySQL](https://dev.mysql.com/downloads/installer/) and [CMake](https://cmake.org/download/). After installation you
 need to add system variables for JDK/JRE and Maven. 
 
 OS X users should install Homebrew. Once Homebrew is installed, run:
@@ -45,6 +51,7 @@ OS X users should install Homebrew. Once Homebrew is installed, run:
     brew install tomcat
     brew install maven
     brew install mysql
+    brew install cmake
 
 Linux/BSD users should use their appropriate package managers to install:
 
@@ -54,7 +61,7 @@ Linux/BSD users should use their appropriate package managers to install:
     apt-get install tomcat8
     apt-get install maven
     apt-get install mysql-server
-    apt-get install mysql-client
+    apt-get install cmake
 
 ## How to build OLSystem
 Clone a copy of the main OLSystem git repo by running:
@@ -67,13 +74,13 @@ Enter the OLSystem directory and run the build script on Windows:
 
 Enter the OLSystem directory and run the build script on OS X or Linux/BSD:
 
-    ./build
+    ./build.sh
     
 If you don't have installing programming languages(compilers) on your computer, you can 
 run script and choose the ones you need programming languages(C, C++, Python and Java 
 must be already installed after building OLSystem) for passing olympiad. On Linux/BSD:
 
-    ./languages
+    ./languages.sh
 
 Script for Windows will be added later...
 
