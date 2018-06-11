@@ -9,18 +9,18 @@ with the OLSystem, the JSON format is used.
 
 ##### Example request 
 
-    {
-        "testData" : [
+    "{
+        'testData' : [
             {
-                "outputData" : "5",
-                "inputData" : "5"
+                'outputData' : '5',
+                'inputData' : '5'
             },
             {
-                 "outputData" : "567",
-                 "inputData" : "567"
+                 'outputData' : '567',
+                 'inputData' : '567'
             },
         ],
-        "textProgram" : "#include <iostream>
+        'textProgram' : '#include <iostream>
                        
                         int main() 
                         {
@@ -28,8 +28,8 @@ with the OLSystem, the JSON format is used.
                              std::cin >> tmpVar;
                              std::cout << tmpVar << std::endl;
                              return EXIT_SUCCESS;
-                        }"
-    }
+                        }'
+    }"
 
 After checking the program, the application sends the result code:
 
@@ -74,7 +74,4 @@ the ProgChecker.
             name language language for programs(Cpp, C, Java or Python)
       COMPILER_OR_INTERPRETER
             name compiler or interpreter for selected language supported by your OS(gcc, g++, javac, python, clang etc)
-      ADDRESS
-            ip address on which the application will be launched
-      PORT
-            number of the port that will listen to the application
+

@@ -4,9 +4,8 @@
 #include <vector>
 #include <memory>
 
-#include "Objects/Task.h"
+#include "DataObjects/Task.h"
 #include "Utils/Terminal.h"
-#include "Exceptions/IOException.h"
 
 namespace SystemChecking
 {

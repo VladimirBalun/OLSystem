@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network>
+    <address>127.0.0.1</address>
+    <port>7070</port>
+</network>

@@ -3,11 +3,13 @@ set (SOURCES main.cpp
              SystemChecking/System.cpp
              SystemChecking/Programs/CreatorPrograms.cpp
              SystemChecking/Programs/Interpreters/Python.cpp
-        SystemChecking/Programs/Compilers/CppC.cpp
-             Objects/TestData.cpp
-             Objects/Task.cpp
+        	 SystemChecking/Programs/Compilers/CppC.cpp
+             DataObjects/TestData.cpp
+             DataObjects/Task.cpp
              Utils/Terminal.cpp
-             Utils/FileSystem.cpp)
+             Utils/FileSystem.cpp
+        	 SystemChecking/Programs/Compilers/Java.cpp
+			 Network/Client.cpp )
 
 
 set (HEADERS Exceptions/IException.h
@@ -18,17 +20,19 @@ set (HEADERS Exceptions/IException.h
              Network/Server.h
              SystemChecking/ISystem.h SystemChecking/Programs/Interpreters/Python.h
              SystemChecking/Programs/Interpreters/IInterpreter.h
-        SystemChecking/Programs/Compilers/CppC.h
+		     SystemChecking/Programs/Compilers/CppC.h
              SystemChecking/Programs/Compilers/ICompiler.h
              SystemChecking/System.h
 			 SystemChecking/EResultChecking.h
              SystemChecking/Programs/IProgram.h
              SystemChecking/Programs/CreatorPrograms.h
-             Objects/TestData.h
-             Objects/Task.h
+             DataObjects/TestData.h
+             DataObjects/Task.h
              Utils/Logger.h
              Utils/Terminal.h
-             Utils/FileSystem.h)
+             Utils/FileSystem.h
+             SystemChecking/Programs/Compilers/Java.h
+             Network/Client.h)
 
 if (WIN32)
 
@@ -36,6 +40,7 @@ if (WIN32)
 	set (Boost_INCLUDE_DIR ${BOOST_PATH}/include)
 	set (LIBRARIES ${BOOST_PATH}/lib/libboost_filesystem-vc141-mt-gd-x32-1_67.lib 
 				   ${BOOST_PATH}/lib/libboost_system-vc141-mt-gd-x32-1_67.lib
+                   ${BOOST_PATH}/lib/libboost_date_time-vc141-mt-gd-x32-1_67.lib
 				   ${BOOST_PATH}/lib/libboost_regex-vc141-mt-gd-x32-1_67.lib)
 
 elseif (UNIX)
