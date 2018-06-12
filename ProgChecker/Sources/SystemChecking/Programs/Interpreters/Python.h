@@ -12,10 +12,10 @@ namespace SystemChecking::Interpreters
     {
     public:
         explicit Python(const std::string& interpreterName) : _interpreterName(interpreterName) {}
-        int checkTask(const UPtrTask& task) override;
+        EResultChecking checkTask(const UPtrTask& task) override;
     private:
-        int runProgram(const std::string& textProgram, std::vector<SPtrTestData>&& testDataForProgram) override;
-        int runProgramWithTestData(std::vector<SPtrTestData>& testDataForProgram);
+        EResultChecking runProgram(const std::string& textProgram, std::vector<SPtrTestData>&& testDataForProgram) override;
+        EResultChecking runProgramWithTestData(std::vector<SPtrTestData>& testDataForProgram);
     private:
         std::string _interpreterName;
         const std::string __sourceFile = "pythonProgram.py";

@@ -1,5 +1,5 @@
-#ifndef _ICHECKING_PROGRAM_H
-#define _ICHECKING_PROGRAM_H
+#ifndef _I_PROGRAM_H_
+#define _I_PROGRAM_H_
 
 #include <vector>
 #include <memory>
@@ -11,10 +11,15 @@
 namespace SystemChecking
 {
 
+    /**
+     * The interface - adapter for compilers and interpreters.
+     * It allocates one common method for checking task, but
+     * compilers and interpreters implement it in different ways.
+     */
     struct IProgram
     {
         typedef std::unique_ptr<Objects::Task> UPtrTask;
-        virtual int checkTask(const UPtrTask& task) = 0;
+        virtual EResultChecking checkTask(const UPtrTask& task) = 0;
     };
 
 }

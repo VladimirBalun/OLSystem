@@ -3,7 +3,7 @@
 namespace SystemChecking::Compilers
 {
 
-    int CppC::checkTask(const IProgram::UPtrTask &task)
+    EResultChecking CppC::checkTask(const IProgram::UPtrTask &task)
     {
         if(!compileProgram(task->getTextProgram()))
         {

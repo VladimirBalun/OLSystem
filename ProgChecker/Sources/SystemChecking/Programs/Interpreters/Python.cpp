@@ -3,12 +3,12 @@
 namespace SystemChecking::Interpreters
 {
 
-    int Python::checkTask(const UPtrTask& task)
+    EResultChecking Python::checkTask(const UPtrTask& task)
     {
         return runProgram(task->getTextProgram(), task->getTestDataForTask());
     }
 
-    int Python::runProgram(const std::string& textProgram, std::vector<SPtrTestData>&& testDataForProgram)
+    EResultChecking Python::runProgram(const std::string& textProgram, std::vector<SPtrTestData>&& testDataForProgram)
     {
         if (!Utils::create_source_file(__sourceFile, textProgram))
         {
@@ -25,7 +25,7 @@ namespace SystemChecking::Interpreters
         return runProgramWithTestData(testDataForProgram);
     }
 
-    int Python::runProgramWithTestData(std::vector<SPtrTestData>& testDataForProgram)
+    EResultChecking Python::runProgramWithTestData(std::vector<SPtrTestData>& testDataForProgram)
     {
         for (const auto &testData : testDataForProgram)
         {

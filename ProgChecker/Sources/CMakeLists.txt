@@ -1,38 +1,61 @@
-set (SOURCES main.cpp
-             Network/Server.cpp
-             SystemChecking/System.cpp
-             SystemChecking/Programs/CreatorPrograms.cpp
-             SystemChecking/Programs/Interpreters/Python.cpp
-        	 SystemChecking/Programs/Compilers/CppC.cpp
-             DataObjects/TestData.cpp
-             DataObjects/Task.cpp
-             Utils/Terminal.cpp
-             Utils/FileSystem.cpp
-        	 SystemChecking/Programs/Compilers/Java.cpp
-			 Network/Client.cpp )
+set (DATA_OBJECTS_PATH DataObjects)
+set (DATA_OBJECTS ${DATA_OBJECTS_PATH}/TestData.h
+                  ${DATA_OBJECTS_PATH}/TestData.cpp
+                  ${DATA_OBJECTS_PATH}/Task.h
+                  ${DATA_OBJECTS_PATH}/Task.cpp)
 
+set (EXCEPTIONS_PATH Exceptions)
+set (EXCEPTIONS ${EXCEPTIONS_PATH}/IException.h
+                ${EXCEPTIONS_PATH}/SystemChecking/SystemCheckingException.h
+                ${EXCEPTIONS_PATH}/SystemChecking/NonExistLanguageException.h
+                ${EXCEPTIONS_PATH}/SystemChecking/NonExistProgramException.h
+                ${EXCEPTIONS_PATH}/Network/NetworkException.h)
 
-set (HEADERS Exceptions/IException.h
-             Exceptions/IOException.h
-             Exceptions/SystemCheckingException.h
-             Exceptions/NetworkException.h
-             Network/IServer.h
-             Network/Server.h
-             SystemChecking/ISystem.h SystemChecking/Programs/Interpreters/Python.h
-             SystemChecking/Programs/Interpreters/IInterpreter.h
-		     SystemChecking/Programs/Compilers/CppC.h
-             SystemChecking/Programs/Compilers/ICompiler.h
-             SystemChecking/System.h
-			 SystemChecking/EResultChecking.h
-             SystemChecking/Programs/IProgram.h
-             SystemChecking/Programs/CreatorPrograms.h
-             DataObjects/TestData.h
-             DataObjects/Task.h
-             Utils/Logger.h
-             Utils/Terminal.h
-             Utils/FileSystem.h
-             SystemChecking/Programs/Compilers/Java.h
-             Network/Client.h)
+set (NETWORK_PATH Network)
+set (NETWORK ${NETWORK_PATH}/IServer.h
+             ${NETWORK_PATH}/Server.h
+             ${NETWORK_PATH}/Server.cpp
+             ${NETWORK_PATH}/Client.h
+             ${NETWORK_PATH}/Client.cpp
+             ${NETWORK_PATH}/Response.h
+             ${NETWORK_PATH}/Response.cpp
+             ${NETWORK_PATH}/Request.h
+             ${NETWORK_PATH}/Request.cpp)
+
+set (COMPILERS_PATH SystemChecking/Programs/Compilers)
+set (COMPILERS ${COMPILERS_PATH}/ICompiler.h
+               ${COMPILERS_PATH}/CppC.h
+               ${COMPILERS_PATH}/CppC.cpp
+               ${COMPILERS_PATH}/Java.h
+               ${COMPILERS_PATH}/Java.cpp)
+
+set (INTERPRETERS_PATH SystemChecking/Programs/Interpreters)
+set (INTERPRETERS ${INTERPRETERS_PATH}/IInterpreter.h
+                  ${INTERPRETERS_PATH}/Python.h
+                  ${INTERPRETERS_PATH}/Python.cpp)
+
+set (PROGRAMS_PATH SystemChecking/Programs)
+set (PROGRAMS ${COMPILERS}
+              ${INTERPRETERS}
+              ${PROGRAMS_PATH}/IProgram.h
+              ${PROGRAMS_PATH}/CreatorPrograms.h
+              ${PROGRAMS_PATH}/CreatorPrograms.cpp)
+
+set (SYSTEM_CHECKING_PATH SystemChecking)
+set (SYSTEM_CHECKING ${PROGRAMS}
+                     ${SYSTEM_CHECKING_PATH}/ISystem.h
+                     ${SYSTEM_CHECKING_PATH}/System.h
+                     ${SYSTEM_CHECKING_PATH}/System.cpp
+                     ${SYSTEM_CHECKING_PATH}/EResultChecking.h)
+
+set (UTILS_PATH Utils)
+set (UTILS ${UTILS_PATH}/Logger.h
+           ${UTILS_PATH}/Terminal.h
+           ${UTILS_PATH}/Terminal.cpp
+           ${UTILS_PATH}/FileSystem.h
+           ${UTILS_PATH}/FileSystem.cpp)
+
+set (SOURCES main.cpp ${DATA_OBJECTS} ${EXCEPTIONS} ${NETWORK} ${UTILS} ${SYSTEM_CHECKING})
 
 if (WIN32)
 
@@ -49,6 +72,6 @@ elseif (UNIX)
 
 endif()
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories (${PROJECT_NAME} PRIVATE ${Boost_INCLUDE_DIR})
 target_link_libraries (${PROJECT_NAME} ${LIBRARIES})

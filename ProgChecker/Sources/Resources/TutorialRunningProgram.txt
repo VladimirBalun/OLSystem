@@ -1,9 +1,0 @@
-usage: ProgChecker [PROGRAMMING_LANGUAGE] [COMPILER_OR_INTERPRETER] [ADDRESS] [PORT]
-
-This program checks programs in different programming languages.
-
-arguments:
-  PROGRAMMING_LANGUAGE
-      name language language for programs(Cpp, C, Java or Python)
-  COMPILER_OR_INTERPRETER
-     name compiler or interpreter for selected language supported by your OS(gcc, g++, javac, python, clang etc)

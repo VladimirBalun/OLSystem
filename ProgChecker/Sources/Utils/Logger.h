@@ -3,6 +3,13 @@
 
 	#include <iostream>
 
+	/**
+	 *  Collection of macro for logging Logging works when the program is started in debug mode.
+	 *  LOG_INFO - for various kinds of alerts during program execution.
+	 *  LOG_DEBUG - for tracing individual parts of the program.
+	 *  LOG_WARNING - for minor mistakes.
+	 *  LOG_ERROR - for serious problems in which the program must complete its work.
+	 */
 	#if defined(_DEBUG) || defined(NDEBUG)
 
 		#define LOG_INFO(NAME_FILE, TEXT) \

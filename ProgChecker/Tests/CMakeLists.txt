@@ -15,7 +15,7 @@ if (WIN32)
 
 elseif (UNIX)
 
-    set (LIBRARIES -lboost_unit_test_framework -lboost_filesystem -lboost_system)
+    set (LIBRARIES -lboost_unit_test_framework)
 
 endif()
 

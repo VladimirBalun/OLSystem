@@ -14,7 +14,7 @@ namespace SystemChecking::Compilers
     {
     public:
         explicit CppC(const std::string& compilerName) : _compilerName(compilerName) {}
-        int checkTask(const UPtrTask& task) override;
+        EResultChecking checkTask(const UPtrTask& task) override;
     private:
         bool compileProgram(const std::string& textProgram) override;
         bool runProgram(std::vector<SPtrTestData>&& testData) override;

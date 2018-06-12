@@ -9,7 +9,7 @@ with the OLSystem, the JSON format is used.
 
 ##### Example request 
 
-    "{
+    {
         'testData' : [
             {
                 'outputData' : '5',
@@ -29,7 +29,7 @@ with the OLSystem, the JSON format is used.
                              std::cout << tmpVar << std::endl;
                              return EXIT_SUCCESS;
                         }'
-    }"
+    }
 
 After checking the program, the application sends the result code:
 

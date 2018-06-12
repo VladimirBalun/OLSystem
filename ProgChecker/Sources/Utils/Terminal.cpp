@@ -3,6 +3,11 @@
 namespace Utils
 {
 
+    /**
+     * The static function for running program without input data for it.
+     * @param command command for running program.
+     * @return successful or unsuccessful completion of the program.
+     */
     bool Terminal::runCommand(const std::string &command)
     {
         LOG_DEBUG(__FILE__, "Request on running command: " + command);
@@ -14,6 +19,12 @@ namespace Utils
         return errorMessage.empty();
     }
 
+    /**
+     * The static function for running program with input data for it.
+     * @param command command for running program.
+     * @param inputData input data for the program.
+     * @return output of the program.
+     */
     std::string Terminal::runCommand(const std::string& command, const std::string& inputData)
     {
         LOG_DEBUG(__FILE__, "Request on running command: " + command + " with input data: " + inputData);

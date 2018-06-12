@@ -6,7 +6,10 @@
 #include "IProgram.h"
 #include "Utils/Logger.h"
 #include "Interpreters/Python.h"
-#include "Interpreters/IInterpreter.h"
+#include "Compilers/CppC.h"
+#include "Compilers/Java.h"
+#include "Exceptions/SystemChecking/NonExistLanguageException.h"
+#include "Exceptions/SystemChecking/NonExistProgramException.h"
 
 namespace SystemChecking
 {
@@ -15,11 +18,15 @@ namespace SystemChecking
     {
     public:
         typedef std::unique_ptr<IProgram> UPtrIProgram;
-        bool checkCorrectnessLanguage(const std::string &nameLanguage);
-        bool checkExistingProgramForLanguage(const std::string &nameProgram);
         UPtrIProgram createCompilerOrInterpreterForLanguage(const std::string& nameLanguage, const std::string& nameProgram);
     private:
-        std::vector<std::string> _supportingLanguages = {"Java", "CppC", "C", "Python"};
+        bool checkExistingLanguage(const std::string &nameLanguage);
+        bool checkExistingProgramForLanguage(const std::string &nameProgram);
+    private:
+        const char* __c_language = "C";
+        const char* __cpp_language = "Cpp";
+        const char* __java_language = "Java";
+        const char* __python_language = "Python";
     };
 
 }

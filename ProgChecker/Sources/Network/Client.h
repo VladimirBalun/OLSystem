@@ -1,6 +1,7 @@
-#ifndef _CLIENT_H
-#define _CLIENT_H
+#ifndef _CLIENT_H_
+#define _CLIENT_H_
 
+#include <string>
 #include <boost/asio.hpp>
 
 #include "DataObjects/Task.h"
@@ -8,23 +9,26 @@
 namespace Network
 {
 
+    /**
+     * The class represents client of the network. It
+     * contains client socket and its task and result
+     * of checking task.
+     * @see Task
+     */
     class Client
     {
-    public:
-        typedef boost::asio::ip::tcp::socket ClientSocket;
         typedef std::shared_ptr<boost::asio::ip::tcp::socket> SPtrClientSocket;
         typedef std::shared_ptr<Objects::Task> SPtrTask;
-        Client(SPtrClientSocket& socket, SPtrTask& task) : _socket(socket), _task(task) {};
+
+        SPtrClientSocket _socket;
+        SPtrTask _task;
+    public:
+        Client(SPtrClientSocket& socket, SPtrTask& task) : _socket(socket), _task(task) {}
         SPtrClientSocket getClientSocket() const;
         void setClientSocket(SPtrClientSocket& socket);
         SPtrTask getTask() const;
         void setTask(SPtrTask& task);
-        int getResultChecking() const;
-        void setResultChecking(int resultChecking);
-    private:
-        SPtrClientSocket _socket;
-        SPtrTask _task;
-        int _resultChecking;
+        std::string toString() const;
     };
 
 }

@@ -3,19 +3,40 @@
 namespace SystemChecking
 {
 
-    bool CreatorPrograms::checkCorrectnessLanguage(const std::string &nameLanguage)
+    CreatorPrograms::UPtrIProgram CreatorPrograms::createCompilerOrInterpreterForLanguage(const std::string& nameLanguage, const std::string& nameProgram)
     {
-        for (const auto &language : _supportingLanguages)
+        if(!checkExistingLanguage(nameLanguage))
         {
-            if (language == nameLanguage)
-            {
-                return true;
-            }
+            throw Exceptions::NonExistLanguageException("Incorrect language. Language \"" + nameLanguage + "\" doesn't support by ProgChecker.");
         }
-        return false;
+        if(!checkExistingProgramForLanguage(nameProgram))
+        {
+            throw Exceptions::NonExistProgramException("Incorrect program. Compiler or interpreter \"" + nameProgram + "\" doesn't install.");
+        }
+
+        if(nameLanguage == __python_language)
+        {
+            LOG_INFO(__FILE__, "Was built interpreter \"" + nameProgram + "\" fot language \"" + nameLanguage + "\".");
+            return std::make_unique<Interpreters::Python>(nameProgram);
+        }
+        if(nameLanguage == __cpp_language || __c_language)
+        {
+            LOG_INFO(__FILE__, "Was built compiler \"" + nameProgram + "\" fot language \"" + nameLanguage + "\".");
+            return std::make_unique<Compilers::CppC>(nameProgram);
+        }
+        if(nameLanguage == __java_language)
+        {
+            LOG_INFO(__FILE__, "Was built compiler \"" + nameProgram + "\" fot language \"" + nameLanguage + "\".");
+            //return std::make_unique<Compilers::Java>(nameProgram);
+        }
     }
 
-    bool CreatorPrograms::checkExistingProgramForLanguage(const std::string &nameProgram)
+    bool CreatorPrograms::checkExistingLanguage(const std::string& nameLanguage)
+    {
+        return nameLanguage == __python_language || __cpp_language || __c_language || __java_language;
+    }
+
+    bool CreatorPrograms::checkExistingProgramForLanguage(const std::string& nameProgram)
     {
         try
         {
@@ -23,17 +44,10 @@ namespace SystemChecking
             boost::process::child childProcess(nameProgram, boost::process::std_out > pipeStream);
             return true;
         }
-        catch(boost::process::process_error &e)
+        catch(boost::process::process_error& e)
         {
             return false;
         }
     }
 
-    CreatorPrograms::UPtrIProgram CreatorPrograms::createCompilerOrInterpreterForLanguage(const std::string& nameLanguage, const std::string &nameProgram)
-    {
-        LOG_INFO(__FILE__, "Was built interpreter \"" + nameProgram + "\" fot language \"Python\".");
-        return std::make_unique<Interpreters::Python>(nameProgram);
-    }
-
 }
-
