@@ -1,5 +1,5 @@
-#ifndef _CHECKING_PROGRAM_H_
-#define _CHECKING_PROGRAM_H_
+#ifndef _SYSTEM_H_
+#define _SYSTEM_H_
 
 #include <string>
 #include <cstring>

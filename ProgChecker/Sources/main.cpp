@@ -11,8 +11,7 @@ int main(int argc, char* argv[])
     const int COUNT_CMD_ARGUMENTS = 3; // 0-[ProgChecker] 1-[PROGRAMMING_LANGUAGE] 2-[COMPILER_OR_INTERPRETER]
     if(argc < COUNT_CMD_ARGUMENTS)
     {
-        std::string tutorialRunningProgram = Utils::read_file("Resources/TutorialRunningProgram.txt");
-        std::cout << tutorialRunningProgram << std::endl;
+        std::cerr << "Incorrect number of arguments..." << std::endl;
         LOG_ERROR(__FILE__, "Incorrect input parameters for program.");
         return EXIT_FAILURE;
     }

@@ -1,8 +1,8 @@
-#ifndef _CPP_COMPILER_H_
-#define _CPP_COMPILER_H_
+#ifndef _CPP_C_H_
+#define _CPP_C_H_
 
 #include <string>
-#include <utility>
+
 #include "ICompiler.h"
 #include "Utils/FileSystem.h"
 #include "Utils/Logger.h"
@@ -10,8 +10,18 @@
 namespace SystemChecking::Compilers
 {
 
+    /**
+     * The class represents compiler of C or C++ languages and
+     * implements interface of ICompiler. It used for checking
+     * programs in C and C++ languages.
+     * @see ICompiler
+     */
     class CppC : public ICompiler
     {
+        std::string _compilerName;
+        const std::string __nameProgram = "cppProgram";
+        const std::string __fileExtension = ".hpp";
+        const std::string __sourceFile = __nameProgram + __fileExtension;
     public:
         explicit CppC(const std::string& compilerName) : _compilerName(compilerName) {}
         EResultChecking checkTask(const UPtrTask& task) override;
@@ -20,11 +30,6 @@ namespace SystemChecking::Compilers
         bool runProgram(std::vector<SPtrTestData>&& testData) override;
         inline std::string compileCommand();
         inline std::string runningCommand();
-    private:
-        std::string _compilerName;
-        const std::string __nameProgram = "cppProgram";
-        const std::string __fileExtension = ".hpp";
-        const std::string __sourceFile = __nameProgram + __fileExtension;
     };
 
 }

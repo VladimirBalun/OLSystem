@@ -25,9 +25,7 @@ set (NETWORK ${NETWORK_PATH}/IServer.h
 set (COMPILERS_PATH SystemChecking/Programs/Compilers)
 set (COMPILERS ${COMPILERS_PATH}/ICompiler.h
                ${COMPILERS_PATH}/CppC.h
-               ${COMPILERS_PATH}/CppC.cpp
-               ${COMPILERS_PATH}/Java.h
-               ${COMPILERS_PATH}/Java.cpp)
+               ${COMPILERS_PATH}/CppC.cpp)
 
 set (INTERPRETERS_PATH SystemChecking/Programs/Interpreters)
 set (INTERPRETERS ${INTERPRETERS_PATH}/IInterpreter.h
