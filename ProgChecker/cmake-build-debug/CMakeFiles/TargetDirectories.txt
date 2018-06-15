@@ -1,5 +1,0 @@
-C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources/CMakeFiles/ProgChecker.dir
-C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources/CMakeFiles/edit_cache.dir
-C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources/CMakeFiles/rebuild_cache.dir
