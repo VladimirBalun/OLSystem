@@ -5,4 +5,3 @@ set (CMAKE_CXX_STANDARD 17)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
 
 add_subdirectory (Sources)
-#add_subdirectory (Tests)

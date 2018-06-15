@@ -2,22 +2,22 @@
 
 ## About OLSystem
 
-OLSystem - it's cross-platform system for conducting olympiads, tests, 
-control works and individual solutions of tasks on programming. It' adapted for different devices
-(mobiles, tablets, laptops and computers). Work with the system takes
-place in the web browser. At the moment system is supporting only C, C++, Java and Python languages, 
-but another languages will be added soon. Compiler installation directories are taken from the registry 
-(windows-version) or from the path variable (linux-version). Also *OLSystem* supports 
-administrator room, in which administrator can:
-- change basic information about system(title, description and much more); 
-- add, remove and change tasks;
-- change programming language for passing olympiad or test;
-- change time for the that is given for the passage olympiad or test;
-- add, remove and change groups or classes for grouping participants;
-- remove participants;
-- observe for the results of all participants.
+*OLSystem* - it's a cross-platform system for conducting Olympiads by programming in different
+programming languages. This software product frees the teacher from tedious and error-phone
+checking of the olympiad programs and summarizing the results of the participants manually.
+At the moment, the system supports the following languages: C, C++ and Python. It's also 
+planned to add support for other languages. The *OLSystem* is a browser  application, it works 
+perfectly on different devices(mobile, tablet, laptop and PC). It's worth noting, that system
+supports administrator room for changing of conducting Olympiad, in which administrator can:
 
-This system consists of four main modules:
+- change basic information about conducting Olympiad(title, description, creators and much more); 
+- add, remove and change tasks for participants;
+- change programming language of Olympiad;
+- change time for the that is given for the passage olympiad;
+- remove outdated participants;
+- observe for the results of the all participants.
+
+This system is a modular application. It consists of the following modules:
 
 - [GUI - Vue.js](./GUI)
 - [Database - MySQL](./Database)
@@ -28,8 +28,9 @@ Each module is a separate unit. Thanks to this, independently of other modules, 
 a certain module or completely replace it with another one.
 
 ## What you need to build OLSystem
-For build *OLSystem* on your computer, you will need to have the following
+For build a *OLSystem* on your computer, you will need to have the following
 applications:
+
 - Git
 - JDK/JRE
 - TomCat
@@ -37,14 +38,14 @@ applications:
 - MySQL
 - CMake
 
-For Windows, you have to download and install [Git](https://git-scm.com/download), 
+For Windows, you should download and install [Git](https://git-scm.com/download), 
 [JDK/JRE](http://www.oracle.com/technetwork/java/index-jsp-138363.html), 
 [TomCat](https://tomcat.apache.org/download-80), 
 [Maven](http://maven.apache.org/download.cgi),
-[MySQL](https://dev.mysql.com/downloads/installer/) and [CMake](https://cmake.org/download/). After installation you
-need to add system variables for JDK/JRE and Maven. 
+[MySQL](https://dev.mysql.com/downloads/installer/).
 
-OS X users should install Homebrew. Once Homebrew is installed, run:
+
+For OS X users should install Homebrew. Once Homebrew is installed, run:
     
     brew install git
     brew install java
@@ -53,7 +54,7 @@ OS X users should install Homebrew. Once Homebrew is installed, run:
     brew install mysql
     brew install cmake
 
-Linux/BSD users should use their appropriate package managers to install:
+For Linux/BSD users should use their appropriate package managers to install:
 
     apt-get install git
     apt-get install default-jre
@@ -64,7 +65,7 @@ Linux/BSD users should use their appropriate package managers to install:
     apt-get install cmake
 
 ## How to build OLSystem
-Clone a copy of the main OLSystem git repo by running:
+Clone a copy of the main OLSystem git repository by running:
 
     git clone https://github.com/VladimirBalun/OLSystem.git
 
@@ -76,15 +77,10 @@ Enter the OLSystem directory and run the build script on OS X or Linux/BSD:
 
     ./build.sh
     
-If you don't have installing programming languages(compilers) on your computer, you can 
-run script and choose the ones you need programming languages(C, C++, Python and Java 
-must be already installed after building OLSystem) for passing olympiad. On Linux/BSD:
+If you don't have installing compilers on interpreters for supporting programming languages by *OLSystem*
+on your computer, you can run script and automatically install standard compilers and 
+interpreters for C, C++ and Python. On Linux/BSD or OS X run:
 
     ./languages.sh
 
 Script for Windows will be added later...
-
-____
-Documentation will be supplemented over time, but if you have any questions, please 
-contact: vladimirbalun@yandex.ru
-

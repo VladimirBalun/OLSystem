@@ -25,8 +25,8 @@ namespace Network
     {
         typedef boost::asio::io_service IOService;
         typedef boost::asio::ip::tcp::acceptor Acceptor;
-        typedef boost::asio::ip::tcp::socket ClientSocket;
-        typedef std::shared_ptr<boost::asio::ip::tcp::socket> SPtrClientSocket;
+        typedef boost::asio::ip::tcp::socket Socket;
+        typedef std::unique_ptr<boost::asio::ip::tcp::socket> UPtrSocket;
         typedef boost::asio::ip::tcp TCP;
         typedef boost::asio::ip::address Address;
         typedef std::unique_ptr<SystemChecking::ISystem> UPtrSystemChecking;
@@ -39,7 +39,7 @@ namespace Network
         std::condition_variable _conditionVar;
 
         UPtrSystemChecking _systemChecking;
-        std::queue<std::unique_ptr<Network::Client>> _clients;
+        std::queue<UPtrSocket> _clients;
     public:
         Server(UPtrSystemChecking& systemChecking) : _systemChecking(std::move(systemChecking)) {}
         void start(const std::string& address, int port) override;

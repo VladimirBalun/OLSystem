@@ -17,15 +17,16 @@ namespace Network
      */
     class Client
     {
-        typedef std::shared_ptr<boost::asio::ip::tcp::socket> SPtrClientSocket;
+        typedef boost::asio::ip::tcp::socket Socket;
+        typedef std::unique_ptr<boost::asio::ip::tcp::socket> UPtrSocket;
         typedef std::shared_ptr<Objects::Task> SPtrTask;
 
-        SPtrClientSocket _socket;
+        UPtrSocket _socket;
         SPtrTask _task;
     public:
-        Client(SPtrClientSocket& socket, SPtrTask& task) : _socket(socket), _task(task) {}
-        SPtrClientSocket getClientSocket() const;
-        void setClientSocket(SPtrClientSocket& socket);
+        Client(UPtrSocket& socket, SPtrTask& task) : _socket(std::move(socket)), _task(task) {}
+        Socket* getClientSocket() const;
+        void setClientSocket(UPtrSocket& socket);
         SPtrTask getTask() const;
         void setTask(SPtrTask& task);
         std::string toString() const;

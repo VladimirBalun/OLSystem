@@ -3,6 +3,11 @@
 namespace Network
 {
 
+    /**
+     *
+     * @param address
+     * @param port
+     */
     void Server::start(const std::string& address, int port)
     {
         if(isValidIpAddress(address))
@@ -33,12 +38,12 @@ namespace Network
         // Thread - listener of connections
         while (true)
         {
-            SPtrClientSocket clientSocket(new ClientSocket(_ioService));
+            UPtrSocket clientSocket = std::make_unique<Socket>(_ioService);
             acceptor.accept(*clientSocket);
             char buff[4096];
             size_t length = clientSocket->read_some(boost::asio::buffer(buff));
             std::unique_lock<std::mutex> lock{_mutex};
-            _clients.push(nullptr); // test code
+            _clients.push(std::move(clientSocket)); // test code
             _conditionVar.notify_one();
         }
     }
@@ -66,7 +71,7 @@ namespace Network
     {
         std::string response = "testResponse";
         boost::system::error_code ignoredErrorCode;
-        boost::asio::write(*_clients.front()->getClientSocket(), boost::asio::buffer(response), ignoredErrorCode);
+        boost::asio::write(*_clients.front(), boost::asio::buffer(response), ignoredErrorCode);
     }
 
 }

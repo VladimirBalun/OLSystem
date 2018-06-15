@@ -7,18 +7,18 @@ namespace Network
      * The method returns socket for current client.
      * @return smart pointer to client socket.
      */
-    Client::SPtrClientSocket Client::getClientSocket() const
+    Client::Socket* Client::getClientSocket() const
     {
-        return _socket;
+        return _socket.get();
     }
 
     /**
      * The method sets socket for current client.
      * @param socket smart pointer to client socket.
      */
-    void Client::setClientSocket(Client::SPtrClientSocket& socket)
+    void Client::setClientSocket(Client::UPtrSocket& socket)
     {
-        _socket = socket;
+        _socket = std::move(socket);
     }
 
     /**
