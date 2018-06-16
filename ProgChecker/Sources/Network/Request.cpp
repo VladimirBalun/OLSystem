@@ -9,7 +9,7 @@ namespace Network
      * @param request request from client in JSON format.
      * @return
      */
-    Request::UPtrTask Request::parseClientRequest(const std::string& request) {
+    Request::SPtrTask Request::parseRequest(const std::string& request) {
         try
         {
             std::stringstream stream;
@@ -17,7 +17,7 @@ namespace Network
             boost::property_tree::ptree root;
             boost::property_tree::read_json(stream, root);
             std::string textProgram = root.get_child("textProgram").data();
-            return std::make_unique<Objects::Task>(textProgram, std::move(parseTestData(root)));
+            return std::make_shared<Objects::Task>(textProgram, std::move(parseTestData(root)));
         }
         catch (std::exception& e)
         {

@@ -4,74 +4,86 @@ namespace Network
 {
 
     /**
-     *
-     * @param address
-     * @param port
+     * Main method of the server. Here all the components of the server is
+     * initilizated, after initialization runs two thread for listening and
+     * proccessing of the clients.
+     * @param address ipV4 address for server.
+     * @param port port for server.
      */
-    void Server::start(const std::string& address, int port)
+    void Server::start(const std::string& ipAddress, int port)
     {
-        if(isValidIpAddress(address))
+        try
         {
-            LOG_DEBUG(__FILE__, "Building server... Address: \"" + address + "\" is valid.");
-            _address = address;
-            _port = port;
+            init(ipAddress, port);
+            listen();
+            handle();
         }
-        else
+        catch (std::exception& e)
         {
-            throw Exceptions::NetworkException("IP address isn't valid. Use ipv4: \"000.000.000.000\".");
+            throw Exceptions::NetworkException("Unknown error... Server can't continue its work.");
         }
+    }
 
-        Address ipAddress = Address::from_string(_address);
-        Acceptor acceptor(_ioService, TCP::endpoint(ipAddress, _port));
+    /**
+     *
+     * @param address ipV4 address for server.
+     * @param port port for server.
+     */
+    void Server::init(const std::string& ipAddress, int port)
+    {
+        try
+        {
+            _ioService = std::make_unique<IOService>();
+            _serverAddress = std::make_unique<ServerAddress>(ServerAddress::from_string(ipAddress));
+            _acceptor = std::make_unique<Acceptor>(*_ioService, TCP::endpoint(*_serverAddress, port));
+        }
+        catch (std::exception& e)
+        {
+            throw Exceptions::NetworkException("Server wasn't started... Incorrect ip address or port.");
+        }
+    }
 
-        // Thread - handler of clients
-        std::thread threadCheckingTask([&] {
+    /**
+     *
+     */
+    void Server::listen()
+    {
+        std::thread threadListener([&] {
+            const short BUFF_SIZE = 4096;
+            char buff[BUFF_SIZE];
+            while (true)
+            {
+                auto clientSocket = std::make_unique<Socket>(*_ioService);
+                _acceptor->accept(*clientSocket);
+                size_t lengthBuff = clientSocket->read_some(boost::asio::buffer(buff));
+                auto taskClient = Request::parseRequest(std::string(buff).substr(0, lengthBuff));
+                auto client = std::make_unique<Client>(clientSocket, taskClient);
+
+                std::unique_lock<std::mutex> lock{_mutex};
+                _clients.push(std::move(client));
+                _conditionVar.notify_one();
+            }
+        });
+        threadListener.detach();
+    }
+
+    /**
+     * The method handles connected clients in another thread. Here calls system checking tasks
+     * for checking task of client. After result is sent to the client.
+     */
+    void Server::handle()
+    {
+        std::thread threadHandler([&] {
             while (true)
             {
                 std::unique_lock<std::mutex> lock{_mutex};
                 _conditionVar.wait(lock);
-                handleClient();
+                std::string response = Response::createResponse(100);
+                boost::asio::write(*_clients.front()->getClientSocket(), boost::asio::buffer(response));
                 _clients.pop();
             }
         });
-
-        // Thread - listener of connections
-        while (true)
-        {
-            UPtrSocket clientSocket = std::make_unique<Socket>(_ioService);
-            acceptor.accept(*clientSocket);
-            char buff[4096];
-            size_t length = clientSocket->read_some(boost::asio::buffer(buff));
-            std::unique_lock<std::mutex> lock{_mutex};
-            _clients.push(std::move(clientSocket)); // test code
-            _conditionVar.notify_one();
-        }
-    }
-
-    /**
-     * The method checks the validity of the ipV4 address.
-     * @param address ipV4 address.
-     * @return valid or invalid ipV4 address.
-     */
-    bool Server::isValidIpAddress(std::string address)
-    {
-        boost::regex regEx("(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\"
-                           ".(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\"
-                           ".(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\"
-                           ".(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
-        boost::smatch resultChecking;
-        return boost::regex_match(address, resultChecking, regEx);
-    }
-
-    /**
-     * The method handles connected clients. Here calls system checking tasks
-     * for checking task of client. After result is sent to the client.
-     */
-    void Server::handleClient()
-    {
-        std::string response = "testResponse";
-        boost::system::error_code ignoredErrorCode;
-        boost::asio::write(*_clients.front(), boost::asio::buffer(response), ignoredErrorCode);
+        threadHandler.join();
     }
 
 }

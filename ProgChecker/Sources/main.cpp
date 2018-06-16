@@ -8,7 +8,7 @@
 
 int main(int argc, char* argv[])
 {
-    const int COUNT_CMD_ARGUMENTS = 3; // 0-[ProgChecker] 1-[PROGRAMMING_LANGUAGE] 2-[COMPILER_OR_INTERPRETER]
+    const int COUNT_CMD_ARGUMENTS = 3; // 0-[ProgChecker] 1-[PROGRAMMING_LANGUAGE] 2-[COMPILER_OR_INTERPRETER] 3-[ADDRESS] 4-[PORT]
     if(argc < COUNT_CMD_ARGUMENTS)
     {
         std::cerr << "Incorrect number of arguments..." << std::endl;
@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 
         UPtrISystemChecking systemChecking = std::make_unique<SystemChecking::System>(argv[1], argv[2]);
         UPtrIServer server = std::make_unique<Network::Server>(systemChecking);
-        server->start("127.0.0.1", 13); // test contacts
+        server->start(argv[3], atoi(argv[4]));
     }
     catch(Exceptions::NetworkException& e)
     {

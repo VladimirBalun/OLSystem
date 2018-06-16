@@ -17,10 +17,10 @@ namespace Network
      */
     class Request
     {
-        typedef std::unique_ptr<Objects::Task> UPtrTask;
+        typedef std::shared_ptr<Objects::Task> SPtrTask;
         typedef std::shared_ptr<Objects::TestData> SPtrTestData;
     public:
-        static UPtrTask parseClientRequest(const std::string& request);
+        static SPtrTask parseRequest(const std::string& request);
     private:
         static std::vector<SPtrTestData> parseTestData(const boost::property_tree::ptree& root);
     };

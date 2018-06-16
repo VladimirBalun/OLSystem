@@ -14,7 +14,7 @@ namespace Network
      */
     struct Response
     {
-        static std::string createNetworkResponse(int result);
+        static std::string createResponse(int result);
     };
 
 }

@@ -1,6 +1,6 @@
 ## Structure of Database
 
-Database of OLSystem contains eight tables:
+Database of OLSystem contains nine tables:
 - Table **tasks** contains information about the tasks for olympiad.
 - Table **test_data** contains test data for tasks of Olympiad. Test data
  for tasks is needed to exclude the participant's ability to adjust 
@@ -13,6 +13,7 @@ must be present in the table.
 programming language for the Olympiad). Here are necessary fields with 
 names(timeOlympiad and programmingLanguage) that must be present in 
 the table.
+- Table **programming_languages** stores all the supporting languages by ProgChecker.
 - Table **users** contains information about about participants of the Olympiad
 and administrators.
 - Table **results** contains the results of the olympiad for each participant.
@@ -25,7 +26,7 @@ and administrators.
 ## How to import database for OLSystem
 For import database on your computer, you will need to have MySQL server and 
 download file *database.sql* in current directory. Assuming you're on
-a Linux or Windows console:
+a Linux, Windows and OSX console:
 
     mysql -u <username> -p<password> <databasename> < <filename.sql> // template
     mysql -u root -padmin OLSystem < database.sql                    // example

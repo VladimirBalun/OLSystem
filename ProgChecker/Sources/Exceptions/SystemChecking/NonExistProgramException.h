@@ -1,5 +1,5 @@
-#ifndef _NONEXIST_PROGRAM_EXCEPTION_H_
-#define _NONEXIST_PROGRAM_EXCEPTION_H_
+#ifndef _NON_EXIST_PROGRAM_EXCEPTION_H_
+#define _NON_EXIST_PROGRAM_EXCEPTION_H_
 
 #include "SystemCheckingException.h"
 

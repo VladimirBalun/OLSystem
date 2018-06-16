@@ -33,23 +33,20 @@ applications:
 
 - Git
 - JDK/JRE
-- TomCat
 - Maven
-- MySQL
+- MySQL Server
 - CMake
 
 For Windows, you should download and install [Git](https://git-scm.com/download), 
 [JDK/JRE](http://www.oracle.com/technetwork/java/index-jsp-138363.html), 
-[TomCat](https://tomcat.apache.org/download-80), 
 [Maven](http://maven.apache.org/download.cgi),
-[MySQL](https://dev.mysql.com/downloads/installer/).
+[MySQL Installer](https://dev.mysql.com/downloads/installer/) and [CMake](https://cmake.org/download/).
 
 
 For OS X users should install Homebrew. Once Homebrew is installed, run:
     
     brew install git
     brew install java
-    brew install tomcat
     brew install maven
     brew install mysql
     brew install cmake
@@ -59,7 +56,6 @@ For Linux/BSD users should use their appropriate package managers to install:
     apt-get install git
     apt-get install default-jre
     apt-get install default-jdk
-    apt-get install tomcat8
     apt-get install maven
     apt-get install mysql-server
     apt-get install cmake
@@ -84,3 +80,6 @@ interpreters for C, C++ and Python. On Linux/BSD or OS X run:
     ./languages.sh
 
 Script for Windows will be added later...
+
+____
+Information by deploy will be added later...

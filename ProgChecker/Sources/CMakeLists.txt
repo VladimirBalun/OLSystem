@@ -9,7 +9,7 @@ set (EXCEPTIONS ${EXCEPTIONS_PATH}/IException.h
                 ${EXCEPTIONS_PATH}/SystemChecking/SystemCheckingException.h
                 ${EXCEPTIONS_PATH}/SystemChecking/NonExistLanguageException.h
                 ${EXCEPTIONS_PATH}/SystemChecking/NonExistProgramException.h
-                ${EXCEPTIONS_PATH}/Network/NetworkException.h)
+                ${EXCEPTIONS_PATH}/Network/NetworkException.h Exceptions/Network/BadRequestException.h)
 
 set (NETWORK_PATH Network)
 set (NETWORK ${NETWORK_PATH}/IServer.h

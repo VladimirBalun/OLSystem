@@ -10,6 +10,8 @@
 #include <boost/asio.hpp>
 
 #include "IServer.h"
+#include "Request.h"
+#include "Response.h"
 #include "Utils/Logger.h"
 #include "Exceptions/Network/NetworkException.h"
 #include "SystemChecking/ISystem.h"
@@ -26,26 +28,28 @@ namespace Network
         typedef boost::asio::io_service IOService;
         typedef boost::asio::ip::tcp::acceptor Acceptor;
         typedef boost::asio::ip::tcp::socket Socket;
-        typedef std::unique_ptr<boost::asio::ip::tcp::socket> UPtrSocket;
         typedef boost::asio::ip::tcp TCP;
-        typedef boost::asio::ip::address Address;
+        typedef boost::asio::ip::address ServerAddress;
+        typedef std::unique_ptr<Client> UPtrClient;
+        typedef std::unique_ptr<boost::asio::ip::tcp::socket> UPtrSocket;
         typedef std::unique_ptr<SystemChecking::ISystem> UPtrSystemChecking;
 
-        int _port;
-        std::string _address;
-        IOService _ioService;
+        std::unique_ptr<IOService> _ioService;
+        std::unique_ptr<ServerAddress> _serverAddress;
+        std::unique_ptr<Acceptor> _acceptor;
 
         std::mutex _mutex;
         std::condition_variable _conditionVar;
 
         UPtrSystemChecking _systemChecking;
-        std::queue<UPtrSocket> _clients;
+        std::queue<UPtrClient> _clients;
     public:
         Server(UPtrSystemChecking& systemChecking) : _systemChecking(std::move(systemChecking)) {}
-        void start(const std::string& address, int port) override;
+        void start(const std::string& ipAddress, int port) override;
     private:
-        bool isValidIpAddress(std::string address);
-        void handleClient();
+        void init(const std::string& ipAddress, int port);
+        void listen();
+        void handle();
     };
 
 }
