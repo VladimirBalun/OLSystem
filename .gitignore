@@ -1,4 +1,5 @@
 OLSystem/target/*
 OLSystem/.idea/*
 
-ProgChcler/.idea/*
+ProgChecker/.idea/*
+ProgChecker/build/*
