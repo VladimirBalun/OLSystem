@@ -12,19 +12,8 @@ namespace SystemChecking
      */
     System::System(const std::string& nameLanguage, const std::string& nameProgram)
     {
-        try
-        {
-            CreatorPrograms creatorPrograms;
-            _checkingProgram = creatorPrograms.createCompilerOrInterpreterForLanguage(nameLanguage, nameProgram);
-        }
-        catch (Exceptions::NonExistLanguageException& e)
-        {
-            throw Exceptions::SystemCheckingException(e.what());
-        }
-        catch (Exceptions::NonExistProgramException& e)
-        {
-            throw Exceptions::SystemCheckingException(e.what());
-        }
+        CreatorPrograms creatorPrograms;
+        _checkingProgram = creatorPrograms.createCompilerOrInterpreterForLanguage(nameLanguage, nameProgram);
     }
 
     /**
@@ -34,7 +23,7 @@ namespace SystemChecking
      * @return result of checking current task.
      * @see ISystem
      */
-    EResultChecking System::checkTask(const UPtrTask& task)
+    EResultChecking System::checkTask(SPtrTask&& task)
     {
         return _checkingProgram->checkTask(task);
     }

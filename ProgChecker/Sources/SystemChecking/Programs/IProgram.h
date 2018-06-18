@@ -18,8 +18,8 @@ namespace SystemChecking
      */
     struct IProgram
     {
-        typedef std::unique_ptr<Objects::Task> UPtrTask;
-        virtual EResultChecking checkTask(const UPtrTask& task) = 0;
+        typedef std::shared_ptr<Objects::Task> SPtrTask;
+        virtual EResultChecking checkTask(const SPtrTask& task) = 0;
     };
 
 }

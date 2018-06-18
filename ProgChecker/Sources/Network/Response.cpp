@@ -8,7 +8,8 @@ namespace Network
      * @param result result of checking task of the client.
      * @return response for client in JSON format.
      */
-    std::string Response::createResponse(int result) {
+    std::string Response::createResponse(int result)
+    {
         boost::property_tree::ptree root;
         root.put("resultChecking", result);
         std::stringstream response;

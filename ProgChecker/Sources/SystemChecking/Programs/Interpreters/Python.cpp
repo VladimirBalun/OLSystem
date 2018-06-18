@@ -9,7 +9,7 @@ namespace SystemChecking::Interpreters
      * @param task task for checking.
      * @return result checking of task.
      */
-    EResultChecking Python::checkTask(const UPtrTask& task)
+    EResultChecking Python::checkTask(const SPtrTask& task)
     {
         return runProgram(task->getTextProgram(), task->getTestDataForTask());
     }

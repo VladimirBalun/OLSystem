@@ -6,6 +6,10 @@
 namespace Exceptions
 {
 
+    /**
+     * Exception is used when working with the ProgChecker
+     * doesn't support selected language.
+     */
     class NonExistLanguageException : public SystemCheckingException
     {
     public:

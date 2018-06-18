@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ProgChecker"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Sources\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProgChecker">
+				<Option output="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources/ProgChecker.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources"/>
+					<Add directory="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources"/>
+					<Add directory="E:/Libraries/Boost/include"/>
+					<Add directory="E:\Programms\VisualStudio\VC\Tools\MSVC\14.14.26428\ATLMFC\include"/>
+					<Add directory="E:\Programms\VisualStudio\VC\Tools\MSVC\14.14.26428\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 ProgChecker"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProgChecker/fast">
+				<Option output="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources/ProgChecker.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/Vova/Desktop/OLSystem/ProgChecker/cmake-build-debug/Sources"/>
+					<Add directory="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources"/>
+					<Add directory="E:/Libraries/Boost/include"/>
+					<Add directory="E:\Programms\VisualStudio\VC\Tools\MSVC\14.14.26428\ATLMFC\include"/>
+					<Add directory="E:\Programms\VisualStudio\VC\Tools\MSVC\14.14.26428\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 ProgChecker/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Vova\Desktop\OLSystem\ProgChecker\cmake-build-debug\Sources\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/DataObjects/Task.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/DataObjects/Task.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/DataObjects/TestData.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/DataObjects/TestData.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Exceptions/IException.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Exceptions/Network/BadRequestException.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Exceptions/Network/NetworkException.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Exceptions/SystemChecking/NonExistLanguageException.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Exceptions/SystemChecking/NonExistProgramException.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Exceptions/SystemChecking/SystemCheckingException.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Client.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Client.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/IServer.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Request.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Request.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Response.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Response.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Server.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Network/Server.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/EResultChecking.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/ISystem.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/Compilers/CppC.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/Compilers/CppC.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/Compilers/ICompiler.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/CreatorPrograms.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/CreatorPrograms.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/IProgram.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/Interpreters/IInterpreter.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/Interpreters/Python.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/Programs/Interpreters/Python.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/System.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/SystemChecking/System.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Utils/FileSystem.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Utils/FileSystem.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Utils/Logger.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Utils/Terminal.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/Utils/Terminal.h">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/main.cpp">
+			<Option target="ProgChecker"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Vova/Desktop/OLSystem/ProgChecker/Sources/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Sources\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

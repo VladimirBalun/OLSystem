@@ -17,7 +17,7 @@ namespace SystemChecking::Interpreters
     {
         typedef std::shared_ptr<Objects::TestData> SPtrTestData;
 
-        EResultChecking checkTask(const UPtrTask& task) override = 0;
+        EResultChecking checkTask(const SPtrTask& task) override = 0;
         virtual EResultChecking runProgram(const std::string& textProgram, std::vector<SPtrTestData>&& testDataForProgram) = 0;
         virtual ~IInterpreter() = default;
     };

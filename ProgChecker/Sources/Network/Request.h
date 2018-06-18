@@ -7,13 +7,13 @@
 #include <boost/property_tree/json_parser.hpp>
 
 #include "DataObjects/Task.h"
-#include "Utils/Logger.h"
 
 namespace Network
 {
 
     /**
-     *
+     * The class is used for parsing client requests
+     * in JSON format.
      */
     class Request
     {

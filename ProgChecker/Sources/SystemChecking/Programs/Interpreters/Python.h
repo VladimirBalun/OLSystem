@@ -21,7 +21,7 @@ namespace SystemChecking::Interpreters
         const std::string __runningCommand = _interpreterName + " " + __sourceFile;
     public:
         explicit Python(const std::string& interpreterName) : _interpreterName(interpreterName) {}
-        EResultChecking checkTask(const UPtrTask& task) override;
+        EResultChecking checkTask(const SPtrTask& task) override;
     private:
         EResultChecking runProgram(const std::string& textProgram, std::vector<SPtrTestData>&& testDataForProgram) override;
         EResultChecking runProgramWithTestData(std::vector<SPtrTestData>& testDataForProgram);

@@ -5,7 +5,6 @@
 #include <memory>
 
 #include "DataObjects/Task.h"
-#include "Utils/Terminal.h"
 #include "EResultChecking.h"
 
 namespace SystemChecking
@@ -18,8 +17,8 @@ namespace SystemChecking
      */
     struct ISystem
     {
-        typedef std::unique_ptr<Objects::Task> UPtrTask;
-        virtual EResultChecking checkTask(const UPtrTask& task) = 0;
+        typedef std::shared_ptr<Objects::Task> SPtrTask;
+        virtual EResultChecking checkTask(SPtrTask&& task) = 0;
         virtual ~ISystem() = default;
     };
 

@@ -6,6 +6,10 @@
 namespace Exceptions
 {
 
+    /**
+     * Exception is used when working with the OS doesn't
+     * contain compiler or interpreter for selected language.
+     */
     class NonExistProgramException : public SystemCheckingException
     {
     public:

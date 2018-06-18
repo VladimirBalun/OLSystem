@@ -10,7 +10,7 @@ namespace SystemChecking::Compilers
      * @return result checking of task.
      * @see ICompiler
      */
-    EResultChecking CppC::checkTask(const IProgram::UPtrTask &task)
+    EResultChecking CppC::checkTask(const IProgram::SPtrTask &task)
     {
         if (!compileProgram(task->getTextProgram()))
         {

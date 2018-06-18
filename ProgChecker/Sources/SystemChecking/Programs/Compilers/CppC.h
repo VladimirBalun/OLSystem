@@ -1,8 +1,6 @@
 #ifndef _CPP_C_H_
 #define _CPP_C_H_
 
-#include <string>
-
 #include "ICompiler.h"
 #include "Utils/FileSystem.h"
 #include "Utils/Logger.h"
@@ -24,7 +22,7 @@ namespace SystemChecking::Compilers
         const std::string __sourceFile = __nameProgram + __fileExtension;
     public:
         explicit CppC(const std::string& compilerName) : _compilerName(compilerName) {}
-        EResultChecking checkTask(const UPtrTask& task) override;
+        EResultChecking checkTask(const SPtrTask& task) override;
     private:
         bool compileProgram(const std::string& textProgram) override;
         bool runProgram(std::vector<SPtrTestData>&& testData) override;

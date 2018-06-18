@@ -2,7 +2,6 @@
 #define _SERVER_H_
 
 #include <thread>
-#include <chrono>
 #include <mutex>
 #include <iostream>
 #include <queue>
@@ -13,15 +12,18 @@
 #include "Request.h"
 #include "Response.h"
 #include "Utils/Logger.h"
-#include "Exceptions/Network/NetworkException.h"
-#include "SystemChecking/ISystem.h"
 #include "Network/Client.h"
+#include "SystemChecking/ISystem.h"
+#include "Exceptions/Network/NetworkException.h"
 
 namespace Network
 {
 
     /**
-     *
+     * The class implements interface of IServer. Current
+     * class listens new connections with clients and the
+     * proccesses them.
+     * @See IServer
      */
     class Server : public IServer
     {
@@ -32,7 +34,7 @@ namespace Network
         typedef boost::asio::ip::address ServerAddress;
         typedef std::unique_ptr<Client> UPtrClient;
         typedef std::unique_ptr<boost::asio::ip::tcp::socket> UPtrSocket;
-        typedef std::unique_ptr<SystemChecking::ISystem> UPtrSystemChecking;
+        typedef std::unique_ptr<SystemChecking::ISystem> UPtrISystemChecking;
 
         std::unique_ptr<IOService> _ioService;
         std::unique_ptr<ServerAddress> _serverAddress;
@@ -41,10 +43,10 @@ namespace Network
         std::mutex _mutex;
         std::condition_variable _conditionVar;
 
-        UPtrSystemChecking _systemChecking;
+        UPtrISystemChecking _systemChecking;
         std::queue<UPtrClient> _clients;
     public:
-        Server(UPtrSystemChecking& systemChecking) : _systemChecking(std::move(systemChecking)) {}
+        Server(UPtrISystemChecking& systemChecking) : _systemChecking(std::move(systemChecking)) {}
         void start(const std::string& ipAddress, int port) override;
     private:
         void init(const std::string& ipAddress, int port);

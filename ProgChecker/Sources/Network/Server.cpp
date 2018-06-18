@@ -25,7 +25,7 @@ namespace Network
     }
 
     /**
-     *
+     * The method runs server on selected address and port.
      * @param address ipV4 address for server.
      * @param port port for server.
      */
@@ -36,6 +36,7 @@ namespace Network
             _ioService = std::make_unique<IOService>();
             _serverAddress = std::make_unique<ServerAddress>(ServerAddress::from_string(ipAddress));
             _acceptor = std::make_unique<Acceptor>(*_ioService, TCP::endpoint(*_serverAddress, port));
+            LOG_INFO(__FILE__, "Server was started.");
         }
         catch (std::exception& e)
         {
@@ -44,7 +45,8 @@ namespace Network
     }
 
     /**
-     *
+     * The method listens incomer connections with clients. After connection,
+     * current client is added in queue for further processing.
      */
     void Server::listen()
     {
@@ -53,15 +55,24 @@ namespace Network
             char buff[BUFF_SIZE];
             while (true)
             {
-                auto clientSocket = std::make_unique<Socket>(*_ioService);
-                _acceptor->accept(*clientSocket);
-                size_t lengthBuff = clientSocket->read_some(boost::asio::buffer(buff));
-                auto taskClient = Request::parseRequest(std::string(buff).substr(0, lengthBuff));
-                auto client = std::make_unique<Client>(clientSocket, taskClient);
+                try
+                {
+                    UPtrSocket clientSocket = std::make_unique<Socket>(*_ioService);
+                    _acceptor->accept(*clientSocket);
 
-                std::unique_lock<std::mutex> lock{_mutex};
-                _clients.push(std::move(client));
-                _conditionVar.notify_one();
+                    size_t lengthBuff = clientSocket->read_some(boost::asio::buffer(buff));
+                    SystemChecking::ISystem::SPtrTask taskClient = Request::parseRequest(std::string(buff).substr(0, lengthBuff));
+                    UPtrClient client = std::make_unique<Client>(clientSocket, taskClient);
+
+                    std::unique_lock<std::mutex> lock{_mutex};
+                    _clients.push(std::move(client));
+                    _conditionVar.notify_one();
+                }
+                catch(std::exception& e)
+                {
+                    LOG_WARNING(__FILE__, e.what());
+                    std::cerr << "Incorrect request from user. Cause: " << e.what() << std::endl;
+                }
             }
         });
         threadListener.detach();
@@ -78,7 +89,8 @@ namespace Network
             {
                 std::unique_lock<std::mutex> lock{_mutex};
                 _conditionVar.wait(lock);
-                std::string response = Response::createResponse(100);
+                SystemChecking::EResultChecking resultChecking = _systemChecking->checkTask(_clients.front()->getTask());
+                std::string response = Response::createResponse(resultChecking);
                 boost::asio::write(*_clients.front()->getClientSocket(), boost::asio::buffer(response));
                 _clients.pop();
             }

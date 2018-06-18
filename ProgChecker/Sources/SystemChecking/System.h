@@ -1,13 +1,6 @@
 #ifndef _SYSTEM_H_
 #define _SYSTEM_H_
 
-#include <string>
-#include <cstring>
-#include <vector>
-#include <iostream>
-#include <memory>
-
-#include "Exceptions/SystemChecking/SystemCheckingException.h"
 #include "SystemChecking/ISystem.h"
 #include "SystemChecking/Programs/CreatorPrograms.h"
 
@@ -25,7 +18,7 @@ namespace SystemChecking
     {
     public:
         System(const std::string& nameLanguage, const std::string& nameProgram);
-        EResultChecking checkTask(const UPtrTask& task) override;
+        EResultChecking checkTask(SPtrTask&& task) override;
     private:
         std::unique_ptr<SystemChecking::IProgram> _checkingProgram;
     };

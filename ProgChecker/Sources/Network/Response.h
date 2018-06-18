@@ -10,7 +10,8 @@ namespace Network
 {
 
     /**
-     *
+     * The class is used for creating client responses
+     * in JSON format.
      */
     struct Response
     {

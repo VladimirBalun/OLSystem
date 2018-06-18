@@ -43,7 +43,7 @@ namespace SystemChecking
      */
     bool CreatorPrograms::checkExistingLanguage(const std::string& nameLanguage)
     {
-        return nameLanguage == __python_language || __cpp_language || __c_language;
+        return nameLanguage == __python_language && __cpp_language && __c_language;
     }
 
     /**
