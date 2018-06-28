@@ -4,20 +4,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.system.OLSystem.data.service.UsersService;
 
+import java.io.IOException;
+import java.util.Properties;
+
 @Component
 public class AuthenticationImpl implements Authentication {
 
     @Autowired
     private UsersService usersService;
 
-    private final String ADMIN_LOGIN = "admin1";
-    private final String ADMIN_PASSWORD = "e00cf25ad42683b3df678c61f42c6bda";
+    private Properties properties;
+
+    public AuthenticationImpl() throws IOException {
+        properties = new Properties();
+        properties.load(AuthenticationImpl.class.getClassLoader().getResourceAsStream("administrator.properties"));
+    }
 
     public UserRole authenticate(String login, String password) {
-        if (login.equals(ADMIN_LOGIN) & password.equals(ADMIN_PASSWORD)) {
+        if (login.equals(properties.getProperty("administrator.login")) & password.equals(properties.getProperty("administrator.password"))) {
             return UserRole.ADMIN;
-        }
-        if (usersService.isExistUser(login, password)) {
+        } else if (usersService.isExistUser(login, password)) {
             return UserRole.PARTICIPANT;
         } else {
             return UserRole.UNKNOWN;

@@ -1,4 +1,4 @@
-package ru.system.OLSystem.olympiad.pojo;
+package ru.system.OLSystem.olympiad.objects;
 
 public class Program {
 

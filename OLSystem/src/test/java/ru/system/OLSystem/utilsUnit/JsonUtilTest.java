@@ -1,4 +1,4 @@
-package ru.system.OLSystem.UtilsUnit;
+package ru.system.OLSystem.utilsUnit;
 
 import org.junit.Assert;
 import org.junit.Test;

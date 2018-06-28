@@ -2,8 +2,6 @@ package ru.system.OLSystem.data.entity;
 
 import org.codehaus.jackson.annotate.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 import java.util.*;
 

@@ -1,14 +1,31 @@
 package ru.system.OLSystem.olympiad.utils;
 
+import org.apache.log4j.Logger;
+import ru.system.OLSystem.authentication.AuthenticationImpl;
+import ru.system.OLSystem.data.service.DataOlympiadServiceImpl;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.Properties;
 
 public class Connector {
 
+    private final static Logger logger = Logger.getLogger(DataOlympiadServiceImpl.class);
+    private static Properties properties;
+
+    static {
+        try {
+            properties = new Properties();
+            properties.load(AuthenticationImpl.class.getClassLoader().getResourceAsStream("connector.properties"));
+        } catch (IOException e) {
+            logger.error("Config file for ProgChecker not found.");
+        }
+    }
+
     public static String sendTaskOnCkecking(String jsonText) throws IOException {
-        String host = "127.0.0.1";
-        int port = 1234;
+        String host = properties.getProperty("progChecker.address");
+        int port = Integer.valueOf(properties.getProperty("progChecker.port"));
         InetAddress address = InetAddress.getByName(host);
         Socket socket = new Socket(address, port);
 

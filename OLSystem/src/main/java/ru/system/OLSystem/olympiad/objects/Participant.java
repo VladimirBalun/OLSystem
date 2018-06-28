@@ -1,7 +1,6 @@
-package ru.system.OLSystem.olympiad.pojo;
+package ru.system.OLSystem.olympiad.objects;
 
 import ru.system.OLSystem.data.entity.Task;
-import ru.system.OLSystem.data.entity.TestData;
 
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +30,11 @@ public class Participant {
                     .build();
             tasksParticipant.put(taskDemo.getTitle(), taskDemo);
         }
+    }
+
+    public void addExecutionTask(String titleTask) {
+        tasksParticipant.remove(titleTask);
+        countTruthAnswers++;
     }
 
     public String getLogin() {

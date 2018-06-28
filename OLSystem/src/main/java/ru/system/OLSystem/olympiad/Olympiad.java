@@ -1,6 +1,6 @@
 package ru.system.OLSystem.olympiad;
 
-import ru.system.OLSystem.olympiad.pojo.Participant;
+import ru.system.OLSystem.olympiad.objects.Participant;
 
 public interface Olympiad {
 

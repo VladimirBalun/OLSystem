@@ -10,17 +10,19 @@ import ru.system.OLSystem.authentication.AuthenticationImpl;
 import ru.system.OLSystem.olympiad.Olympiad;
 import ru.system.OLSystem.olympiad.OlympiadImpl;
 
+import java.io.IOException;
+
 @Configuration
 @ComponentScan({"ru.system.OLSystem.olympiad", "ru.system.OLSystem.authentication"})
 public class ApplicationConfig {
 
     @Bean
-    public Authentication authentication(){
+    public Authentication authentication() throws IOException{
         return new AuthenticationImpl();
     }
 
     @Bean
-//    @Scope(WebApplicationContext.SCOPE_SESSION)
+    @Scope(WebApplicationContext.SCOPE_SESSION)
     public Olympiad olympiad() {
         return new OlympiadImpl();
     }
